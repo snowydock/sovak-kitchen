@@ -18,7 +18,7 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; -webkit-font-smoothing: antialiased; }
-
+ 
   /* HEADER */
   .site-header { padding: 3rem 2rem 2rem; max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
   .header-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
@@ -28,14 +28,14 @@
   .count-label { font-size: 12px; color: var(--ink-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; text-align: right; }
   .header-divider { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
   .header-divider hr { border: none; border-top: 1px solid var(--border); }
-
+ 
   /* NAV */
   .section-nav { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem 2rem; display: flex; gap: 8px; flex-wrap: wrap; }
   .nav-btn { padding: 7px 18px; border-radius: 99px; border: 1px solid var(--border); background: var(--white); font-size: 13px; font-weight: 400; color: var(--ink-muted); cursor: pointer; text-decoration: none; transition: all 0.15s; display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; }
   .nav-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
   .nav-btn .nav-count { font-size: 11px; background: var(--cream-dark); color: var(--ink-muted); padding: 1px 7px; border-radius: 99px; transition: all 0.15s; }
   .nav-btn:hover .nav-count { background: rgba(255,255,255,0.2); color: var(--white); }
-
+ 
   /* MAIN */
   .main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
   .section { margin-bottom: 3.5rem; scroll-margin-top: 1.5rem; }
@@ -43,10 +43,10 @@
   .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: var(--ink); letter-spacing: -0.2px; white-space: nowrap; }
   .section-line { flex: 1; height: 1px; background: var(--border); }
   .section-pill { font-size: 11px; font-weight: 500; color: var(--ink-muted); background: var(--cream-dark); padding: 3px 10px; border-radius: 99px; }
-
+ 
   /* GRID */
   .recipe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-
+ 
   /* CARD */
   .card { background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--r-lg); padding: 1.25rem 1.4rem; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: transparent; transition: background 0.2s ease; border-radius: var(--r-lg) var(--r-lg) 0 0; }
@@ -64,11 +64,11 @@
   .macro-lbl { font-size: 9px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
   .macro-sep { width: 1px; background: var(--border-soft); align-self: stretch; margin: 0 2px; }
   .card-servings { font-size: 10px; color: var(--ink-faint); margin-top: 8px; }
-
+ 
   /* MODAL OVERLAY */
   .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(28,25,23,0.5); z-index: 200; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(4px); }
   .modal-overlay.open { display: flex; }
-
+ 
   /* SUMMARY MODAL */
   .modal { background: var(--white); border-radius: var(--r-xl); width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); animation: modalIn 0.2s ease; }
   @keyframes modalIn { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -93,13 +93,13 @@
   .note-box { background: var(--accent-light); border-left: 3px solid var(--accent-mid); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 12px 16px; font-size: 12.5px; color: var(--ink-soft); line-height: 1.7; margin-top: 1.4rem; font-weight: 300; }
   .source-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 1.25rem; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 500; padding: 7px 14px; background: var(--accent-light); border-radius: 99px; border: 1px solid rgba(194,87,10,0.15); transition: background 0.15s; }
   .source-link:hover { background: #fde8d0; }
-
+ 
   /* START COOKING BUTTON */
   .start-cooking-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 1.5rem; padding: 14px; background: var(--ink); color: var(--white); border: none; border-radius: var(--r-md); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.15s, transform 0.1s; letter-spacing: 0.2px; }
   .start-cooking-btn:hover { background: var(--ink-soft); }
   .start-cooking-btn:active { transform: scale(0.99); }
   .start-cooking-btn svg { width: 16px; height: 16px; fill: var(--white); }
-
+ 
   /* COOKING MODE */
   .cook-modal { background: var(--white); border-radius: var(--r-xl); width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); animation: modalIn 0.2s ease; display: flex; flex-direction: column; }
   .cook-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; background: var(--white); border-radius: var(--r-xl) var(--r-xl) 0 0; z-index: 1; }
@@ -109,7 +109,7 @@
   .cook-back-btn:hover { background: var(--cream-dark); }
   .cook-close { background: var(--cream); border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 15px; color: var(--ink-muted); display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
   .cook-close:hover { background: var(--cream-dark); }
-
+ 
   /* PROGRESS BAR */
   .cook-progress-wrap { padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border-soft); }
   .cook-progress-labels { display: flex; justify-content: space-between; margin-bottom: 6px; }
@@ -117,12 +117,12 @@
   .cook-step-total { font-size: 11px; color: var(--ink-faint); }
   .cook-progress-bar { height: 3px; background: var(--cream-dark); border-radius: 99px; overflow: hidden; }
   .cook-progress-fill { height: 100%; background: var(--accent-mid); border-radius: 99px; transition: width 0.4s ease; }
-
+ 
   /* STEP CONTENT */
   .cook-body { padding: 2rem 1.75rem; flex: 1; }
   .cook-step-num { font-size: 11px; font-weight: 500; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
   .cook-step-text { font-family: 'Playfair Display', serif; font-size: clamp(18px, 3vw, 22px); font-weight: 400; color: var(--ink); line-height: 1.55; margin-bottom: 2rem; }
-
+ 
   /* TIMER */
   .cook-timer { display: flex; flex-direction: column; align-items: center; background: var(--cream); border-radius: var(--r-lg); padding: 1.5rem; margin-bottom: 2rem; }
   .cook-timer-display { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -1px; margin-bottom: 1rem; }
@@ -137,7 +137,7 @@
   .cook-timer-btn.reset:hover { background: var(--cream-dark); }
   .cook-timer-buttons { display: flex; gap: 0; }
   .cook-timer-done-msg { font-size: 13px; font-weight: 500; color: #16a34a; margin-top: 10px; }
-
+ 
   /* NAV BUTTONS */
   .cook-nav { display: flex; gap: 10px; padding: 1.25rem 1.75rem 1.75rem; border-top: 1px solid var(--border-soft); }
   .cook-nav-btn { flex: 1; padding: 13px; border-radius: var(--r-md); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.15s; border: none; }
@@ -148,12 +148,12 @@
   .cook-nav-btn.next:hover { background: var(--ink-soft); }
   .cook-nav-btn.next.finish { background: #16a34a; }
   .cook-nav-btn.next.finish:hover { background: #15803d; }
-
+ 
   /* FOOTER */
   .site-footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--ink-faint); border-top: 1px solid var(--border-soft); max-width: 1100px; margin: 0 auto; }
   .modal::-webkit-scrollbar, .cook-modal::-webkit-scrollbar { width: 4px; }
   .modal::-webkit-scrollbar-thumb, .cook-modal::-webkit-scrollbar-thumb { background: var(--cream-darker); border-radius: 99px; }
-
+ 
   @media (max-width: 600px) {
     .site-header { padding: 2rem 1.25rem 1.5rem; }
     .section-nav { padding: 1rem 1.25rem 1.5rem; }
@@ -164,14 +164,14 @@
     .cook-body { padding: 1.5rem 1.25rem; }
     .cook-nav { padding: 1rem 1.25rem 1.25rem; }
   }
-
+ 
   /* VIEW TABS */
   .view-tabs { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem 0; display: flex; gap: 6px; }
   .view-tab { padding: 9px 20px; border-radius: var(--r-md) var(--r-md) 0 0; border: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink-faint); cursor: pointer; transition: color 0.15s; position: relative; }
   .view-tab.active { color: var(--ink); }
   .view-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent-mid); }
   .view-tab:hover:not(.active) { color: var(--ink-muted); }
-
+ 
   /* PLANNER */
   .planner { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
   .planner-intro { padding: 2rem 0 1.5rem; }
@@ -199,19 +199,19 @@
   .plan-card-macros { display: flex; gap: 7px; font-size: 11px; color: var(--ink-muted); flex-wrap: wrap; }
   .plan-card-macros b { color: var(--ink); font-weight: 500; }
   .plan-card-servings { font-size: 10px; color: var(--ink-faint); margin-top: 8px; }
-
-
+ 
+ 
   /* SAUCE CARDS */
   .sauce-card::before { background: var(--accent-mid) !important; }
   .sauce-kcal { font-size: 11px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 3px 10px; border-radius: 99px; }
   .sauce-card-foot { font-size: 10px; color: var(--ink-faint); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-soft); letter-spacing: 0.3px; }
   .sauce-modal-kcal { font-size: 12px; color: var(--accent); font-weight: 500; }
   .sauce-modal-character { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 0.5rem; }
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <header class="site-header">
   <div class="header-left">
     <div class="header-eyebrow">Meal prep cookbook</div>
@@ -223,24 +223,24 @@
     <div class="count-label">Recipes</div>
   </div>
 </header>
-
+ 
 <div class="header-divider"><hr></div>
-
+ 
 <div class="view-tabs">
   <button class="view-tab active" id="tab-browse" onclick="switchView('browse')">Cookbook</button>
   <button class="view-tab" id="tab-plan" onclick="switchView('plan')">Plan my week</button>
 </div>
-
+ 
 <div id="view-browse">
   <nav class="section-nav" id="section-nav"></nav>
   <main class="main" id="main"></main>
 </div>
-
+ 
 <div id="view-plan" style="display:none;">
   <div class="planner">
     <div class="planner-intro">
       <div class="planner-headline">Plan my week</div>
-      <div class="planner-sub">Roll a random week &mdash; 2 dinners (6 servings each) and 1 lunch (10 servings). Re-roll as many times as you like; nothing is saved. Tap any meal to view the full recipe.</div>
+      <div class="planner-sub">Roll a random week &mdash; 1 lunch (the big anchor meal, 40g+ protein) and 2 dinners (the lighter fill-in meals). Batch size varies by recipe. Re-roll as many times as you like; nothing is saved. Tap any meal to view the full recipe.</div>
     </div>
     <div class="planner-controls">
       <button class="planner-btn primary" onclick="rollWeek()">
@@ -255,11 +255,11 @@
   </div>
 </div>
 <footer class="site-footer">The Sovak Kitchen &mdash; updated April 2026</footer>
-
+ 
 <div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
   <div id="modal-container"></div>
 </div>
-
+ 
 <script>
 const recipes = [
   { id:1, category:"breakfast", protein_type:"other", emoji:"🥣", name:"Overnight oats", source:null, desc:"Protein-packed oats with blueberries and flax. Make the night before.", cal:445, protein:"37g", carbs:"42g", fat:"15g", servings:"1 serving",
@@ -270,7 +270,7 @@ const recipes = [
       {text:"Cover and refrigerate overnight, or at least 4 hours.", timer:14400},
       {text:"Serve cold, topped with fresh blueberries.", timer:null}
     ], notes:"" },
-  { id:2, category:"lunch", protein_type:"chicken", emoji:"🍲", name:"Dill chicken soup", source:null, desc:"Creamy orzo soup with rotisserie chicken, peas, and fresh dill.", cal:290, protein:"30g", carbs:"24g", fat:"10g", servings:"10 servings",
+  { id:2, category:"dinner", protein_type:"chicken", emoji:"🍲", name:"Dill chicken soup", source:null, desc:"Creamy orzo soup with rotisserie chicken, peas, and fresh dill.", cal:290, protein:"30g", carbs:"24g", fat:"10g", servings:"10 servings",
     ingredients:["26g olive oil","120g carrots","150g onion","6g garlic","140g orzo","600g chicken breast (shredded)","300g chicken thigh (shredded)","1440g chicken broth","210g frozen peas","4g fresh dill","30g lemon juice","245g Greek yogurt","240g liquid egg whites"],
     steps:[
       {text:"Heat olive oil in a large pot over medium. Add carrots, onion, and garlic — sauté 4–5 minutes until softened.", timer:300},
@@ -281,7 +281,7 @@ const recipes = [
       {text:"In a bowl, whisk Greek yogurt with about half a cup of hot broth to temper it. Slowly stir the mixture back into the pot.", timer:null},
       {text:"Warm gently for 1–2 minutes — do not boil. Season with salt, pepper, and extra dill or lemon as desired.", timer:90}
     ], notes:"" },
-  { id:3, category:"lunch", protein_type:"turkey", emoji:"🍛", name:"White turkey chili", source:null, desc:"Hearty cannellini bean chili with ground turkey and green chiles.", cal:250, protein:"23g", carbs:"20g", fat:"9g", servings:"10 servings",
+  { id:3, category:"dinner", protein_type:"turkey", emoji:"🍛", name:"White turkey chili", source:null, desc:"Hearty cannellini bean chili with ground turkey and green chiles.", cal:250, protein:"23g", carbs:"20g", fat:"9g", servings:"10 servings",
     ingredients:["960g cannellini beans (drained)","600g cream of chicken soup","480g ground turkey breast (cooked)","630g milk","226g chopped green chiles","4g fresh cilantro","10g dried minced onion","6g garlic powder","4g cumin","2g dried oregano","180g nonfat Greek yogurt"],
     steps:[
       {text:"In a large pot, combine cannellini beans, cream of chicken soup, ground turkey, and milk. Stir well over medium heat.", timer:null},
@@ -290,7 +290,7 @@ const recipes = [
       {text:"Remove from heat and stir in Greek yogurt until fully blended.", timer:null},
       {text:"Taste and season with salt and pepper if needed. Serve warm.", timer:null}
     ], notes:"" },
-  { id:4, category:"lunch", protein_type:"beef", emoji:"🥢", name:"Thai beef & veggie bowls", source:null, desc:"Bold sesame-soy beef with cabbage, carrots, and bell pepper.", cal:245, protein:"21g", carbs:"9g", fat:"15g", servings:"10 servings",
+  { id:4, category:"dinner", protein_type:"beef", emoji:"🥢", name:"Thai beef & veggie bowls", source:null, desc:"Bold sesame-soy beef with cabbage, carrots, and bell pepper.", cal:245, protein:"21g", carbs:"9g", fat:"15g", servings:"10 servings",
     ingredients:["608g 85/15 ground beef","250g red bell pepper","180g shredded carrots","350g green cabbage","30g green onions","14g sesame oil","60g low-sodium soy sauce","15g rice vinegar","15g sriracha (optional)","6g garlic powder","2g ground ginger"],
     steps:[
       {text:"Heat sesame oil in a large skillet over medium-high. Add ground beef and brown thoroughly. Drain excess fat if desired.", timer:null},
@@ -299,7 +299,7 @@ const recipes = [
       {text:"Stir in soy sauce, rice vinegar, sriracha, and green onions. Cook another 2–3 minutes.", timer:150},
       {text:"Taste and adjust seasoning. Serve hot or portion into containers.", timer:null}
     ], notes:"" },
-  { id:5, category:"lunch", protein_type:"beef", emoji:"🌶️", name:"Chili", source:null, desc:"Classic beef and bean chili, slow-simmered with crushed tomatoes.", cal:250, protein:"15g", carbs:"18g", fat:"12g", servings:"10 servings",
+  { id:5, category:"dinner", protein_type:"beef", emoji:"🌶️", name:"Chili", source:null, desc:"Classic beef and bean chili, slow-simmered with crushed tomatoes.", cal:250, protein:"15g", carbs:"18g", fat:"12g", servings:"10 servings",
     ingredients:["608g 85/15 ground beef","300g yellow onion (diced)","9g garlic (minced)","800g stewed tomatoes","1580g crushed tomatoes","240g kidney beans (drained)"],
     steps:[
       {text:"In a large saucepan, cook ground beef, onion, and garlic over medium heat until beef is browned. Drain excess fat.", timer:null},
@@ -308,7 +308,7 @@ const recipes = [
       {text:"Stir in kidney beans. Return to a boil, then reduce heat again.", timer:null},
       {text:"Simmer uncovered for 20 minutes, stirring occasionally, until thickened to your liking.", timer:1200}
     ], notes:"" },
-  { id:6, category:"lunch", protein_type:"beef", emoji:"🌮", name:"Crispy cheesy beef tacos", source:"https://www.youtube.com/shorts/fRZRCinpqkE", desc:"Juicy sheet-pan beef, roasted peppers, melty mozzarella in a crispy low-carb wrap. Batch the filling, assemble fresh in 3s.", cal:310, protein:"26g", carbs:"22g", fat:"13g", servings:"15 tacos",
+  { id:6, category:"dinner", protein_type:"beef", emoji:"🌮", name:"Crispy cheesy beef tacos", source:"https://www.youtube.com/shorts/fRZRCinpqkE", desc:"Juicy sheet-pan beef, roasted peppers, melty mozzarella in a crispy low-carb wrap. Batch the filling, assemble fresh in 3s.", cal:310, protein:"26g", carbs:"22g", fat:"13g", servings:"15 tacos",
     ingredients:["1440g 85/15 ground beef","240g tomato paste","300g white onion (sliced)","300g bell pepper (sliced)","300g plain yogurt","120g light mayo","100g Cholula chilli lime hot sauce","50g honey","480g shredded mozzarella (32g per taco)","15 Mission low carb mini wraps","Avocado cooking spray","Spices: 2 tsp salt, 3 tsp smoked paprika, 3 tsp oregano, 3 tsp garlic powder, 2 tsp onion powder, 2 tsp cumin"],
     steps:[
       {text:"Make the sauce: whisk together yogurt, light mayo, Cholula, honey, 1 tsp smoked paprika, 1 tsp onion powder, and 1 tbsp fresh parsley in a bowl. Cover and set aside in the fridge.", timer:null},
@@ -321,7 +321,7 @@ const recipes = [
       {text:"ASSEMBLY DAY — batch of 3: dip 3 wraps briefly in the reserved pan juices to moisten. Lay flat, fill each with the beef and veg mixture, top with 32g mozzarella, and fold.", timer:null},
       {text:"Arrange the 3 tacos on a lined baking sheet. Bake at 370°F for 12 minutes, flipping halfway, until golden and crispy. Repeat this assembly step fresh each day rather than baking all 15 at once.", timer:720}
     ], notes:"TWO-PHASE METHOD (the whole trick): Make the beef-and-veg mixture as one big batch on prep day, then assemble and bake tacos fresh in batches of 3 (2 for Mike, 1 for Ali) on the day you eat them. Batch-baking all 15 tacos up front is onerous and they lose their crispness — this splits the work across days and gives far better results for less upfront effort. The beef mixture and its pan juices keep in the fridge; the wraps and cheese stay separate until assembly. MACRO NOTE: 85/15 beef vs the original 95/5 adds ~3–4g fat and ~30–35 cal per taco." },
-  { id:7, category:"lunch", protein_type:"chicken", emoji:"🫒", name:"Mediterranean chicken with salad & pita", source:null, desc:"Herb and lemon marinated chicken thighs with a fresh cucumber-tomato salad, crumbled feta, and mini pitas.", cal:370, protein:"37g", carbs:"18g", fat:"14g", servings:"10 servings",
+  { id:7, category:"dinner", protein_type:"chicken", emoji:"🫒", name:"Mediterranean chicken with salad & pita", source:null, desc:"Herb and lemon marinated chicken thighs with a fresh cucumber-tomato salad, crumbled feta, and mini pitas.", cal:370, protein:"37g", carbs:"18g", fat:"14g", servings:"10 servings",
     ingredients:["1588g boneless skinless chicken thighs","3 tbsp olive oil","3 tbsp fresh lemon juice","1 tsp lemon zest","5 garlic cloves (minced)","2 tsp dried oregano","1 tsp dried thyme","1 tsp smoked paprika","1.5 tsp kosher salt","0.75 tsp black pepper","0.25 tsp red pepper flakes (optional)","3 English cucumbers (diced)","3 cups cherry tomatoes (halved)","0.5 red onion (finely diced)","0.25 cup fresh parsley (chopped)","2 tbsp olive oil (salad)","2 tbsp red wine vinegar","1 tsp dried oregano (salad)","0.75 tsp kosher salt (salad)","0.5 tsp black pepper (salad)","280g feta cheese (crumbled)","10 mini pitas (~28g each)"],
     steps:[
       {text:"Combine chicken with olive oil, lemon juice, lemon zest, garlic, oregano, thyme, smoked paprika, salt, pepper, and red pepper flakes. Marinate at least 1 hour — overnight is best.", timer:3600},
@@ -349,7 +349,7 @@ const recipes = [
       {text:"Cook 5–6 minutes per side until golden and internal temperature reaches 165°F (74°C).", timer:660},
       {text:"Serve on buns.", timer:null}
     ], notes:"" },
-  { id:10, category:"dinner", protein_type:"beef", emoji:"🌮", name:"Taco casserole", source:null, desc:"One-pan beef, bean, and rice bake with melted cheddar.", cal:500, protein:"36g", carbs:"30g", fat:"27g", servings:"6 servings",
+  { id:10, category:"lunch", protein_type:"beef", emoji:"🌮", name:"Taco casserole", source:null, desc:"One-pan beef, bean, and rice bake with melted cheddar.", cal:500, protein:"36g", carbs:"30g", fat:"27g", servings:"6 servings",
     ingredients:["680g 85/15 ground beef","75g yellow onion (diced)","150g bell pepper (diced)","240g black beans (drained)","140g frozen corn","283g diced tomatoes & green chiles","1 Bibigo cooked white rice packet (210g)","30g taco seasoning","84g shredded cheddar","Toppings: Greek yogurt, cilantro, green onion"],
     steps:[
       {text:"Preheat oven to 375°F (190°C).", timer:null},
@@ -358,8 +358,8 @@ const recipes = [
       {text:"Transfer to a greased 9×13 baking dish. Top evenly with shredded cheddar.", timer:null},
       {text:"Bake 15–20 minutes until cheese is melted and bubbly.", timer:1050},
       {text:"Serve with desired toppings. Stores well in fridge up to 4 days.", timer:null}
-    ], notes:"" },
-  { id:11, category:"dinner", protein_type:"beef", emoji:"🍽", name:"Cottage cheese lasagna", source:null, desc:"High-protein lasagna with cottage cheese and a rich beef marinara.", cal:520, protein:"40g", carbs:"32g", fat:"24g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs 36g protein, just under the 40g target. Bump the chicken/beef slightly if you want it fully over the bar. " },
+  { id:11, category:"lunch", protein_type:"beef", emoji:"🍽", name:"Cottage cheese lasagna", source:null, desc:"High-protein lasagna with cottage cheese and a rich beef marinara.", cal:520, protein:"40g", carbs:"32g", fat:"24g", servings:"6 servings",
     ingredients:["454g 85/15 ground beef","250g lasagna noodles (dry)","450g cottage cheese","480g marinara sauce","56g shredded mozzarella","50g egg (1 large)","6g garlic (minced)","Italian seasoning, salt, pepper to taste","Optional: grated parmesan"],
     steps:[
       {text:"Preheat oven to 375°F (190°C).", timer:null},
@@ -389,7 +389,7 @@ const recipes = [
       {text:"Bake at 375°F (190°C) for 25–30 minutes until the potato topping is golden.", timer:1650},
       {text:"Rest 5–10 minutes before serving.", timer:null}
     ], notes:"" },
-  { id:14, category:"dinner", protein_type:"chicken", emoji:"🌶️", name:"Southwest chicken & rice bake", source:null, desc:"Shredded chicken with rice, black beans, corn, and cheddar.", cal:470, protein:"36g", carbs:"35g", fat:"18g", servings:"6 servings",
+  { id:14, category:"lunch", protein_type:"chicken", emoji:"🌶️", name:"Southwest chicken & rice bake", source:null, desc:"Shredded chicken with rice, black beans, corn, and cheddar.", cal:470, protein:"36g", carbs:"35g", fat:"18g", servings:"6 servings",
     ingredients:["680g cooked chicken breast (shredded)","2 Bibigo cooked white rice packets (420g)","425g black beans (drained)","160g corn (frozen or canned)","283g diced tomatoes with green chiles","1 tbsp taco seasoning","84g low-fat shredded cheddar"],
     steps:[
       {text:"Preheat oven to 375°F (190°C).", timer:null},
@@ -397,8 +397,8 @@ const recipes = [
       {text:"Spread evenly in a greased 9×13 dish. Top with shredded cheddar.", timer:null},
       {text:"Bake 20–25 minutes until hot throughout and cheese is melted and bubbly.", timer:1350},
       {text:"Rest 5–10 minutes before serving.", timer:null}
-    ], notes:"" },
-  { id:15, category:"dinner", protein_type:"chicken", emoji:"🧄", name:"Creamy garlic chicken mac bake", source:null, desc:"Protein pasta in a garlicky yogurt-cream cheese sauce with shredded chicken.", cal:495, protein:"42g", carbs:"32g", fat:"22g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs 36g protein, just under the 40g target. Bump the chicken/beef slightly if you want it fully over the bar. " },
+  { id:15, category:"lunch", protein_type:"chicken", emoji:"🧄", name:"Creamy garlic chicken mac bake", source:null, desc:"Protein pasta in a garlicky yogurt-cream cheese sauce with shredded chicken.", cal:495, protein:"42g", carbs:"32g", fat:"22g", servings:"6 servings",
     ingredients:["340g protein pasta","Rotisserie chicken — 2 full breasts (shredded)","227g plain nonfat Greek yogurt","113g reduced-fat cream cheese","240ml low-sodium chicken broth","140g reduced-fat shredded cheddar or mozzarella blend","1 tbsp olive oil or butter","1 tbsp minced garlic","1 tsp garlic powder","0.5 tsp onion powder","Salt & pepper to taste"],
     steps:[
       {text:"Cook pasta to al dente, drain, and set aside.", timer:null},
@@ -407,7 +407,7 @@ const recipes = [
       {text:"Stir in shredded chicken and pasta. Pour into a greased 9×13 dish.", timer:null},
       {text:"Top with remaining cheese. Bake at 375°F (190°C) for 20–25 minutes until golden and bubbling.", timer:1350}
     ], notes:"" },
-  { id:16, category:"dinner", protein_type:"chicken", emoji:"🍗", name:"Chicken Alfredo zucchini bake", source:null, desc:"Tender chicken and zucchini in a creamy garlic Alfredo sauce.", cal:445, protein:"42g", carbs:"14g", fat:"20g", servings:"6 servings",
+  { id:16, category:"lunch", protein_type:"chicken", emoji:"🍗", name:"Chicken Alfredo zucchini bake", source:null, desc:"Tender chicken and zucchini in a creamy garlic Alfredo sauce.", cal:445, protein:"42g", carbs:"14g", fat:"20g", servings:"6 servings",
     ingredients:["680g cooked chicken breast (cubed)","450g zucchini (sliced)","227g plain nonfat Greek yogurt","113g reduced-fat cream cheese","240g low-sodium chicken broth","112g shredded mozzarella","1 tsp garlic powder","0.5 tsp black pepper"],
     steps:[
       {text:"Preheat oven to 375°F (190°C).", timer:null},
@@ -416,7 +416,7 @@ const recipes = [
       {text:"Transfer to a greased 9×13 dish. Top with shredded mozzarella.", timer:null},
       {text:"Bake 30–35 minutes until bubbling and golden.", timer:1950}
     ], notes:"" },
-  { id:17, category:"dinner", protein_type:"chicken", emoji:"🫙", name:"Chicken shawarma rice bowls", source:"https://www.youtube.com/shorts/2aLnAJiQIRA", desc:"Charred garlic-spiced chicken thighs over seasoned turmeric rice, with garlic white sauce and crunchy slaw.", cal:552, protein:"46g", carbs:"48g", fat:"19g", servings:"6 servings",
+  { id:17, category:"lunch", protein_type:"chicken", emoji:"🫙", name:"Chicken shawarma rice bowls", source:"https://www.youtube.com/shorts/2aLnAJiQIRA", desc:"Charred garlic-spiced chicken thighs over seasoned turmeric rice, with garlic white sauce and crunchy slaw.", cal:552, protein:"46g", carbs:"48g", fat:"19g", servings:"6 servings",
     ingredients:["1200g boneless skinless chicken thighs","35g minced garlic (marinade)","2.5 tsp salt","2.5 tsp black pepper","2.5 tsp smoked paprika","2.5 tsp onion powder","2 tsp cumin","2 tsp cinnamon","4 tsp olive oil","Juice of 1 lemon","25g reduced fat butter","40g minced garlic (rice)","240g white onion (finely chopped)","1.2 tsp each: turmeric, smoked paprika, salt","3 Bibigo cooked white rice packets (630g)","180g fat free yogurt","90g light mayo","30g honey","30g pickle juice","1.2 tsp garlic powder","300g red onion (thinly sliced)","360g cherry tomatoes (chopped)","240g pickled gherkins (thinly sliced)","2.5 tbsp fresh parsley"],
     steps:[
       {text:"Combine chicken with all marinade ingredients — garlic, salt, pepper, smoked paprika, onion powder, cumin, cinnamon, olive oil, and lemon juice. Toss well. Marinate at least 30 minutes.", timer:1800},
@@ -427,8 +427,8 @@ const recipes = [
       {text:"Heat the Bibigo rice packets per instructions. In a pan, melt butter over medium and sauté garlic and onion 5–6 minutes. Add turmeric, smoked paprika, and salt, then fold through the hot rice until evenly coated.", timer:360},
       {text:"Whisk together yogurt, mayo, honey, pickle juice, and garlic powder for the white sauce. Refrigerate.", timer:null},
       {text:"Combine slaw ingredients — red onion, cherry tomatoes, gherkins, and parsley. Store separately and add fresh at serving.", timer:null}
-    ], notes:"Sumac omitted — sub with extra lemon squeeze at serving. Slaw and sauce stay separate; build bowls fresh each meal." },
-  { id:18, category:"dinner", protein_type:"beef", emoji:"🍜", name:"Crispy spicy beef noodles", source:"https://www.youtube.com/shorts/2B5xnGJvdUw", desc:"Golden crispy 85/15 beef tossed with egg noodles, peppers, and a bold chilli-soy sauce. Better on day 2.", cal:570, protein:"51g", carbs:"56g", fat:"13g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs ~552 kcal, slightly over Ali's 400-500 target, but clears the 40g protein bar comfortably. Trim the rice portion if you want it inside the window. Sumac omitted — sub with extra lemon squeeze at serving. Slaw and sauce stay separate; build bowls fresh each meal." },
+  { id:18, category:"lunch", protein_type:"beef", emoji:"🍜", name:"Crispy spicy beef noodles", source:"https://www.youtube.com/shorts/2B5xnGJvdUw", desc:"Golden crispy 85/15 beef tossed with egg noodles, peppers, and a bold chilli-soy sauce. Better on day 2.", cal:570, protein:"51g", carbs:"56g", fat:"13g", servings:"6 servings",
     ingredients:["1200g 85/15 ground beef","30g light butter","150g green onion (chopped)","1.5 tbsp minced garlic","1.5 tbsp minced ginger","2 medium red onions (sliced)","2 medium red bell peppers (sliced)","330g medium egg noodles","75ml light soy sauce","30ml dark soy sauce","45g honey","53g sweet chilli sauce (Blue Dragon reduced sugar)","38g rice vinegar","90g chilli garlic paste (Lee Kum Kee)","1.5 tsp red pepper flakes","1.5 tsp sesame seeds","30ml water"],
     steps:[
       {text:"Mix all sauce ingredients — light soy sauce, dark soy sauce, honey, sweet chilli sauce, rice vinegar, chilli garlic paste, red pepper flakes, sesame seeds, and water. Set aside.", timer:null},
@@ -438,8 +438,8 @@ const recipes = [
       {text:"In the same pan, stir-fry sliced onion, bell pepper, garlic, ginger, and green onion 5 minutes until softened.", timer:300},
       {text:"On low heat, toss noodles with the veggie mix and reserved ⅓ sauce until fully coated.", timer:null},
       {text:"Gently fold in the crispy beef. Portion into 6 containers.", timer:null}
-    ], notes:"85/15 beef adds ~5–6g fat vs. lean but is key to crisping. Red onion and pepper rounded from 1.5 → 2 each; negligible macro impact. Reheat with a splash of water. Tastes better on day 2+." },
-  { id:19, category:"dinner", protein_type:"chicken", emoji:"🌽", name:"Street corn chicken bowls", source:"https://www.youtube.com/shorts/mVyy7zEC8nY", desc:"Lime-marinated chicken breast with charred street corn salsa, coriander rice, and crumbled feta.", cal:559, protein:"50g", carbs:"43g", fat:"18g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs ~570 kcal, slightly over Ali's 400-500 target, but clears the 40g protein bar comfortably. Trim the rice portion if you want it inside the window. 85/15 beef adds ~5–6g fat vs. lean but is key to crisping. Red onion and pepper rounded from 1.5 → 2 each; negligible macro impact. Reheat with a splash of water. Tastes better on day 2+." },
+  { id:19, category:"lunch", protein_type:"chicken", emoji:"🌽", name:"Street corn chicken bowls", source:"https://www.youtube.com/shorts/mVyy7zEC8nY", desc:"Lime-marinated chicken breast with charred street corn salsa, coriander rice, and crumbled feta.", cal:559, protein:"50g", carbs:"43g", fat:"18g", servings:"6 servings",
     ingredients:["1200g chicken breast (cubed)","2 tsp salt","2.5 tsp dried parsley","2.5 tsp garlic powder","2.5 tsp onion powder","2.5 tsp smoked paprika","2 tsp cumin","4 tsp olive oil","Juice of 1 lime","30g light butter","2.5 tsp minced garlic","2.5 tbsp fresh parsley","500g canned sweetcorn (drained)","75g light mayo","120g fat-free Greek yogurt","60g Cholula hot sauce","60g jalapeños (deseeded, chopped)","2.5 tbsp fresh coriander","2.5 tsp Tajin","120g crumbled feta","Juice of half a lime","3 Bibigo cooked white rice packets (630g)","4 tbsp fresh coriander (rice)","Optional lime squeeze"],
     steps:[
       {text:"Toss chicken cubes with salt, dried parsley, garlic powder, onion powder, smoked paprika, cumin, olive oil, and lime juice. Marinate at least 20 minutes.", timer:1200},
@@ -447,8 +447,8 @@ const recipes = [
       {text:"Heat the Bibigo rice packets per instructions. Stir through fresh coriander and an optional squeeze of lime.", timer:null},
       {text:"Make the street corn salsa: mix sweetcorn, mayo, Greek yogurt, Cholula, jalapeños, coriander, Tajin, feta, and lime juice. Store separately.", timer:null},
       {text:"Portion rice and chicken into 6 containers. Add street corn salsa fresh at serving time.", timer:null}
-    ], notes:"Marinate chicken at least 20 min for best flavour. Lower heat before adding garlic and parsley to avoid burning. Salsa stored separately keeps everything clean for reheating." },
-  { id:20, category:"dinner", protein_type:"chicken", emoji:"🧀", name:"Creamy garlic cheesy chicken & potatoes", source:"https://www.youtube.com/shorts/4V6HZHEY3To", desc:"Seared chicken breast in a velvety garlic cream cheese sauce, served over crispy roasted potatoes.", cal:543, protein:"54g", carbs:"43g", fat:"17g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs ~559 kcal, slightly over Ali's 400-500 target, but clears the 40g protein bar comfortably. Trim the rice portion if you want it inside the window. Marinate chicken at least 20 min for best flavour. Lower heat before adding garlic and parsley to avoid burning. Salsa stored separately keeps everything clean for reheating." },
+  { id:20, category:"lunch", protein_type:"chicken", emoji:"🧀", name:"Creamy garlic cheesy chicken & potatoes", source:"https://www.youtube.com/shorts/4V6HZHEY3To", desc:"Seared chicken breast in a velvety garlic cream cheese sauce, served over crispy roasted potatoes.", cal:543, protein:"54g", carbs:"43g", fat:"17g", servings:"6 servings",
     ingredients:["1200g chicken breast (cubed)","36g minced garlic","24g light butter","360ml skimmed milk","192g Philadelphia Garlic & Herb cream cheese","96g shredded mozzarella","1.8 tsp salt","2.4 tsp mixed herbs","2.4 tsp smoked paprika","2.4 tsp onion powder","1.8 tsp chilli flakes (optional)","3.6 tsp olive oil","1320g yellow/white potatoes (small cubes)","1.2 tsp salt (potatoes)","1.8 tsp mixed herbs (potatoes)","1.8 tsp garlic powder (potatoes)","1.8 tsp paprika (potatoes)","2.4 tsp olive oil (potatoes)"],
     steps:[
       {text:"Toss potato cubes with salt, mixed herbs, garlic powder, paprika, and olive oil until evenly coated. Spread on a baking sheet.", timer:null},
@@ -458,8 +458,8 @@ const recipes = [
       {text:"Lower heat. Add skimmed milk and cream cheese to the pan. Stir until melted and smooth.", timer:null},
       {text:"Bubble gently 2–3 minutes to thicken, then stir in shredded mozzarella until melted.", timer:150},
       {text:"Serve creamy chicken sauce over crispy potatoes. Portion into 6 containers.", timer:null}
-    ], notes:"Potatoes and chicken sauce store separately for best texture — reheat potatoes in oven or air fryer to keep them crispy. Sauce reheats well with a splash of milk to loosen." },
-  { id:21, category:"dinner", protein_type:"chicken", emoji:"🍊", name:"Orange chicken rice bowl", source:null, desc:"Sticky honey-orange glazed chicken thighs over garlic sesame rice with a crisp cucumber slaw.", cal:452, protein:"38g", carbs:"49g", fat:"12g", servings:"6 servings",
+    ], notes:"ANCHOR MEAL — runs ~543 kcal, slightly over Ali's 400-500 target, but clears the 40g protein bar comfortably. Trim the rice portion if you want it inside the window. Potatoes and chicken sauce store separately for best texture — reheat potatoes in oven or air fryer to keep them crispy. Sauce reheats well with a splash of milk to loosen." },
+  { id:21, category:"lunch", protein_type:"chicken", emoji:"🍊", name:"Orange chicken rice bowl", source:null, desc:"Sticky honey-orange glazed chicken thighs over garlic sesame rice with a crisp cucumber slaw.", cal:452, protein:"38g", carbs:"49g", fat:"12g", servings:"6 servings",
     ingredients:["1200g chicken thighs (cubed)","9g black pepper","24g minced garlic","24g ginger paste","10g red pepper flakes","36g honey","36g sriracha","120g fresh orange juice","9g orange zest","30g dark soy sauce","3 Bibigo cooked white rice packets (630g)","18g reduced fat butter","30g sesame seeds","24g minced garlic (rice)","60g green onion (rice)","360g green cabbage (sliced)","480g cucumber (sliced)","240g red onion (sliced)","240g carrots (grated)","180g green onion (slaw)","30g rice vinegar","8g red pepper flakes (slaw)","24g honey (slaw)"],
     steps:[
       {text:"Combine chicken with black pepper, garlic, ginger paste, red pepper flakes, honey, sriracha, orange juice, zest, and dark soy sauce. Toss well and marinate at least 30 minutes.", timer:1800},
@@ -467,7 +467,7 @@ const recipes = [
       {text:"Heat the Bibigo rice packets per instructions. In a separate pan, toast sesame seeds until golden, then sauté garlic in butter. Toss the hot rice through with green onion.", timer:null},
       {text:"Make the slaw: combine cabbage, cucumber, red onion, carrots, and green onion. Dress with rice vinegar, red pepper flakes, and honey. Toss well.", timer:null},
       {text:"Portion rice into 6 containers and top with chicken. Store slaw separately — add fresh at serving.", timer:null}
-    ], notes:"" },
+    ], notes:"ANCHOR MEAL — runs 38g protein, just under the 40g target. Bump the chicken/beef slightly if you want it fully over the bar. " },
   { id:22, category:"snack", protein_type:"veg", emoji:"🌽", name:"Cowboy caviar", source:null, desc:"Bright bean and corn salsa with red onion, jalapeño, and lime dressing.", cal:156, protein:"5g", carbs:"14g", fat:"8g", servings:"6 servings",
     ingredients:["113g diced green chiles","425g great northern beans (drained, rinsed)","150g red onion (diced)","285g corn (drained)","150g bell pepper (diced)","15g jalapeño (optional, seeded, minced)","30g cilantro (chopped)","60g extra virgin olive oil","30ml red wine vinegar","Juice of 1 lime"],
     steps:[
@@ -478,7 +478,7 @@ const recipes = [
       {text:"Chill for 15–30 minutes before serving. Toss again just before eating.", timer:1200}
     ], notes:"" }
   ,
-  { id:23, category:"dinner", protein_type:"chicken", emoji:"🥢", name:"Korean BBQ chicken bowls", source:"https://m.youtube.com/shorts/HMZzVWRuQ94", desc:"Gochujang-marinated chicken thighs with a tangy crunchy cucumber salad over steamed rice.", cal:484, protein:"49g", carbs:"50g", fat:"10g", servings:"6 servings",
+  { id:23, category:"lunch", protein_type:"chicken", emoji:"🥢", name:"Korean BBQ chicken bowls", source:"https://m.youtube.com/shorts/HMZzVWRuQ94", desc:"Gochujang-marinated chicken thighs with a tangy crunchy cucumber salad over steamed rice.", cal:484, protein:"49g", carbs:"50g", fat:"10g", servings:"6 servings",
     ingredients:["1350g boneless skinless chicken thighs","1.5 tsp black pepper","1.5 tbsp garlic paste","1.5 tbsp ginger paste","60g gochujang (Haepyo)","38g sriracha","1.5 tbsp sesame seeds","60ml light soy sauce","600g cucumbers (thinly sliced)","1.5 tsp salt","1.5 tsp fresh garlic (salad)","23g gochujang (salad)","23g honey","45ml rice vinegar","1.5 tbsp sesame seeds (salad)","1.5 tsp chilli flakes","38ml light soy sauce (salad)"],
     steps:[
       {text:"Combine chicken thighs with black pepper, garlic paste, ginger paste, gochujang, sriracha, sesame seeds, and light soy sauce. Mix well to coat. Marinate at least 30 minutes.", timer:1800},
@@ -519,7 +519,7 @@ const recipes = [
     ],
     notes:"BASE MACROS: ~290 kcal, 18g protein (edamame carries it). Add a sauce for +35 to +90 kcal — see the Sauces section for the four modular options (Gochujang-Lime is the house default). Beside 3 eggs = ~30g+ protein, holds a 170g protein day. --- LEVERS: Cut calories by halving oil and skipping honey (~70 kcal saved). Cauliflower browns more forgivingly than broccoli and tastes nuttier. Roast, never steam, the crucifer — that is the whole palatability unlock. If using spinach instead of kale, stir it in raw off-heat so it barely wilts." }
   ,
-  { id:26, category:"dinner", protein_type:"turkey", emoji:"🇬🇷", name:"Greek turkey meatballs with tomato-feta protein pasta", source:null, desc:"Oregano-and-feta turkey meatballs baked and simmered in a garlicky tomato sauce that turns creamy from melted feta, tossed with high-protein pasta.", cal:495, protein:"46g", carbs:"42g", fat:"16g", servings:"6 servings (5 meatballs each)",
+  { id:26, category:"lunch", protein_type:"turkey", emoji:"🇬🇷", name:"Greek turkey meatballs with tomato-feta protein pasta", source:null, desc:"Oregano-and-feta turkey meatballs baked and simmered in a garlicky tomato sauce that turns creamy from melted feta, tossed with high-protein pasta.", cal:495, protein:"46g", carbs:"42g", fat:"16g", servings:"6 servings (5 meatballs each)",
     ingredients:["1360g 93/7 ground turkey","60g panko breadcrumbs","2 large eggs","85g feta cheese, crumbled (meatballs)","100g red onion, finely grated or minced","4 garlic cloves, minced (meatballs)","2 tsp dried oregano (meatballs)","1.5 tsp kosher salt (meatballs)","0.5 tsp black pepper","15g fresh dill or parsley, chopped","2 tbsp olive oil","4 garlic cloves, sliced (sauce)","2 tbsp tomato paste","800g canned San Marzano or crushed tomatoes","1 tsp dried oregano (sauce)","0.5 tsp red pepper flakes","1 tsp kosher salt (sauce)","115g feta cheese, crumbled (sauce)","340g Costco protein pasta, dry","1 lemon, zested"],
     steps:[
       {text:"Preheat oven to 425°F (220°C). Line a sheet pan with foil and lightly oil it.", timer:null},
@@ -536,7 +536,7 @@ const recipes = [
     ],
     notes:"FRIDGE LIFE: 5 days sealed. Most reheat-durable format for turkey — the sauce protects the pasta and the meatballs do not dry out the way loose crumbles do. REHEAT: microwave covered 2–2.5 min with a splash of water; the sauce tightens when cold and the water brings it back. MACRO LEVERS: Protein runs high (~46g) because the chickpea/lentil pasta stacks on top of the turkey. Calories sit right at the 500 ceiling — to buy breathing room, drop the sauce feta to 85g (saves ~25 kcal/serving), slightly less creamy but still good. If your Costco pasta box lists different macros, the turkey side is fixed at ~265 kcal / 33g P per serving; adjust the pasta contribution from there. SCALING: 1360g (3 lb) turkey yields 30 meatballs at ~50g each. For larger meatballs, do 24 at 57g and portion 4 per container." }
   ,
-  { id:27, category:"lunch", protein_type:"chicken", emoji:"🥗", name:"High-protein chicken salad", source:null, desc:"Light, tangy, and crunchy — rotisserie chicken in a yogurt-forward dressing with pickles, celery, and grapes. Served with Costco sourdough.", cal:215, protein:"30g", carbs:"8g", fat:"6g", servings:"10 servings (~190g each)",
+  { id:27, category:"dinner", protein_type:"chicken", emoji:"🥗", name:"High-protein chicken salad", source:null, desc:"Light, tangy, and crunchy — rotisserie chicken in a yogurt-forward dressing with pickles, celery, and grapes. Served with Costco sourdough.", cal:215, protein:"30g", carbs:"8g", fat:"6g", servings:"10 servings (~190g each)",
     ingredients:["950g shredded rotisserie chicken breast (from 2 chickens)","250g nonfat Greek yogurt","120g light mayonnaise","120g dill pickles, finely diced","150g celery, finely diced","200g red grapes, halved","60g red onion, minced","15g Dijon mustard","15ml lemon juice","0.5 tsp salt","0.5 tsp black pepper","Costco sourdough bread, 1–2 slices per serving (to serve)"],
     steps:[
       {text:"Shred or chop the rotisserie chicken breast into bite-sized pieces and add to a large bowl.", timer:null},
@@ -560,7 +560,7 @@ const recipes = [
     ],
     notes:"PREP-AHEAD / COOK-TO-ORDER — this is the whole point. You prep everything once, then sear one fresh portion (~8 min) each day rather than batch-cooking and reheating. Cook-to-order keeps the chicken juicy and the veg crisp all week, which reheated fajitas never manage. STORAGE: 2 chicken portions in the fridge (days 1–2), freeze the 3rd flat (day 3, thaw overnight). Peppers and onions hold 4–5 days sliced. The dry rub doubles as a dry-brine, so flavor actually improves over 1–2 days. MACROS: the 265 kcal / 38g P per serving EXCLUDES tortillas or rice — add a Bibigo rice packet (~285 kcal) on the side if you want the full plate. Per-portion cook math: ~150g chicken + ~185g veg + 1 tsp oil." }
 ];
-
+ 
 const sections = [
   { key:"breakfast", label:"Breakfast" },
   { key:"lunch", label:"Lunch" },
@@ -568,8 +568,8 @@ const sections = [
   { key:"snack", label:"Snacks & sides" },
   { key:"sauces", label:"Sauces" }
 ];
-
-
+ 
+ 
 const sauces = [
   { id:"s1", emoji:"🌶️", name:"Gochujang-Lime", kcal:"+40 kcal", character:"Bold, Korean-leaning — the house default. Sweet, sour, salty, and spicy all at once.",
     ingredients:["1 tbsp gochujang","1 tsp soy sauce / tamari","1 tsp toasted sesame oil","½ lime, juiced","1 tsp honey or maple"],
@@ -584,9 +584,9 @@ const sauces = [
     ingredients:["juice of ½ lemon","2 tbsp grated parmesan","pinch chili flake","black pepper"],
     tip:"No whisking — just toss the roasted veg in it." }
 ];
-
+ 
 let cookTimer = null;
-
+ 
 function buildNav() {
   const nav = document.getElementById('section-nav');
   nav.innerHTML = sections.map(sec => {
@@ -595,7 +595,7 @@ function buildNav() {
     return `<a class="nav-btn" href="#section-${sec.key}">${sec.label}<span class="nav-count">${count}</span></a>`;
   }).join('');
 }
-
+ 
 function buildCard(r) {
   return `<div class="card" onclick="openSummary(${r.id})">
     <div class="card-top">
@@ -616,7 +616,7 @@ function buildCard(r) {
     <div class="card-servings">${r.servings}</div>
   </div>`;
 }
-
+ 
 function render() {
   buildNav();
   const main = document.getElementById('main');
@@ -648,7 +648,7 @@ function render() {
   main.innerHTML = html;
   document.getElementById('recipe-count').textContent = recipes.length;
 }
-
+ 
 function buildSauceCard(s) {
   return `<div class="card sauce-card" onclick="openSauce('${s.id}')">
     <div class="card-top">
@@ -660,7 +660,7 @@ function buildSauceCard(s) {
     <div class="sauce-card-foot">${s.ingredients.length} ingredients &middot; tap for recipe</div>
   </div>`;
 }
-
+ 
 function openSauce(id) {
   const s = sauces.find(x => x.id === id);
   document.getElementById('modal-container').innerHTML = `
@@ -685,7 +685,7 @@ function openSauce(id) {
   document.getElementById('overlay').classList.add('open');
   document.getElementById('summary-modal').scrollTop = 0;
 }
-
+ 
 // SUMMARY MODAL
 function openSummary(id) {
   clearCookTimer();
@@ -725,7 +725,7 @@ function openSummary(id) {
   document.getElementById('overlay').classList.add('open');
   document.getElementById('summary-modal').scrollTop = 0;
 }
-
+ 
 // COOKING MODE
 function openCooking(id, stepIndex) {
   clearCookTimer();
@@ -735,7 +735,7 @@ function openCooking(id, stepIndex) {
   const total = r.steps.length;
   const progress = Math.round(((idx + 1) / total) * 100);
   const isLast = idx === total - 1;
-
+ 
   let timerHtml = '';
   if (step.timer) {
     timerHtml = `
@@ -747,7 +747,7 @@ function openCooking(id, stepIndex) {
         </div>
       </div>`;
   }
-
+ 
   document.getElementById('modal-container').innerHTML = `
     <div class="cook-modal">
       <div class="cook-header">
@@ -777,23 +777,23 @@ function openCooking(id, stepIndex) {
       </div>
     </div>`;
 }
-
+ 
 // TIMER LOGIC
 let timerInterval = null;
 let timerRemaining = 0;
 let timerRunning = false;
-
+ 
 function clearCookTimer() {
   if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
   timerRunning = false;
 }
-
+ 
 function formatTime(secs) {
   const m = Math.floor(secs / 60);
   const s = secs % 60;
   return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-
+ 
 function toggleTimer(recipeId, stepIdx, originalSecs) {
   const display = document.getElementById('timer-display');
   const btn = document.getElementById('timer-btn');
@@ -830,7 +830,7 @@ function toggleTimer(recipeId, stepIdx, originalSecs) {
     display.className = 'cook-timer-display';
   }
 }
-
+ 
 function resetTimer(recipeId, stepIdx, originalSecs) {
   clearCookTimer();
   timerRemaining = originalSecs;
@@ -841,19 +841,19 @@ function resetTimer(recipeId, stepIdx, originalSecs) {
   const doneMsg = document.querySelector('.cook-timer-done-msg');
   if (doneMsg) doneMsg.remove();
 }
-
+ 
 function closeModal() {
   clearCookTimer();
   timerRemaining = 0;
   document.getElementById('overlay').classList.remove('open');
 }
-
+ 
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('overlay')) closeModal();
 }
-
+ 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
+ 
 // ===== VIEW SWITCHING =====
 function switchView(view) {
   const browse = document.getElementById('view-browse');
@@ -872,7 +872,7 @@ function switchView(view) {
     tabPlan.classList.remove('active');
   }
 }
-
+ 
 // ===== WEEK PLANNER =====
 function pickWithVariety(pool, count) {
   // Try to pick `count` recipes avoiding repeated protein_type. Fall back to pure random if not enough variety.
@@ -895,26 +895,26 @@ function pickWithVariety(pool, count) {
   }
   return picked;
 }
-
+ 
 function rollWeek() {
   const dinners = recipes.filter(r => r.category === 'dinner');
   const lunches = recipes.filter(r => r.category === 'lunch');
   const pickedDinners = pickWithVariety(dinners, 2);
   const pickedLunches = pickWithVariety(lunches, 1);
-
+ 
   const out = document.getElementById('plan-output');
   out.innerHTML = `
     <div class="week-group">
-      <div class="week-group-label">Dinners &mdash; 6 servings each<span class="line"></span></div>
+      <div class="week-group-label">Dinners &mdash; lighter fill-in meals<span class="line"></span></div>
       <div class="plan-grid">${pickedDinners.map(planCard).join('')}</div>
     </div>
     <div class="week-group">
-      <div class="week-group-label">Lunch &mdash; 10 servings<span class="line"></span></div>
+      <div class="week-group-label">Lunch &mdash; the anchor meal<span class="line"></span></div>
       <div class="plan-grid">${pickedLunches.map(planCard).join('')}</div>
     </div>`;
   document.getElementById('reroll-btn').style.display = 'inline-flex';
 }
-
+ 
 function planCard(r) {
   return `<div class="plan-card" onclick="openSummary(${r.id})">
     <div class="plan-card-top">
@@ -926,7 +926,7 @@ function planCard(r) {
     <div class="plan-card-servings">${r.servings}</div>
   </div>`;
 }
-
+ 
 render();
 </script>
 </body>
