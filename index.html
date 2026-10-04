@@ -208,6 +208,24 @@
   .sauce-modal-kcal { font-size: 12px; color: var(--accent); font-weight: 500; }
   .sauce-modal-character { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; font-weight: 300; font-style: italic; margin-bottom: 0.5rem; }
  
+  /* SEARCH */
+  .search-wrap { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2rem 0; }
+  .search-box { position: relative; }
+  .search-box svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; fill: none; stroke: var(--ink-faint); stroke-width: 2; pointer-events: none; }
+  .search-input { width: 100%; padding: 11px 40px 11px 38px; border-radius: 99px; border: 1px solid var(--border); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--ink); outline: none; transition: border-color 0.15s, box-shadow 0.15s; -webkit-appearance: none; appearance: none; }
+  .search-input::placeholder { color: var(--ink-faint); }
+  .search-input:focus { border-color: var(--accent-mid); box-shadow: 0 0 0 3px var(--accent-light); }
+  .search-input::-webkit-search-cancel-button { display: none; }
+  .search-clear { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; border: none; background: var(--cream-dark); color: var(--ink-muted); font-size: 13px; cursor: pointer; display: none; align-items: center; justify-content: center; }
+  .search-clear.show { display: flex; }
+  .search-empty { text-align: center; padding: 3rem 1rem; color: var(--ink-muted); font-size: 14px; }
+
+  /* UPDATE BANNER */
+  .update-banner { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 300; background: var(--ink); color: var(--white); border: none; border-radius: 99px; padding: 12px 22px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; box-shadow: var(--shadow-lg); cursor: pointer; display: none; white-space: nowrap; }
+  .update-banner.show { display: block; }
+  .update-link { background: none; border: none; padding: 0; font: inherit; color: var(--ink-muted); text-decoration: underline; cursor: pointer; }
+  @media (max-width: 600px) { .search-wrap { padding: 1rem 1.25rem 0; } }
+
 </style>
 </head>
 <body>
@@ -232,6 +250,13 @@
 </div>
  
 <div id="view-browse">
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input type="search" class="search-input" id="search-input" placeholder="Search recipes by name" autocomplete="off" autocorrect="off" spellcheck="false" oninput="onSearch(this.value)">
+      <button class="search-clear" id="search-clear" onclick="clearSearch()" aria-label="Clear search">&#x2715;</button>
+    </div>
+  </div>
   <nav class="section-nav" id="section-nav"></nav>
   <main class="main" id="main"></main>
 </div>
@@ -254,7 +279,8 @@
     </div>
   </div>
 </div>
-<footer class="site-footer">The Sovak Kitchen &mdash; updated April 2026</footer>
+<footer class="site-footer">The Sovak Kitchen &mdash; updated October 2026 &middot; <button class="update-link" id="update-link" onclick="checkForUpdate(true)">Check for updates</button></footer>
+<button class="update-banner" id="update-banner" onclick="applyUpdate()">New version available &mdash; tap to update</button>
  
 <div class="modal-overlay" id="overlay" onclick="handleOverlayClick(event)">
   <div id="modal-container"></div>
@@ -628,10 +654,25 @@ const sauces = [
  
 let cookTimer = null;
  
+let searchQuery = '';
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+const matches = item => !searchQuery || norm(item.name).includes(searchQuery);
+function onSearch(v) {
+  searchQuery = norm(v.trim());
+  document.getElementById('search-clear').classList.toggle('show', v.length > 0);
+  render();
+}
+function clearSearch() {
+  const input = document.getElementById('search-input');
+  input.value = '';
+  onSearch('');
+  input.focus();
+}
+
 function buildNav() {
   const nav = document.getElementById('section-nav');
   nav.innerHTML = sections.map(sec => {
-    const count = sec.key === 'sauces' ? sauces.length : recipes.filter(r => r.category === sec.key).length;
+    const count = sec.key === 'sauces' ? sauces.filter(matches).length : recipes.filter(r => r.category === sec.key && matches(r)).length;
     if (!count) return '';
     return `<a class="nav-btn" href="#section-${sec.key}">${sec.label}<span class="nav-count">${count}</span></a>`;
   }).join('');
@@ -664,18 +705,19 @@ function render() {
   let html = '';
   sections.forEach(sec => {
     if (sec.key === 'sauces') {
-      if (!sauces.length) return;
+      const sGroup = sauces.filter(matches);
+      if (!sGroup.length) return;
       html += `<section class="section" id="section-sauces">
         <div class="section-header">
           <h2 class="section-title">${sec.label}</h2>
           <div class="section-line"></div>
-          <span class="section-pill">${sauces.length}</span>
+          <span class="section-pill">${sGroup.length}</span>
         </div>
-        <div class="recipe-grid">${sauces.map(buildSauceCard).join('')}</div>
+        <div class="recipe-grid">${sGroup.map(buildSauceCard).join('')}</div>
       </section>`;
       return;
     }
-    const group = recipes.filter(r => r.category === sec.key);
+    const group = recipes.filter(r => r.category === sec.key && matches(r));
     if (!group.length) return;
     html += `<section class="section" id="section-${sec.key}">
       <div class="section-header">
@@ -686,6 +728,7 @@ function render() {
       <div class="recipe-grid">${group.map(buildCard).join('')}</div>
     </section>`;
   });
+  if (!html && searchQuery) html = `<div class="search-empty">No recipes match &ldquo;${document.getElementById('search-input').value.replace(/[<>&"]/g, '')}&rdquo;</div>`;
   main.innerHTML = html;
   document.getElementById('recipe-count').textContent = recipes.length;
 }
@@ -968,6 +1011,40 @@ function planCard(r) {
   </div>`;
 }
  
+// ===== UPDATE CHECK =====
+// Compares this page's own code against a fresh copy from the server, bypassing the cache.
+function pageSignature(doc) {
+  return [...doc.querySelectorAll('style, script:not([src])')].map(n => n.textContent.trim()).join('\n');
+}
+const currentSignature = pageSignature(document);
+let lastUpdateCheck = 0;
+async function checkForUpdate(manual) {
+  const link = document.getElementById('update-link');
+  if (!manual && Date.now() - lastUpdateCheck < 60000) return;
+  lastUpdateCheck = Date.now();
+  if (manual) link.textContent = 'Checking…';
+  try {
+    const res = await fetch(location.pathname + '?check=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const fresh = new DOMParser().parseFromString(await res.text(), 'text/html');
+    if (pageSignature(fresh) !== currentSignature) {
+      document.getElementById('update-banner').classList.add('show');
+      if (manual) link.textContent = 'Update available';
+    } else if (manual) {
+      link.textContent = 'You’re up to date';
+    }
+  } catch (e) {
+    if (manual) link.textContent = 'Couldn’t check — try again';
+  }
+  if (manual) setTimeout(() => { link.textContent = 'Check for updates'; }, 3000);
+}
+function applyUpdate() {
+  location.replace(location.pathname + '?v=' + Date.now());
+}
+if (/[?&]v=\d+/.test(location.search)) history.replaceState(null, '', location.pathname + location.hash);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkForUpdate(false); });
+window.addEventListener('pageshow', () => checkForUpdate(false));
+
 render();
 </script>
 </body>
