@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>UWS Apartment Hunt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f3; --surface:#ffffff; --ink:#1b2420; --muted:#5d6b64; --line:#d9e0dc;
+  --accent:#2f5d4a; --accent-soft:#e3ede7; --gone:#b5470f; --gone-ink:#ffffff;
+  --f-display:"Newsreader", Georgia, "Times New Roman", serif;
+  --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#141a17; --surface:#1c2420; --ink:#e5ece8; --muted:#9aa9a1; --line:#2e3a34;
+  --accent:#8cc4a8; --accent-soft:#22332b; --gone:#f0894a; --gone-ink:#1c120b; color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right)) 56px max(16px,env(safe-area-inset-left));display:flex;flex-direction:column;gap:20px}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,4vw,40px);line-height:1.1;margin:0}
+button,input{font:inherit;color:inherit}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:500;font-size:14px;text-decoration:none;display:inline-block;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn:focus-visible,input:focus-visible,.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 12px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0;cursor:pointer}
+.card:hover{border-color:var(--accent)}
+.top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.addr{font-family:var(--f-display);font-size:20px;font-weight:600;line-height:1.2;margin:0;overflow-wrap:anywhere}
+.addr small{font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--muted);display:block;margin-top:2px}
+.rent{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.rent b{font-size:18px;font-weight:500;display:block}
+.rent span{font-size:12px;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.pill.gone{background:var(--gone);color:var(--gone-ink);font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:11px;padding:3px 9px;vertical-align:middle;white-space:nowrap;display:inline-block}
+.struck{text-decoration:line-through;text-decoration-thickness:2px;color:var(--muted)}
+.last{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.last b{color:var(--ink);font-weight:600}
+.se{font-weight:600;font-size:13px;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:4px 10px;white-space:nowrap}
+.se:hover{background:var(--accent);color:var(--bg)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:14px}
+dt{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:11px;padding-top:3px}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+a{color:var(--accent)}
+.status{font-size:13px;color:var(--muted);margin:0}
+.overlay{position:fixed;inset:0;background:rgba(10,15,12,.45);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:max(24px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) 24px max(12px,env(safe-area-inset-left));z-index:20}
+.overlay[hidden]{display:none}
+.panel{background:var(--surface);border-radius:12px;max-width:680px;width:100%;padding:22px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--line)}
+.panel h2{font-family:var(--f-display);margin:0;font-size:24px;line-height:1.2;overflow-wrap:anywhere}
+.panel h2 small{display:block;font-family:var(--f-body);font-size:13px;color:var(--muted);font-weight:500;margin-top:2px}
+.panel h3{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.notes{font-size:14px;white-space:pre-wrap;margin:0}
+.phones{display:flex;flex-wrap:wrap;gap:6px}
+.phone{font-family:var(--f-mono);font-size:13px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:3px 10px;cursor:pointer}
+.phone:hover{border-color:var(--accent)}
+.log{display:flex;flex-direction:column;border-left:2px solid var(--line);margin-left:6px}
+.entry{position:relative;padding:0 0 18px 18px;display:flex;flex-direction:column;gap:6px}
+.entry::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.entry.in::before{background:var(--accent)}
+.entry .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-size:13px}
+.entry .meta b{font-family:var(--f-mono);font-weight:500}
+.entry .meta .to{color:var(--muted)}
+.entry .body{white-space:pre-wrap;font-size:14px;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>UWS Apartment Hunt</h1>
+  <input type="search" id="q" placeholder="Search address, landlord, contact, notes" aria-label="Search">
+  <p class="status" id="status" role="status">Loading…</p>
+  <section class="grid" id="grid"></section>
+</div>
+
+<div class="overlay" id="detail" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <div class="row">
+      <h2 id="dTitle"></h2>
+      <div class="row"><a class="btn primary" id="dLink" target="_blank" rel="noopener" hidden>View on StreetEasy ↗</a><button class="btn" type="button" id="dClose">Close</button></div>
+    </div>
+    <dl id="dInfo"></dl>
+    <p class="notes" id="dNotes" hidden></p>
+    <h3>Activity</h3>
+    <div class="log" id="log"></div>
+  </div>
+</div>
+
+<script>
+let rows=[], openId=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money=n=>"$"+Number(n).toLocaleString("en-US");
+const fmtDate=d=>d?new Date(d+"T12:00:00").toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"}):"";
+const lastOf=r=>{const a=r.activity||[];return a.reduce((m,x,i)=>(!m||(x.date||"")>=(m.date||""))?x:m,null);};
+
+function rentHtml(r){
+  if(!r.rent)return `<span>No unit yet</span>`;
+  const fees=Number(r.fees)||0;
+  if(r.net)return `<b>${money(Number(r.net)+fees)}</b><span>net eff. · ${money(r.rent)} base</span>`;
+  return `<b>${money(Number(r.rent)+fees)}</b><span>${fees?"incl. "+money(fees)+" fees":"base"}</span>`;
+}
+const title=r=>`${esc(r.address)}${r.unit?" "+esc(r.unit):""}`;
+
+function render(){
+  const q=$("q").value.trim().toLowerCase();
+  const list=rows.filter(r=>!q||[r.address,r.unit,r.building,r.mgmt,r.contact,r.notes,r.amenities].join(" ").toLowerCase().includes(q))
+    .sort((a,b)=>(!!a.unavailable-!!b.unavailable)||((lastOf(b)||{}).date||"").localeCompare((lastOf(a)||{}).date||""));
+  $("grid").innerHTML=list.map(r=>{
+    const amen=(r.amenities||"").split(",").map(x=>x.trim()).filter(Boolean);
+    const la=lastOf(r), n=(r.activity||[]).length;
+    return `<article class="card" data-open="${esc(r.id)}" tabindex="0">
+      <div class="top">
+        <h3 class="addr"><span class="${r.unavailable?"struck":""}">${title(r)}</span><small>${esc(r.building||r.mgmt||"")}</small></h3>
+        <div class="rent">${rentHtml(r)}</div>
+      </div>
+      ${r.unavailable?`<div class="pills"><span class="pill gone">No longer available</span></div>`:""}
+      ${amen.length?`<div class="pills">${amen.map(a=>`<span class="pill">${esc(a)}</span>`).join("")}</div>`:""}
+      <div class="last"><span>${la?`Last: <b>${esc(la.channel)}</b> · ${fmtDate(la.date)}${n>1?` · ${n} entries`:""}`:"No activity yet"}</span>${r.link?`<a class="se" href="${esc(r.link)}" target="_blank" rel="noopener">View on StreetEasy ↗</a>`:""}</div>
+    </article>`;
+  }).join("");
+}
+
+function phonesHtml(r){
+  const nums=[...new Set(((r.contact||"")+" "+(r.phone||"")).match(/\(\d{3}\)\s?\d{3}-\d{4}/g)||[])];
+  return nums.length?`<div class="phones">${nums.map(p=>`<button class="phone" type="button" data-copy="${esc(p)}">${esc(p)}</button>`).join("")}</div>`:"";
+}
+
+function openDetail(id){
+  const r=rows.find(x=>x.id===id); if(!r)return; openId=id;
+  $("dTitle").innerHTML=`<span class="${r.unavailable?"struck":""}">${title(r)}</span>${r.unavailable?"<br><span class='pill gone' style='margin-top:6px'>No longer available</span>":""}${r.building?`<small>${esc(r.building)}</small>`:""}`;
+  const fees=Number(r.fees)||0;
+  const info=[
+    ["Rent", r.rent?`${money(r.rent)} base${fees?" + "+money(fees)+" fees":""}${r.net?` · ${money(r.net)} net effective`:""}`:""],
+    ["Size", r.sqft?esc(r.sqft)+" ft²":""],
+    ["Amenities", esc(r.amenities||"")],
+    ["Landlord", esc(r.mgmt||"")],
+    ["Contact", esc(r.contact||"")],
+    ["Phones", phonesHtml(r)],
+    ["Email", r.email?`<a href="mailto:${esc(r.email)}">${esc(r.email)}</a>`:""],
+  ].filter(x=>x[1]);
+  $("dInfo").innerHTML=info.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("");
+  $("dNotes").hidden=!r.notes; $("dNotes").textContent=r.notes||"";
+  $("dLink").hidden=!r.link; if(r.link)$("dLink").href=r.link;
+  const acts=(r.activity||[]).map((a,i)=>({...a,i})).sort((a,b)=>(b.date||"").localeCompare(a.date||"")||b.i-a.i);
+  $("log").innerHTML=acts.length?acts.map(a=>`<div class="entry${/reply/i.test(a.channel||"")?" in":""}">
+      <div class="meta"><b>${fmtDate(a.date)}</b><span>${esc(a.channel)}</span>${a.to?`<span class="to">${/reply/i.test(a.channel||"")?"from":"with"} ${esc(a.to)}</span>`:""}</div>
+      ${a.body?`<p class="body">${esc(a.body)}</p>`:""}
+    </div>`).join(""):`<p class="status" style="padding-left:18px">Nothing yet.</p>`;
+  $("detail").hidden=false; document.body.style.overflow="hidden"; $("dClose").focus();
+}
+function closeDetail(){ $("detail").hidden=true; openId=null; document.body.style.overflow=""; }
+
+$("grid").addEventListener("click",e=>{if(e.target.closest("a"))return;const c=e.target.closest("[data-open]");if(c)openDetail(c.dataset.open);});
+$("grid").addEventListener("keydown",e=>{if(e.key!=="Enter"||e.target.closest("a"))return;const c=e.target.closest("[data-open]");if(c)openDetail(c.dataset.open);});
+$("dClose").onclick=closeDetail;
+$("detail").addEventListener("click",async e=>{
+  if(e.target.id==="detail")return closeDetail();
+  const b=e.target.closest("[data-copy]"); if(!b)return;
+  const v=b.dataset.copy;
+  try{await navigator.clipboard.writeText(v);b.textContent="Copied";}catch(_){location.href="tel:"+v.replace(/\D/g,"");return;}
+  setTimeout(()=>b.textContent=v,1200);
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("detail").hidden)closeDetail();});
+$("q").addEventListener("input",render);
+
+fetch("places.json?v="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(d=>{
+  rows=d.places||[];
+  const live=rows.filter(r=>!r.unavailable).length;
+  $("status").textContent=`${rows.length} contacted · ${live} still available`;
+  render();
+}).catch(()=>{$("status").textContent="Couldn't load the list. Pull down to refresh.";});
+</script>
+</body>
+</html>

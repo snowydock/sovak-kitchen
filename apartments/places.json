@@ -1,0 +1,111 @@
+{
+  "places": [
+    {
+      "id": "riverside-222-16f",
+      "address": "222 Riverside Drive",
+      "amenities": "24-hr doorman, Concierge, Elevator, Gym, Roof deck, Playroom, In-unit W/D, Live-in super",
+      "building": "Condo at 94th St",
+      "contact": "Johnny Lee (917) 886-5140 · Michael Lorber (917) 664-0029 · Alexander Boriskin",
+      "link": "https://streeteasy.com/building/222-riverside-drive-new_york/16f",
+      "mgmt": "Douglas Elliman",
+      "notes": "Junior 1BR (2 rooms), 16th floor, Hudson River views, furnished or unfurnished. Condo, so expect a board application and move-in fees. Listed 10/19, available now. 0.18 mi to 96th St express.",
+      "phone": "(917) 886-5140",
+      "rent": 4700,
+      "sqft": 555,
+      "unit": "#16F",
+      "activity": [
+        {
+          "body": "Hi Johnny and Michael,\n\nMy wife and I are interested in #16F at 222 Riverside. We're looking for a 1BR on Riverside or West End for a December 15 move-in and a 12-month lease.\n\nWe're both employed full-time with income well above 40x rent and strong credit, and our application documents are ready to go. We'd like to tour in the first half of November and can sign quickly.\n\nA few questions:\n1. Would the owner consider a December 15 start?\n2. We'd want it unfurnished. Is that still an option?\n3. What does the condo's application process look like, and how long does board approval usually take?\n\nThanks,\nMike Sovak",
+          "channel": "StreetEasy message",
+          "date": "2026-10-23",
+          "to": "Johnny Lee & Michael Lorber"
+        },
+        {
+          "body": "Hi Johnny, this is Mike Sovak. I just sent an inquiry on StreetEasy about 222 Riverside #16F. My wife and I are looking at a 12/15 move-in, unfurnished, and have everything ready to apply. Would love to set up a tour in early November if it's still around. Thanks!",
+          "channel": "Text",
+          "date": "2026-10-23",
+          "to": "Johnny Lee"
+        },
+        {
+          "body": "Hi Michael, Mike Sovak here. Just reached out on StreetEasy about 222 Riverside #16F. We're targeting a 12/15 move-in, are fully qualified, and can move fast. Any idea how long the condo's board approval usually takes? Thanks!",
+          "channel": "Text",
+          "date": "2026-10-23",
+          "to": "Michael Lorber"
+        }
+      ]
+    },
+    {
+      "id": "riverside-280",
+      "address": "280 Riverside Drive",
+      "amenities": "Full-time doorman, Elevator, Gym, Roof deck, Laundry in bldg",
+      "contact": "Sadie Taylor (347) 852-5821 · Shane Ragin (347) 725-2743 · broker Forrestt Zlochiver (212) 239-3516",
+      "link": "https://streeteasy.com/building/280-riverside-drive-new_york/2jh",
+      "mgmt": "Stonecrest Realty",
+      "notes": "#2JH no longer available (Sadie, 10/23). Keeping the building on file: ~103rd on Riverside Park, 129 units, Stonecrest handles leasing.",
+      "phone": "(347) 852-5821",
+      "rent": 4750,
+      "sqft": 750,
+      "unavailable": true,
+      "unit": "#2JH",
+      "activity": [
+        {
+          "body": "Hi Sadie and Shane,\n\nMy wife and I are interested in #2JH. We're looking for a 1BR on Riverside or West End for a December 15 move-in and a 12-month lease.\n\nWe're both employed full-time with income well above 40x rent and strong credit, and our application documents are ready to go. We'd like to tour in the first half of November and can sign quickly.\n\nTwo questions:\n1. Would the landlord consider a December 15 start?\n2. Are any other 1BRs in the building expected to open up for December?\n\nThanks,\nMike Sovak",
+          "channel": "StreetEasy message",
+          "date": "2026-10-23",
+          "to": "Sadie Taylor & Shane Ragin"
+        },
+        {
+          "body": "Hi Sadie, this is Mike Sovak. I just sent an inquiry on StreetEasy about 280 Riverside #2JH. My wife and I are looking at a 12/15 move-in and have everything ready to apply. Would love to set up a tour in early November if it's still around. Thanks!",
+          "channel": "Text",
+          "date": "2026-10-23",
+          "to": "Sadie Taylor"
+        },
+        {
+          "body": "Hi Shane, Mike Sovak here. Just reached out on StreetEasy about 280 Riverside #2JH. We're targeting a 12/15 move-in, are fully qualified, and can move fast. Any other 1BRs in the building opening up for December? Thanks!",
+          "channel": "Text",
+          "date": "2026-10-23",
+          "to": "Shane Ragin"
+        },
+        {
+          "body": "Hi Mike! Sorry this one's no longer available",
+          "channel": "Their reply",
+          "date": "2026-10-23",
+          "to": "Sadie Taylor"
+        },
+        {
+          "body": "No worries, thanks for letting me know! We really like the building. If any other 1BRs there open up for December, or you have anything similar on Riverside or West End, please send them our way. We're ready to apply.",
+          "channel": "Text",
+          "date": "2026-10-23",
+          "to": "Sadie Taylor"
+        },
+        {
+          "body": "I certainly will!",
+          "channel": "Their reply",
+          "date": "2026-10-23",
+          "to": "Sadie Taylor"
+        }
+      ]
+    },
+    {
+      "id": "wea-752-2h",
+      "address": "752 West End Avenue",
+      "amenities": "Full-time doorman, Concierge, Elevator, Laundry in bldg, Gym, Roof deck, Live-in super, Package room",
+      "building": "The Paris New York",
+      "contact": "Stellar leasing team (no agent or phone on listing)",
+      "link": "https://streeteasy.com/building/the-paris-new-york/02h",
+      "mgmt": "Stellar Management (direct, no broker)",
+      "net": 4351,
+      "notes": "~97th, 96th St express under 500 ft. Net $4,351 assumes 2 months free on an 18-month lease; a 12-month term may lose some of that. 167 units, 2 available.",
+      "rent": 4895,
+      "unit": "#2H",
+      "activity": [
+        {
+          "body": "Hi,\n\nMy wife and I are interested in #2H at The Paris. We're looking for a 1BR on West End or Riverside for a December 15 move-in.\n\nWe're both employed full-time with income well above 40x rent and strong credit, and our application documents are ready to go. We'd like to tour in the first half of November and can sign quickly.\n\nA few questions:\n1. Would you consider a December 15 lease start?\n2. We'd prefer a 12-month lease. What would the concession and net effective rent be on that term?\n3. Are any other 1BRs in the building expected to open up for December?\n\nThanks,\nMike Sovak",
+          "channel": "StreetEasy message",
+          "date": "2026-10-23",
+          "to": "Stellar Management leasing"
+        }
+      ]
+    }
+  ]
+}
