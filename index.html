@@ -237,7 +237,7 @@
     <div class="header-sub">Curated by Mike &amp; Ali</div>
   </div>
   <div class="header-count">
-    <div class="count-num" id="recipe-count">22</div>
+    <div class="count-num" id="recipe-count">30</div>
     <div class="count-label">Recipes</div>
   </div>
 </header>
@@ -245,8 +245,9 @@
 <div class="header-divider"><hr></div>
  
 <div class="view-tabs">
-  <button class="view-tab active" id="tab-browse" onclick="switchView('browse')">Cookbook</button>
-  <button class="view-tab" id="tab-plan" onclick="switchView('plan')">Plan my week</button>
+  <button class="view-tab active" id="tab-browse" onclick="switchView('browse')">Recipes</button>
+  <button class="view-tab" id="tab-plan" onclick="switchView('plan')">Plan</button>
+  <button class="view-tab" id="tab-pantry" onclick="switchView('pantry')">Pantry</button>
 </div>
  
 <div id="view-browse">
@@ -279,6 +280,14 @@
     </div>
   </div>
 </div>
+<div id="view-pantry" style="display:none;">
+  <div class="planner">
+    <div class="planner-intro">
+      <div class="planner-headline">Pantry</div>
+      <div class="planner-sub">Coming soon &mdash; what&rsquo;s on hand, learned from our Instacart orders.</div>
+    </div>
+  </div>
+</div>
 <footer class="site-footer">The Sovak Kitchen &mdash; updated October 2026 &middot; <button class="update-link" id="update-link" onclick="checkForUpdate(true)">Check for updates</button></footer>
 <button class="update-banner" id="update-banner" onclick="applyUpdate()">New version available &mdash; tap to update</button>
  
@@ -287,347 +296,10 @@
 </div>
  
 <script>
-const recipes = [
-  { id:1, category:"breakfast", protein_type:"other", emoji:"🥣", name:"Overnight oats", source:null, desc:"Protein-packed oats with blueberries and flax. Make the night before.", cal:445, protein:"37g", carbs:"42g", fat:"15g", servings:"1 serving",
-    ingredients:["45g old fashioned oats","180g oat milk","30g protein powder","70g blueberries","14g flax seed"],
-    steps:[
-      {text:"Combine oats, oat milk, and protein powder in a jar. Stir or shake well until fully mixed.", timer:null},
-      {text:"Add flax seed on top.", timer:null},
-      {text:"Cover and refrigerate overnight, or at least 4 hours.", timer:14400},
-      {text:"Serve cold, topped with fresh blueberries.", timer:null}
-    ], notes:"" },
-  { id:2, category:"dinner", protein_type:"chicken", emoji:"🍲", name:"Dill chicken soup", source:null, desc:"Creamy orzo soup with rotisserie chicken, peas, and fresh dill.", cal:290, protein:"30g", carbs:"24g", fat:"10g", servings:"10 servings",
-    ingredients:["26g olive oil","120g carrots","150g onion","6g garlic","140g orzo","600g chicken breast (shredded)","300g chicken thigh (shredded)","1440g chicken broth","210g frozen peas","4g fresh dill","30g lemon juice","245g Greek yogurt","240g liquid egg whites"],
-    steps:[
-      {text:"Heat olive oil in a large pot over medium. Add carrots, onion, and garlic — sauté 4–5 minutes until softened.", timer:300},
-      {text:"Add orzo and stir for 1–2 minutes to lightly toast. Pour in chicken broth and bring to a boil.", timer:120},
-      {text:"Reduce heat and simmer 10–12 minutes until orzo is tender.", timer:660},
-      {text:"Stir in shredded chicken, peas, dill, and lemon juice. Simmer 2–3 minutes.", timer:180},
-      {text:"Lower heat to very low. Slowly drizzle in egg whites while stirring continuously until they form soft ribbons.", timer:null},
-      {text:"In a bowl, whisk Greek yogurt with about half a cup of hot broth to temper it. Slowly stir the mixture back into the pot.", timer:null},
-      {text:"Warm gently for 1–2 minutes — do not boil. Season with salt, pepper, and extra dill or lemon as desired.", timer:90}
-    ], notes:"" },
-  { id:3, category:"dinner", protein_type:"turkey", emoji:"🍛", name:"White turkey chili", source:null, desc:"Hearty cannellini bean chili with ground turkey and green chiles.", cal:250, protein:"23g", carbs:"20g", fat:"9g", servings:"10 servings",
-    ingredients:["960g cannellini beans (drained)","600g cream of chicken soup","480g ground turkey breast (cooked)","630g milk","226g chopped green chiles","4g fresh cilantro","10g dried minced onion","6g garlic powder","4g cumin","2g dried oregano","180g nonfat Greek yogurt"],
-    steps:[
-      {text:"In a large pot, combine cannellini beans, cream of chicken soup, ground turkey, and milk. Stir well over medium heat.", timer:null},
-      {text:"Add chopped green chiles, cilantro, dried onion, garlic powder, cumin, and oregano. Stir to combine.", timer:null},
-      {text:"Simmer for 15–20 minutes, stirring occasionally.", timer:1050},
-      {text:"Remove from heat and stir in Greek yogurt until fully blended.", timer:null},
-      {text:"Taste and season with salt and pepper if needed. Serve warm.", timer:null}
-    ], notes:"" },
-  { id:4, category:"dinner", protein_type:"beef", emoji:"🥢", name:"Thai beef & veggie bowls", source:null, desc:"Bold sesame-soy beef with cabbage, carrots, and bell pepper.", cal:245, protein:"21g", carbs:"9g", fat:"15g", servings:"10 servings",
-    ingredients:["608g 85/15 ground beef","250g red bell pepper","180g shredded carrots","350g green cabbage","30g green onions","14g sesame oil","60g low-sodium soy sauce","15g rice vinegar","15g sriracha (optional)","6g garlic powder","2g ground ginger"],
-    steps:[
-      {text:"PREP DAY: slice the red bell pepper and green cabbage, and store together with the shredded carrots in one airtight container.", timer:null},
-      {text:"Mix the sauce: soy sauce, rice vinegar, sriracha, garlic powder, and ground ginger. Store in a jar. Slice the green onions and store separately.", timer:null},
-      {text:"Divide the raw ground beef into 3 portions. Refrigerate 2 and freeze the 3rd flat (thaw overnight). PREP DAY ENDS HERE.", timer:null},
-      {text:"COOK DAY: heat sesame oil in a skillet and brown one beef portion. Drain excess fat if desired.", timer:null},
-      {text:"Add a share of the veg mix and cook 5 to 7 minutes, stirring, until crisp-tender.", timer:360},
-      {text:"Pour in a share of the sauce, add the green onions, and cook 2 to 3 minutes. Adjust seasoning and serve hot.", timer:150}
-    ],
-    notes:"" },
-  { id:6, category:"dinner", protein_type:"beef", emoji:"🌮", name:"Crispy cheesy beef tacos", source:"https://www.youtube.com/shorts/fRZRCinpqkE", desc:"Juicy sheet-pan beef, roasted peppers, melty mozzarella in a crispy low-carb wrap. Batch the filling, assemble fresh in 3s.", cal:310, protein:"26g", carbs:"22g", fat:"13g", servings:"15 tacos",
-    ingredients:["1440g 85/15 ground beef","240g tomato paste","300g white onion (sliced)","300g bell pepper (sliced)","300g plain yogurt","120g light mayo","100g Cholula chilli lime hot sauce","50g honey","480g shredded mozzarella (32g per taco)","15 Mission low carb mini wraps","Avocado cooking spray","Spices: 2 tsp salt, 3 tsp smoked paprika, 3 tsp oregano, 3 tsp garlic powder, 2 tsp onion powder, 2 tsp cumin"],
-    steps:[
-      {text:"Make the sauce: whisk together yogurt, light mayo, Cholula, honey, 1 tsp smoked paprika, 1 tsp onion powder, and 1 tbsp fresh parsley in a bowl. Cover and set aside in the fridge.", timer:null},
-      {text:"Line a large sheet pan. Add the chopped onion and bell pepper, spray with avocado oil, and season with the taco spices. Mix, spread evenly, and roast at 370°F for 15 minutes.", timer:900},
-      {text:"Add the ground beef directly on top of the roasted veg on the same sheet pan. Add more taco seasoning, the tomato paste, and chopped cilantro. Mix well with your hands right on the pan, flatten evenly, score lightly, and spray again with avocado oil.", timer:null},
-      {text:"Bake at 370°F for 6 minutes to partially cook the beef.", timer:360},
-      {text:"Break up the beef with a spoon, then return to the oven for another 6 minutes until lightly crisp.", timer:360},
-      {text:"Add a splash of water to the pan and mix until the beef is juicy. Remove from the oven. Keep the pan juices — store them with the beef mixture.", timer:null},
-      {text:"PREP DAY ENDS HERE. Cool the beef-and-veg mixture (with its juices) and refrigerate. Do NOT assemble or bake the tacos yet — you build them fresh in small batches on the day you eat them.", timer:null},
-      {text:"ASSEMBLY DAY — batch of 3: dip 3 wraps briefly in the reserved pan juices to moisten. Lay flat, fill each with the beef and veg mixture, top with 32g mozzarella, and fold.", timer:null},
-      {text:"Arrange the 3 tacos on a lined baking sheet. Bake at 370°F for 12 minutes, flipping halfway, until golden and crispy. Repeat this assembly step fresh each day rather than baking all 15 at once.", timer:720}
-    ], notes:"TWO-PHASE METHOD (the whole trick): Make the beef-and-veg mixture as one big batch on prep day, then assemble and bake tacos fresh in batches of 3 (2 for Mike, 1 for Ali) on the day you eat them. Batch-baking all 15 tacos up front is onerous and they lose their crispness — this splits the work across days and gives far better results for less upfront effort. The beef mixture and its pan juices keep in the fridge; the wraps and cheese stay separate until assembly. MACRO NOTE: 85/15 beef vs the original 95/5 adds ~3–4g fat and ~30–35 cal per taco." },
-  { id:7, category:"dinner", protein_type:"chicken", emoji:"🫒", name:"Mediterranean chicken with salad & pita", source:null, desc:"Herb and lemon marinated chicken thighs with a fresh cucumber-tomato salad, crumbled feta, and mini pitas.", cal:370, protein:"37g", carbs:"18g", fat:"14g", servings:"10 servings",
-    ingredients:["1588g boneless skinless chicken thighs","3 tbsp olive oil","3 tbsp fresh lemon juice","1 tsp lemon zest","5 garlic cloves (minced)","2 tsp dried oregano","1 tsp dried thyme","1 tsp smoked paprika","1.5 tsp kosher salt","0.75 tsp black pepper","0.25 tsp red pepper flakes (optional)","3 English cucumbers (diced)","3 cups cherry tomatoes (halved)","0.5 red onion (finely diced)","0.25 cup fresh parsley (chopped)","2 tbsp olive oil (salad)","2 tbsp red wine vinegar","1 tsp dried oregano (salad)","0.75 tsp kosher salt (salad)","0.5 tsp black pepper (salad)","280g feta cheese (crumbled)","10 mini pitas (~28g each)"],
-    steps:[
-      {text:"PREP DAY: whisk the olive oil, lemon juice, lemon zest, garlic, oregano, thyme, smoked paprika, salt, pepper, and red pepper flakes, then toss with the chicken thighs. Divide into 4 portions of ~400g each.", timer:null},
-      {text:"Refrigerate 2 portions (days 1 to 2) and freeze the rest flat (thaw overnight before use).", timer:null},
-      {text:"Make the salad: combine the diced cucumber, cherry tomatoes, red onion, and parsley, then dress with olive oil, red wine vinegar, oregano, salt, and pepper. Store in its own container.", timer:null},
-      {text:"PREP DAY ENDS HERE. Keep the feta and pitas separate and sealed. The marinade keeps improving over a day or two.", timer:null},
-      {text:"COOK DAY: cook one chicken portion over medium-high heat or on a grill, 6 to 7 minutes per side, until cooked through. Rest 5 minutes, then slice.", timer:780},
-      {text:"Plate the chicken with a scoop of the cold salad, crumble the feta over, and warm a pita for 30 seconds to serve alongside.", timer:null}
-    ],
-    notes:"Marinating overnight delivers the best flavour. Store salad and pita separately from chicken — add feta and pita fresh at serving to avoid sogginess." },
-  { id:8, category:"dinner", protein_type:"turkey", emoji:"🍝", name:"Sausage & basil pasta", source:null, desc:"Smoked turkey sausage with burst cherry tomatoes, basil, and parmesan.", cal:495, protein:"29g", carbs:"45g", fat:"20g", servings:"6 servings",
-    ingredients:["454g spaghetti","397g smoked turkey sausage (sliced)","450g grape tomatoes (halved)","50g fresh basil (chopped)","150g onion (diced)","12g garlic (minced)","90g grated parmesan","120g reserved pasta water","Red pepper flakes to taste","13g olive oil"],
-    steps:[
-      {text:"PREP DAY: slice the smoked turkey sausage, halve the grape tomatoes, dice the onion, and mince the garlic. Store the sausage separately from the vegetables.", timer:null},
-      {text:"Chop the fresh basil and store it wrapped in a damp paper towel. PREP DAY ENDS HERE. Keep the spaghetti dry until cook day.", timer:null},
-      {text:"COOK DAY: boil a single serving of spaghetti in salted water until al dente. Reserve a splash of pasta water before draining.", timer:null},
-      {text:"Sauté a share of the sliced sausage in olive oil 3 to 5 minutes, add the onion and cook 2 to 3 minutes.", timer:480},
-      {text:"Add the garlic and red pepper flakes and cook 30 seconds until fragrant.", timer:30},
-      {text:"Add a share of the tomatoes with a pinch of salt and cook 4 to 6 minutes until they burst. Stir in the basil.", timer:300},
-      {text:"Toss in the drained pasta, parmesan, and reserved pasta water for 1 to 2 minutes until glossy. Season and serve.", timer:90}
-    ],
-    notes:"" },
-  { id:9, category:"dinner", protein_type:"turkey", emoji:"🍔", name:"Tender turkey burger", source:null, desc:"Juicy turkey patties with celery, onion, and Worcestershire.", cal:300, protein:"21g", carbs:"24g", fat:"12g", servings:"6 servings",
-    ingredients:["567g ground turkey","40g bread crumbs","60g celery (chopped)","40g onion (chopped)","50g egg (1 large)","4g fresh parsley (chopped)","5g Worcestershire sauce","Salt & pepper to taste","6 hamburger buns"],
-    steps:[
-      {text:"PREP DAY: combine the ground turkey, bread crumbs, celery, onion, egg, parsley, Worcestershire, salt, and pepper. Mix gently until just combined.", timer:null},
-      {text:"Form into 6 patties. Stack with parchment between them, refrigerate 2 to 3 for the next couple of days, and freeze the rest flat.", timer:null},
-      {text:"PREP DAY ENDS HERE. Keep the buns sealed and separate so they do not go stale.", timer:null},
-      {text:"COOK DAY: preheat a grill or skillet over medium heat and pull the patties you need (thaw frozen ones overnight).", timer:null},
-      {text:"Cook 5 to 6 minutes per side until golden and the internal temperature reaches 165F.", timer:660},
-      {text:"Toast the buns and serve immediately.", timer:null}
-    ],
-    notes:"" },
-  { id:10, category:"lunch", protein_type:"beef", emoji:"🌮", name:"Taco casserole", source:null, desc:"One-pan beef, bean, and rice bake with melted cheddar.", cal:500, protein:"36g", carbs:"30g", fat:"27g", servings:"6 servings",
-    ingredients:["680g 85/15 ground beef","75g yellow onion (diced)","150g bell pepper (diced)","240g black beans (drained)","140g frozen corn","283g diced tomatoes & green chiles","1 Bibigo cooked white rice packet (210g)","30g taco seasoning","84g shredded cheddar","Toppings: Greek yogurt, cilantro, green onion"],
-    steps:[
-      {text:"Preheat oven to 375°F (190°C).", timer:null},
-      {text:"In a skillet, cook ground beef with onion and bell pepper until browned. Drain excess liquid.", timer:null},
-      {text:"Heat the Bibigo rice packet per instructions. Stir taco seasoning, black beans, corn, tomatoes, and rice into the beef. Simmer 2–3 minutes.", timer:150},
-      {text:"Transfer to a greased 9×13 baking dish. Top evenly with shredded cheddar.", timer:null},
-      {text:"Bake 15–20 minutes until cheese is melted and bubbly.", timer:1050},
-      {text:"Serve with desired toppings. Stores well in fridge up to 4 days.", timer:null}
-    ], notes:"" },
-  { id:11, category:"lunch", protein_type:"beef", emoji:"🍽", name:"Cottage cheese lasagna", source:null, desc:"High-protein lasagna with cottage cheese and a rich beef marinara.", cal:520, protein:"40g", carbs:"32g", fat:"24g", servings:"6 servings",
-    ingredients:["454g 85/15 ground beef","250g lasagna noodles (dry)","450g cottage cheese","480g marinara sauce","56g shredded mozzarella","50g egg (1 large)","6g garlic (minced)","Italian seasoning, salt, pepper to taste","Optional: grated parmesan"],
-    steps:[
-      {text:"Preheat oven to 375°F (190°C).", timer:null},
-      {text:"In a skillet, brown beef with garlic, salt, pepper, and Italian seasoning. Stir in marinara and simmer 5 minutes.", timer:300},
-      {text:"In a bowl, mix cottage cheese with egg and a pinch of salt.", timer:null},
-      {text:"In a greased 9×13 dish, layer: sauce → 3 noodles → cottage cheese mix → sauce. Repeat for 3 layers. Top with mozzarella and optional parmesan.", timer:null},
-      {text:"Cover with foil and bake 30 minutes.", timer:1800},
-      {text:"Uncover and bake 10 more minutes until golden and bubbling.", timer:600},
-      {text:"Let cool 10 minutes before slicing.", timer:600}
-    ], notes:"" },
-  { id:12, category:"lunch", protein_type:"beef", emoji:"🇬🇷", name:"Greek pasta bake", source:null, desc:"Pastitsio-style bake with cinnamon-spiced beef and a cottage cheese custard.", cal:510, protein:"33g", carbs:"35g", fat:"25g", servings:"6 servings",
-    ingredients:["454g 85/15 ground beef","225g whole wheat penne","70g onion (chopped)","6g garlic (minced)","1 tsp cinnamon","0.25 tsp nutmeg","425g tomato sauce","1 tbsp tomato paste (optional)","450g low-fat cottage cheese","100g eggs (2 large)","56g crumbled feta","0.25 cup grated parmesan (optional)","Salt & pepper to taste"],
-    steps:[
-      {text:"Boil penne to al dente, drain, and set aside.", timer:null},
-      {text:"In a skillet, sauté onion and garlic until soft. Add ground beef, cook through, then stir in tomato sauce, cinnamon, nutmeg, and tomato paste. Simmer 10–15 minutes.", timer:780},
-      {text:"In a blender, mix cottage cheese, eggs, and black pepper until smooth. Stir in feta and parmesan.", timer:null},
-      {text:"In a greased 9×13 dish, layer: pasta → meat sauce → cottage cheese mixture.", timer:null},
-      {text:"Bake at 375°F (190°C) for 30–35 minutes until set and golden.", timer:1950},
-      {text:"Let rest 10 minutes before slicing.", timer:600}
-    ], notes:"" },
-  { id:13, category:"lunch", protein_type:"beef", emoji:"🥔", name:"Shepherd's pie", source:null, desc:"Savory beef and veggie base topped with fluffy mashed potatoes.", cal:460, protein:"34g", carbs:"30g", fat:"23g", servings:"6 servings",
-    ingredients:["608g 85/15 ground beef","110g yellow onion (diced)","6g garlic (minced)","270g frozen mixed vegetables","1 tbsp tomato paste","1 tsp Worcestershire sauce","1 tsp thyme or Italian seasoning","Salt & pepper to taste","1 tbsp olive oil","600g prepared mashed potatoes"],
-    steps:[
-      {text:"In a skillet, heat olive oil and sauté onion and garlic until soft.", timer:null},
-      {text:"Add beef and brown fully, then stir in tomato paste, Worcestershire, thyme, frozen vegetables, salt, and pepper. Simmer 5 minutes.", timer:300},
-      {text:"Spread the beef mixture into a greased 9×13 dish. Top evenly with mashed potatoes.", timer:null},
-      {text:"Bake at 375°F (190°C) for 25–30 minutes until the potato topping is golden.", timer:1650},
-      {text:"Rest 5–10 minutes before serving.", timer:null}
-    ], notes:"" },
-  { id:14, category:"lunch", protein_type:"chicken", emoji:"🌶️", name:"Southwest chicken & rice bake", source:null, desc:"Shredded chicken with rice, black beans, corn, and cheddar.", cal:470, protein:"36g", carbs:"35g", fat:"18g", servings:"6 servings",
-    ingredients:["680g cooked chicken breast (shredded)","2 Bibigo cooked white rice packets (420g)","425g black beans (drained)","160g corn (frozen or canned)","283g diced tomatoes with green chiles","1 tbsp taco seasoning","84g low-fat shredded cheddar"],
-    steps:[
-      {text:"Preheat oven to 375°F (190°C).", timer:null},
-      {text:"Heat the Bibigo rice packets per instructions. In a large bowl, mix shredded chicken, rice, black beans, corn, diced tomatoes, and taco seasoning until well combined.", timer:null},
-      {text:"Spread evenly in a greased 9×13 dish. Top with shredded cheddar.", timer:null},
-      {text:"Bake 20–25 minutes until hot throughout and cheese is melted and bubbly.", timer:1350},
-      {text:"Rest 5–10 minutes before serving.", timer:null}
-    ], notes:"" },
-  { id:15, category:"lunch", protein_type:"chicken", emoji:"🧄", name:"Creamy garlic chicken mac bake", source:null, desc:"Protein pasta in a garlicky yogurt-cream cheese sauce with shredded chicken.", cal:495, protein:"42g", carbs:"32g", fat:"22g", servings:"6 servings",
-    ingredients:["340g protein pasta","Rotisserie chicken — 2 full breasts (shredded)","227g plain nonfat Greek yogurt","113g reduced-fat cream cheese","240ml low-sodium chicken broth","140g reduced-fat shredded cheddar or mozzarella blend","1 tbsp olive oil or butter","1 tbsp minced garlic","1 tsp garlic powder","0.5 tsp onion powder","Salt & pepper to taste"],
-    steps:[
-      {text:"Cook pasta to al dente, drain, and set aside.", timer:null},
-      {text:"In a skillet, sauté garlic in oil or butter until fragrant. Add cream cheese and broth, stirring until smooth.", timer:null},
-      {text:"Lower heat. Mix in Greek yogurt, garlic powder, onion powder, salt, pepper, and half the shredded cheese.", timer:null},
-      {text:"Stir in shredded chicken and pasta. Pour into a greased 9×13 dish.", timer:null},
-      {text:"Top with remaining cheese. Bake at 375°F (190°C) for 20–25 minutes until golden and bubbling.", timer:1350}
-    ], notes:"" },
-  { id:16, category:"lunch", protein_type:"chicken", emoji:"🍗", name:"Chicken Alfredo zucchini bake", source:null, desc:"Tender chicken and zucchini in a creamy garlic Alfredo sauce.", cal:445, protein:"42g", carbs:"14g", fat:"20g", servings:"6 servings",
-    ingredients:["680g cooked chicken breast (cubed)","450g zucchini (sliced)","227g plain nonfat Greek yogurt","113g reduced-fat cream cheese","240g low-sodium chicken broth","112g shredded mozzarella","1 tsp garlic powder","0.5 tsp black pepper"],
-    steps:[
-      {text:"Preheat oven to 375°F (190°C).", timer:null},
-      {text:"In a bowl, whisk together Greek yogurt, cream cheese, chicken broth, garlic powder, and black pepper until smooth.", timer:null},
-      {text:"Combine cubed chicken and sliced zucchini in a large bowl. Pour sauce over and stir to coat everything evenly.", timer:null},
-      {text:"Transfer to a greased 9×13 dish. Top with shredded mozzarella.", timer:null},
-      {text:"Bake 30–35 minutes until bubbling and golden.", timer:1950}
-    ], notes:"" },
-  { id:17, category:"lunch", protein_type:"chicken", emoji:"🫙", name:"Chicken shawarma rice bowls", source:"https://www.youtube.com/shorts/2aLnAJiQIRA", desc:"Charred garlic-spiced chicken thighs over seasoned turmeric rice, with garlic white sauce and crunchy slaw.", cal:552, protein:"46g", carbs:"48g", fat:"19g", servings:"6 servings",
-    ingredients:["1200g boneless skinless chicken thighs","35g minced garlic (marinade)","2.5 tsp salt","2.5 tsp black pepper","2.5 tsp smoked paprika","2.5 tsp onion powder","2 tsp cumin","2 tsp cinnamon","4 tsp olive oil","Juice of 1 lemon","25g reduced fat butter","40g minced garlic (rice)","240g white onion (finely chopped)","1.2 tsp each: turmeric, smoked paprika, salt","3 Bibigo cooked white rice packets (630g)","180g fat free yogurt","90g light mayo","30g honey","30g pickle juice","1.2 tsp garlic powder","300g red onion (thinly sliced)","360g cherry tomatoes (chopped)","240g pickled gherkins (thinly sliced)","2.5 tbsp fresh parsley"],
-    steps:[
-      {text:"PREP DAY: combine the chicken thighs with the garlic, salt, pepper, smoked paprika, onion powder, cumin, cinnamon, olive oil, and lemon juice. Toss well and divide into 3 portions of ~400g each.", timer:null},
-      {text:"Whisk the yogurt, mayo, honey, pickle juice, and garlic powder into the white sauce. Refrigerate in a jar.", timer:null},
-      {text:"Combine the slaw: red onion, cherry tomatoes, gherkins, and parsley. Store in its own container.", timer:null},
-      {text:"Store 2 chicken portions in the fridge (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight). PREP DAY ENDS HERE. The marinade keeps improving as a dry brine.", timer:null},
-      {text:"COOK DAY: heat oven to 425F. Spread one chicken portion on a foil-lined sheet pan and bake 20 to 22 minutes, flipping halfway.", timer:1290},
-      {text:"Broil 4 to 5 minutes for char. Rest 5 minutes, chop into cubes, and pour the pan juices back over.", timer:270},
-      {text:"Melt the butter in a pan, soften a share of the garlic and onion 5 to 6 minutes, add the turmeric, smoked paprika, and salt, then fold through a heated Bibigo rice packet.", timer:360},
-      {text:"Plate the rice, top with chicken, and add the slaw and white sauce fresh from the fridge.", timer:null}
-    ],
-    notes:"Sumac omitted — sub with extra lemon squeeze at serving. Slaw and sauce stay separate; build bowls fresh each meal." },
-  { id:18, category:"lunch", protein_type:"beef", emoji:"🍜", name:"Crispy spicy beef noodles", source:"https://www.youtube.com/shorts/2B5xnGJvdUw", desc:"Golden crispy 85/15 beef tossed with egg noodles, peppers, and a bold chilli-soy sauce. Batch-cooked in one session and better on day 2.", cal:558, protein:"42g", carbs:"45g", fat:"22g", servings:"6 servings",
-    ingredients:["1100g 85/15 ground beef","Cooking spray, for the pan","150g green onion (chopped)","1.5 tbsp minced garlic","1.5 tbsp minced ginger","2 medium red onions (sliced)","2 medium red bell peppers (sliced)","225g medium egg noodles, dry","110g soy sauce (any regular soy sauce)","50g honey","53g sweet chilli sauce (Blue Dragon reduced sugar)","38g rice vinegar","90g chilli garlic paste (Lee Kum Kee)","1.5 tsp red pepper flakes","1.5 tsp sesame seeds","30ml water"],
-    steps:[
-      {text:"BATCH COOK (one session, makes all 6 servings): mix all the sauce ingredients (soy sauce, honey, sweet chilli, rice vinegar, chilli garlic paste, red pepper flakes, sesame seeds, water) in a jar. Pour about a quarter (~90ml) into a small separate jar and refrigerate it. That is your reheat sauce.", timer:null},
-      {text:"Slice the red onions, bell peppers, and green onion. Put a large pot of water on to boil for the noodles.", timer:null},
-      {text:"Coat a large pan with cooking spray and brown a third of the beef (about 365g) over medium-high, breaking it up, 5 to 6 minutes. One pan of 1100g would steam instead of crisp, so work in three batches.", timer:330},
-      {text:"Tilt the pan, spoon off the rendered fat, and move the beef to a bowl. Repeat with the other two batches, re-spraying the pan each time. Don't skip the drain: it takes about 40 kcal off each serving.", timer:null},
-      {text:"Return all the beef to the pan, add two thirds of the main sauce, and cook 5 to 7 minutes, stirring, until sticky and caramelized. Tip it back into the bowl.", timer:360},
-      {text:"Meanwhile, boil all 225g of egg noodles for 4 minutes (a minute under the packet time; they finish softening in the fridge and on reheat). Drain and rinse with cold water.", timer:240},
-      {text:"In the same pan, stir-fry all the sliced veg 4 to 5 minutes until just softened. Leave some bite, since they soften more when reheated.", timer:270},
-      {text:"Off the heat, toss the noodles, veg, and beef with the rest of the main sauce. Divide evenly into 6 containers and cool. Refrigerate 4 and freeze 2 flat.", timer:null},
-      {text:"TO EAT: move a frozen container to the fridge the night before. Add 1 tbsp of the reheat sauce (or a splash of water), cover, and microwave 2 minutes, stirring halfway.", timer:120}
-    ],
-    notes:"FULLY MAKE-AHEAD (Oct 2026): cooked in one session instead of prep day plus three cook days. About 45 minutes once, then 2 minutes a day. The beef goes chewy-caramelized rather than crunchy after a night in the sauce, which is the trade for not cooking three times. FRIDGE LIFE: eat the 4 fridge containers within 4 days; the 2 frozen keep for a couple of months. The reserved quarter of sauce matters because the noodles keep drinking sauce in the fridge and taste dry by day 3 without it. Macros are unchanged; the reheat sauce is part of the same batch. ONE SOY SAUCE: the original called for 75ml light plus 30ml dark soy. Both are now one 110g pour of regular soy sauce, weighed straight into the jar. Dark soy mostly adds colour and a molasses sweetness, so the honey went up 5g to cover it; the sauce will look a little lighter but taste the same. --- REBUILT FOR 85/15 (Oct 2026): the old card claimed 570 kcal, but that number came from the source video's leaner beef. With 85/15 the real figure was ~750, and cutting the beef to 900g only got it to ~644 with protein under 40g. The fix is the opposite of less beef: MORE beef (1100g) for protein, FEWER noodles (225g, down from 330g), drain the rendered fat, and spray instead of light butter. Lands at ~558 kcal / 42g protein — the same slightly-over-but-clears-the-bar group as the shawarma and street corn bowls. LOGGING IT IN THE TRACKER: the app can't see the drain, so logging 1100g raw 85/15 will overstate it by ~40 kcal a serving. Either weigh the beef after draining and log it as cooked 85/15 crumbles (expect ~780g), or accept the higher number. Also add the soy sauce (it was missing) and log the bell peppers as 2 medium peppers, not scoops. MACROS ARE ESTIMATED — send the logged numbers back and they'll replace these." },
-  { id:19, category:"lunch", protein_type:"chicken", emoji:"🌽", name:"Street corn chicken bowls", source:"https://www.youtube.com/shorts/mVyy7zEC8nY", desc:"Lime-marinated chicken breast with charred street corn salsa, coriander rice, and crumbled feta.", cal:559, protein:"50g", carbs:"43g", fat:"18g", servings:"6 servings",
-    ingredients:["1200g chicken breast (cubed)","2 tsp salt","2.5 tsp dried parsley","2.5 tsp garlic powder","2.5 tsp onion powder","2.5 tsp smoked paprika","2 tsp cumin","4 tsp olive oil","Juice of 1 lime","30g light butter","2.5 tsp minced garlic","2.5 tbsp fresh parsley","500g canned sweetcorn (drained)","75g light mayo","120g fat-free Greek yogurt","60g Cholula hot sauce","60g jalapeños (deseeded, chopped)","2.5 tbsp fresh coriander","2.5 tsp Tajin","120g crumbled feta","Juice of half a lime","3 Bibigo cooked white rice packets (630g)","4 tbsp fresh coriander (rice)","Optional lime squeeze"],
-    steps:[
-      {text:"PREP DAY: toss the cubed chicken with the salt, dried parsley, garlic powder, onion powder, smoked paprika, cumin, olive oil, and lime juice. Divide into 3 portions of ~400g each.", timer:null},
-      {text:"Make the street corn salsa: mix the sweetcorn, mayo, Greek yogurt, Cholula, jalapenos, coriander, Tajin, feta, and lime juice. Store in its own container.", timer:null},
-      {text:"Store 2 chicken portions in the fridge (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight). PREP DAY ENDS HERE.", timer:null},
-      {text:"COOK DAY: cook one chicken portion over medium heat 6 to 8 minutes until cooked through. Lower the heat, add a share of the butter and minced garlic, cook 1 minute, then toss with fresh parsley.", timer:480},
-      {text:"Heat a Bibigo rice packet and stir through fresh coriander and a squeeze of lime.", timer:null},
-      {text:"Plate the rice and chicken, then spoon the cold street corn salsa over the top.", timer:null}
-    ],
-    notes:"Marinate chicken at least 20 min for best flavour. Lower heat before adding garlic and parsley to avoid burning. Salsa stored separately keeps everything clean for reheating." },
-  { id:20, category:"lunch", protein_type:"chicken", emoji:"🧀", name:"Creamy garlic cheesy chicken & potatoes", source:"https://www.youtube.com/shorts/4V6HZHEY3To", desc:"Seared chicken breast in a velvety garlic cream cheese sauce, served over crispy roasted potatoes.", cal:543, protein:"54g", carbs:"43g", fat:"17g", servings:"6 servings",
-    ingredients:["1200g chicken breast (cubed)","36g minced garlic","24g light butter","360ml skimmed milk","192g Philadelphia Garlic & Herb cream cheese","96g shredded mozzarella","1.8 tsp salt","2.4 tsp mixed herbs","2.4 tsp smoked paprika","2.4 tsp onion powder","1.8 tsp chilli flakes (optional)","3.6 tsp olive oil","1320g yellow/white potatoes (small cubes)","1.2 tsp salt (potatoes)","1.8 tsp mixed herbs (potatoes)","1.8 tsp garlic powder (potatoes)","1.8 tsp paprika (potatoes)","2.4 tsp olive oil (potatoes)"],
-    steps:[
-      {text:"PREP DAY: cube the potatoes and toss with the salt, mixed herbs, garlic powder, paprika, and olive oil. Store in an airtight container.", timer:null},
-      {text:"Toss the cubed chicken with the salt, mixed herbs, smoked paprika, onion powder, chilli flakes, and olive oil. Divide into 3 portions of ~400g each.", timer:null},
-      {text:"Store 2 chicken portions in the fridge (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight). PREP DAY ENDS HERE.", timer:null},
-      {text:"COOK DAY: spread a share of the seasoned potatoes on a sheet pan and roast at 400F for 22 to 25 minutes until crispy.", timer:1380},
-      {text:"Meanwhile, sear one chicken portion in butter over medium-high until golden on all sides, about 5 to 6 minutes.", timer:330},
-      {text:"Lower the heat, add a share of the milk and cream cheese, and stir until melted and smooth.", timer:null},
-      {text:"Bubble gently 2 to 3 minutes to thicken, stir in the mozzarella until melted, then serve the sauce over the crispy potatoes.", timer:150}
-    ],
-    notes:"Potatoes and chicken sauce store separately for best texture — reheat potatoes in oven or air fryer to keep them crispy. Sauce reheats well with a splash of milk to loosen." },
-  { id:21, category:"lunch", protein_type:"chicken", emoji:"🍊", name:"Orange chicken rice bowl", source:null, desc:"Sticky honey-orange glazed chicken thighs over garlic sesame rice with a crisp cucumber slaw.", cal:452, protein:"38g", carbs:"49g", fat:"12g", servings:"6 servings",
-    ingredients:["1200g chicken thighs (cubed)","9g black pepper","24g minced garlic","24g ginger paste","10g red pepper flakes","36g honey","36g sriracha","120g fresh orange juice","9g orange zest","30g dark soy sauce","3 Bibigo cooked white rice packets (630g)","18g reduced fat butter","30g sesame seeds","24g minced garlic (rice)","60g green onion (rice)","360g green cabbage (sliced)","480g cucumber (sliced)","240g red onion (sliced)","240g carrots (grated)","180g green onion (slaw)","30g rice vinegar","8g red pepper flakes (slaw)","24g honey (slaw)"],
-    steps:[
-      {text:"PREP DAY: combine the cubed chicken thighs with the black pepper, garlic, ginger paste, red pepper flakes, honey, sriracha, orange juice, zest, and dark soy sauce. Divide into 3 portions of ~400g each.", timer:null},
-      {text:"Make the cucumber slaw: combine the cabbage, cucumber, red onion, carrots, and green onion, then dress with the rice vinegar, red pepper flakes, and honey. Store in its own container.", timer:null},
-      {text:"Store 2 chicken portions in the fridge (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight). PREP DAY ENDS HERE. The marinade only gets better over a day or two.", timer:null},
-      {text:"COOK DAY: sear one chicken portion over medium-high heat 8 to 10 minutes, turning occasionally, until caramelised and cooked through.", timer:540},
-      {text:"Heat a Bibigo rice packet. In a small pan, toast a share of the sesame seeds, then sauté garlic in the butter and toss the hot rice through with green onion.", timer:null},
-      {text:"Plate the garlic sesame rice, top with the chicken, and add the cold slaw alongside.", timer:null}
-    ],
-    notes:"" },
-  { id:22, category:"snack", protein_type:"veg", emoji:"🌽", name:"Cowboy caviar", source:null, desc:"Bright bean and corn salsa with red onion, jalapeño, and lime dressing.", cal:156, protein:"5g", carbs:"14g", fat:"8g", servings:"6 servings",
-    ingredients:["113g diced green chiles","425g great northern beans (drained, rinsed)","150g red onion (diced)","285g corn (drained)","150g bell pepper (diced)","15g jalapeño (optional, seeded, minced)","30g cilantro (chopped)","60g extra virgin olive oil","30ml red wine vinegar","Juice of 1 lime"],
-    steps:[
-      {text:"Drain and rinse beans and corn. Prep and dice all produce.", timer:null},
-      {text:"In a large bowl, combine beans, corn, red onion, bell pepper, jalapeño, green chiles, and cilantro.", timer:null},
-      {text:"In a small bowl, whisk together olive oil, red wine vinegar, and lime juice.", timer:null},
-      {text:"Pour dressing over the mixture and toss thoroughly.", timer:null},
-      {text:"Chill for 15–30 minutes before serving. Toss again just before eating.", timer:1200}
-    ], notes:"" }
-  ,
-  { id:23, category:"lunch", protein_type:"chicken", emoji:"🥢", name:"Korean BBQ chicken bowls", source:"https://m.youtube.com/shorts/HMZzVWRuQ94", desc:"Gochujang-marinated chicken thighs with a tangy crunchy cucumber salad over steamed rice.", cal:484, protein:"49g", carbs:"50g", fat:"10g", servings:"6 servings",
-    ingredients:["1350g boneless skinless chicken thighs","1.5 tsp black pepper","1.5 tbsp garlic paste","1.5 tbsp ginger paste","60g gochujang (Haepyo)","38g sriracha","1.5 tbsp sesame seeds","60ml light soy sauce","600g cucumbers (thinly sliced)","1.5 tsp salt","1.5 tsp fresh garlic (salad)","23g gochujang (salad)","23g honey","45ml rice vinegar","1.5 tbsp sesame seeds (salad)","1.5 tsp chilli flakes","38ml light soy sauce (salad)"],
-    steps:[
-      {text:"PREP DAY: combine the chicken thighs with the black pepper, garlic paste, ginger paste, gochujang, sriracha, sesame seeds, and light soy sauce. Divide into 3 portions of ~450g each.", timer:null},
-      {text:"Make the cucumber salad: toss the sliced cucumbers with salt and let sit 10 minutes, then squeeze out the excess water.", timer:600},
-      {text:"Dress the cucumbers with the garlic, gochujang, honey, rice vinegar, sesame seeds, chilli flakes, and soy sauce. Store in its own container. It holds the full week.", timer:null},
-      {text:"Store 2 chicken portions in the fridge (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight). PREP DAY ENDS HERE.", timer:null},
-      {text:"COOK DAY: heat oven to 400F. Spread one chicken portion on a foil-lined sheet pan and bake 14 to 16 minutes.", timer:900},
-      {text:"Broil 2 to 3 minutes until the edges char and caramelise. Rest 5 minutes, then slice.", timer:150},
-      {text:"Serve over a heated Bibigo rice packet with the cold cucumber salad on the side.", timer:null}
-    ],
-    notes:"Scaled 4→6 servings (1.5×). Rounding on sriracha, salad gochujang, honey, and salad soy sauce — variance under 2%. Cucumber salad lasts the full week refrigerated — serve cold alongside reheated chicken." }
-  ,
-  { id:24, category:"dinner", protein_type:"beef", emoji:"🍄", name:"Skinny beef stroganoff", source:null, desc:"Lighter take on the classic — seared beef and mushrooms in a creamy yogurt-broth sauce, spooned over egg noodles.", cal:300, protein:"24g", carbs:"30g", fat:"10g", servings:"6 servings",
-    ingredients:["454g 85/15 ground beef","3 tsp olive oil (divided)","1 medium onion (chopped)","227g sliced mushrooms","4.5 tbsp whole-wheat flour","1200ml low-sodium beef broth","0.75 tsp sea salt","0.5 tsp black pepper","227g dry whole-wheat egg noodles (half a 1lb bag)","0.75 cup reduced-fat (2%) plain Greek yogurt","2 tbsp parsley (finely chopped)"],
-    steps:[
-      {text:"PREP DAY: brown the ground beef in 1 tsp olive oil over high heat 4 to 5 minutes. Remove and set aside.", timer:300},
-      {text:"In the same skillet, cook the onion in 1 tsp oil over medium-high 3 to 4 minutes, then add the mushrooms and cook 4 to 6 minutes until the liquid is absorbed.", timer:600},
-      {text:"Add the last 1 tsp oil and the flour, stirring until the mixture is evenly coated.", timer:null},
-      {text:"Slowly add the beef broth, stirring constantly. Season, bring to a boil, then reduce and cook 8 to 10 minutes until thickened. Return the beef.", timer:600},
-      {text:"Off heat, stir in the Greek yogurt until creamy. Cool and refrigerate. PREP DAY ENDS HERE. Keep the noodles dry until cook day.", timer:null},
-      {text:"COOK DAY: boil a single serving of egg noodles 6 to 8 minutes until soft and drain.", timer:480},
-      {text:"Warm a portion of the stroganoff gently (add a splash of water to loosen), spoon over the fresh noodles, and garnish with parsley.", timer:null}
-    ],
-    notes:"Modified from the original Beachbody recipe: full pound of 85/15 beef (in place of sirloin), half a 1lb bag of egg noodles, and sauce scaled up ~1.5x (broth, flour, yogurt) to stay saucy. Noodles boiled and stored separately to keep them from going gluey over the week — combine fresh at serving." }
-  ,
-  { id:25, category:"snack", protein_type:"veg", emoji:"🥦", name:"Longevity bowl", source:null, desc:"Sauce-modular roasted crucifer, crispy kale, and seared edamame. Swap the sauce to change the whole dish.", cal:290, protein:"18g", carbs:"20g", fat:"16g", servings:"1 serving (base, no sauce)",
-    ingredients:["150g frozen shelled edamame","200g broccoli or cauliflower florets (cut small)","50g kale (stemmed and torn)","1.5 tbsp olive oil (split)","2 cloves garlic (thinly sliced)","0.25 tsp salt","1 tbsp crunch topping (sesame seeds or chopped peanuts)","+ one sauce module (see notes)"],
-    steps:[
-      {text:"Preheat oven to 425°F (220°C). If broccoli is frozen, pat off any ice — wet veg steams instead of browning.", timer:null},
-      {text:"Roast the crucifer: toss florets with 1 tbsp oil and half the salt on a sheet pan, single layer with space between pieces. Roast 20–25 min fresh (25–30 min frozen), tossing halfway. Pull when edges are browned and crisp — more color means more flavor.", timer:1500},
-      {text:"Crisp the kale: toss kale with a few drops of oil and scatter onto the same pan for the last ~5 minutes. Pull the moment edges are crackly — it burns fast, so watch it rather than trusting the clock.", timer:300},
-      {text:"Sear the edamame: in a hot stainless pan with the remaining 0.5 tbsp oil, add edamame straight from frozen. Let it sit undisturbed to brown before stirring. Add sliced garlic in the last minute.", timer:null},
-      {text:"Mix your chosen sauce (see notes) while the veg roasts — it should taste punchy enough to carry the whole bowl.", timer:null},
-      {text:"Combine and finish: kill the heat, add the roasted veg to the pan, pour over the sauce, and toss in the residual heat. Plate and top with the crunch topping — it's what makes it read as a finished dish.", timer:null}
-    ],
-    notes:"BASE MACROS: ~290 kcal, 18g protein (edamame carries it). Add a sauce for +35 to +90 kcal — see the Sauces section for the four modular options (Gochujang-Lime is the house default). Beside 3 eggs = ~30g+ protein, holds a 170g protein day. --- LEVERS: Cut calories by halving oil and skipping honey (~70 kcal saved). Cauliflower browns more forgivingly than broccoli and tastes nuttier. Roast, never steam, the crucifer — that is the whole palatability unlock. If using spinach instead of kale, stir it in raw off-heat so it barely wilts." }
-  ,
-  { id:26, category:"lunch", protein_type:"turkey", emoji:"🇬🇷", name:"Greek turkey meatballs with tomato-feta protein pasta", source:null, desc:"Oregano-and-feta turkey meatballs baked and simmered in a garlicky tomato sauce that turns creamy from melted feta, tossed with high-protein pasta.", cal:545, protein:"42g", carbs:"53g", fat:"19g", servings:"6 servings (4 meatballs each)",
-    ingredients:["680g 93/7 ground turkey","60g panko breadcrumbs","2 large eggs","45g feta cheese, crumbled (meatballs)","100g red onion, finely grated or minced","4 garlic cloves, minced (meatballs)","2 tsp dried oregano (meatballs)","1.5 tsp kosher salt (meatballs)","0.5 tsp black pepper","15g fresh dill or parsley, chopped","1 tbsp olive oil","4 garlic cloves, sliced (sauce)","2 tbsp tomato paste","800g canned San Marzano or crushed tomatoes","1 tsp dried oregano (sauce)","0.5 tsp red pepper flakes","1 tsp kosher salt (sauce)","55g feta cheese, crumbled (sauce)","340g Costco protein pasta, dry","1 lemon, zested"],
-    steps:[
-      {text:"PREP DAY: combine the ground turkey, panko, eggs, 45g feta, grated red onion, minced garlic, oregano, salt, pepper, and half the fresh herbs. Mix by hand until just combined. Do not overwork.", timer:null},
-      {text:"Roll into 24 meatballs of about 42g each. Arrange on a lined tray, then refrigerate two thirds and freeze the rest flat on the tray before bagging.", timer:null},
-      {text:"Make the sauce: bloom the tomato paste in olive oil with the sliced garlic for 2 minutes, add the crushed tomatoes, oregano, red pepper flakes, and salt, and simmer 10 minutes.", timer:600},
-      {text:"Off heat, stir the 55g feta into the sauce until creamy. Cool and refrigerate. PREP DAY ENDS HERE. Keep the pasta dry until cook day.", timer:null},
-      {text:"COOK DAY: heat oven to 425F. Bake 4 meatballs per serving for 15 minutes until browned and cooked through (add a few minutes from frozen).", timer:900},
-      {text:"Boil a single serving of protein pasta to one minute under package al dente. Reserve a splash of pasta water and drain.", timer:null},
-      {text:"Warm a portion of the sauce, add the meatballs and pasta, and toss with the pasta water until glossy. Finish with lemon zest and the remaining fresh herbs.", timer:null}
-    ],
-    notes:"FRIDGE LIFE: 5 days sealed. Most reheat-durable format for turkey — the sauce protects the pasta and the meatballs do not dry out the way loose crumbles do. REHEAT: microwave covered 2–2.5 min with a splash of water; the sauce tightens when cold and the water brings it back. MACROS (Oct 2026 recalc): ~545 kcal / 42g P / 53g C / 19g F per serving, based on Brami protein pasta (190 kcal, 11g P per 57g dry) and 93/7 turkey at ~160 kcal per 4 oz. The old 495 kcal card was wrong — the original 1360g-turkey version actually ran ~780 kcal / 66g P. This version halves the turkey, feta, and oil. MACRO LEVERS: pasta is now the biggest single calorie source (~190 kcal/serving). Cut it to 230g dry to land ~485 kcal / 38g P / 43g C / 18g F. Swapping to 99/1 turkey breast (900g) with 230g pasta gets ~495 kcal with ~52g P — pull those meatballs at 165F so they stay moist. SCALING: 680g turkey yields 24 meatballs at ~42g each, 4 per container." }
-  ,
-  { id:27, category:"dinner", protein_type:"chicken", emoji:"🥗", name:"High-protein chicken salad", source:null, desc:"Light, tangy, and crunchy — rotisserie chicken in a yogurt-forward dressing with pickles, celery, and grapes. Served with Costco sourdough.", cal:215, protein:"30g", carbs:"8g", fat:"6g", servings:"10 servings (~190g each)",
-    ingredients:["950g shredded rotisserie chicken breast (from 2 chickens)","250g nonfat Greek yogurt","120g light mayonnaise","120g dill pickles, finely diced","150g celery, finely diced","200g red grapes, halved","60g red onion, minced","15g Dijon mustard","15ml lemon juice","0.5 tsp salt","0.5 tsp black pepper","Costco sourdough bread, 1–2 slices per serving (to serve)"],
-    steps:[
-      {text:"Shred or chop the rotisserie chicken breast into bite-sized pieces and add to a large bowl.", timer:null},
-      {text:"In a separate bowl, whisk together the Greek yogurt, light mayonnaise, Dijon mustard, lemon juice, salt, and black pepper until smooth.", timer:null},
-      {text:"Add the diced pickles, celery, halved grapes, and minced red onion to the chicken.", timer:null},
-      {text:"Pour the dressing over and fold until everything is evenly coated.", timer:null},
-      {text:"Cover and refrigerate at least 1 hour before serving so the flavors meld.", timer:3600},
-      {text:"Serve with 1–2 slices of Costco sourdough per portion.", timer:null}
-    ],
-    notes:"The 2:1 yogurt-to-mayo ratio keeps it light while the mayo carries the flavor. TASTE AFTER CHILLING — pickles and salt shift as it sits, so adjust seasoning then, not before. If your chickens yield less than 900g of breast meat, fold in thigh meat to hit 950g total. Macros above are for the SALAD ONLY (~215 kcal, ~30g protein per ~190g serving; carbs come mostly from the grapes). Costco sourdough adds roughly 120–140 kcal and ~24g carbs per slice — so a 2-slice serving lands the full plate around 460–500 kcal and ~55g carbs." }
-  ,
-  { id:28, category:"dinner", protein_type:"chicken", emoji:"🌶️", name:"Sheet-pan chicken fajitas (prep-ahead)", source:null, desc:"Dry-brined fajita chicken and peppers, prepped once and seared fresh to order. Cook one portion at a time for the best texture.", cal:265, protein:"38g", carbs:"11g", fat:"7g", servings:"6 servings (cook-to-order)",
-    ingredients:["900g boneless skinless chicken breast (3 portions x 300g)","300g red bell pepper","300g green bell pepper","250g yellow onion","30ml olive oil","2 tbsp chili powder","1 tbsp cumin","2 tsp smoked paprika","2 tsp garlic powder","1.5 tsp salt","1 tsp black pepper","2 limes (wedges)","+ Bibigo rice or tortillas to serve (optional)"],
-    steps:[
-      {text:"PREP DAY: slice the chicken into thin strips. Toss with all the seasoning (chili powder, cumin, smoked paprika, garlic powder, salt, pepper) until fully coated — this doubles as a dry-brine. Divide into 3 portions of ~300g each.", timer:null},
-      {text:"Slice the peppers and onion into even strips. Store them together in one airtight container (holds 4–5 days).", timer:null},
-      {text:"Store 2 chicken portions in the fridge (for days 1–2). Bag the 3rd portion flat and freeze it (for day 3 — thaw overnight before cooking). Keep the oil and limes aside for cook day. PREP DAY ENDS HERE — the dry rub keeps improving as a brine over the next 1–2 days.", timer:null},
-      {text:"COOK DAY (repeat per portion): pull one chicken portion (thaw the frozen one overnight) plus ~185g of the veg. Heat 1 tsp oil in a skillet over medium-high.", timer:null},
-      {text:"Sear the chicken in a single layer, undisturbed, 3–4 minutes. Toss, then cook 2–3 minutes more until it hits 165°F. Push to one side of the pan.", timer:420},
-      {text:"Add the veg to the empty side. Cook 3–4 minutes to crisp-tender with some char. Toss everything together, squeeze a lime wedge over the top, and serve.", timer:240}
-    ],
-    notes:"PREP-AHEAD / COOK-TO-ORDER — this is the whole point. You prep everything once, then sear one fresh portion (~8 min) each day rather than batch-cooking and reheating. Cook-to-order keeps the chicken juicy and the veg crisp all week, which reheated fajitas never manage. STORAGE: 2 chicken portions in the fridge (days 1–2), freeze the 3rd flat (day 3, thaw overnight). Peppers and onions hold 4–5 days sliced. The dry rub doubles as a dry-brine, so flavor actually improves over 1–2 days. MACROS: the 265 kcal / 38g P per serving EXCLUDES tortillas or rice — add a Bibigo rice packet (~285 kcal) on the side if you want the full plate. Per-portion cook math: ~150g chicken + ~185g veg + 1 tsp oil." }
-,
-  { id:29, category:"dinner", protein_type:"turkey", emoji:"🫘", name:"High-protein minestrone", source:null, desc:"Hearty bean-and-turkey minestrone loaded with vegetables. Under 300 calories and better on day two.", cal:280, protein:"21g", carbs:"35g", fat:"7g", servings:"6 servings",
-    ingredients:["1 tbsp olive oil","1 medium onion, diced (~150g)","2 carrots, diced (~120g)","2 celery stalks, diced (~100g)","3 garlic cloves, minced","227g lean ground turkey (93/7)","425g cannellini beans, drained and rinsed","425g kidney beans, drained and rinsed","425g diced tomatoes (with juice)","960ml low-sodium chicken broth","125g zucchini, chopped","60g kale or spinach, chopped","60g small whole wheat pasta (ditalini), dry","1 tsp dried oregano","1 tsp dried basil","1 bay leaf","0.5 tsp salt","0.25 tsp black pepper","25g grated parmesan, for serving (optional)"],
-    steps:[
-      {text:"Heat the olive oil in a large pot over medium. Add the onion, carrots, and celery and cook until softened, about 5 to 6 minutes. Add the garlic and cook 1 more minute until fragrant.", timer:420},
-      {text:"Add the ground turkey, breaking it up with a spoon, and cook until no longer pink, about 5 to 6 minutes.", timer:360},
-      {text:"Stir in both beans, the diced tomatoes with their juice, the broth, oregano, basil, bay leaf, salt, and pepper. Bring to a boil, then reduce heat and simmer uncovered.", timer:null},
-      {text:"Stir in the ditalini and the zucchini. Simmer until the pasta is tender, about 8 to 10 minutes.", timer:540},
-      {text:"Stir in the kale or spinach and cook just until wilted, about 2 minutes. Remove the bay leaf, taste, and adjust the seasoning.", timer:120},
-      {text:"Ladle into bowls and top with grated parmesan if using.", timer:null}
-    ],
-    notes:"Soups are left as batch-and-reheat rather than prep-ahead: minestrone is better on day 2. Keeps 4 days in the fridge. The pasta keeps absorbing broth as it sits, so add a splash of water or broth when reheating. To push the protein up, stir in an extra can of beans or swap the ditalini for the Costco protein pasta already used in the Greek meatballs." }
-,
-  { id:30, category:"dinner", protein_type:"chicken", emoji:"🥡", name:"Chicken & veggie stir fry with rice", source:null, desc:"Lean chicken and crisp-tender vegetables in a garlic-ginger sauce over rice. Prepped once, seared fresh each day so the veg never goes limp.", cal:434, protein:"40g", carbs:"49g", fat:"6g", servings:"6 servings (cook-to-order)",
-    ingredients:["900g raw boneless skinless chicken breast, cubed (3 portions x ~300g)","3 Bibigo cooked white rice packets (630g)","270g broccoli florets","300g bell peppers, sliced","120g carrots, julienned","120g snap peas","4 garlic cloves, minced","1 tbsp fresh ginger, minced","60ml low-sodium soy sauce","1 tbsp rice vinegar","1 tbsp honey","1 tbsp cornstarch","2 tbsp cold water","Cooking spray, for the sear","1 tbsp toasted sesame oil","0.5 tsp salt","0.25 tsp black pepper"],
-    steps:[
-      {text:"PREP DAY: let the frozen chicken sit on the counter 30 to 40 minutes until just soft enough to cut. Cube it while still partly frozen — it slices far cleaner than fully thawed, and you skip a full thaw-and-refreeze cycle.", timer:2100},
-      {text:"Season the cubes with the salt and pepper, then divide into 3 portions of about 300g each.", timer:null},
-      {text:"Refrigerate 1 portion for days 1 to 2. Bag the other 2 flat and return them to the freezer — thaw overnight the night before you want one.", timer:null},
-      {text:"Slice the broccoli, bell peppers, carrots, and snap peas. Store them together in one airtight container. Mince the garlic and ginger and store in a small container of their own.", timer:null},
-      {text:"Whisk the soy sauce, rice vinegar, honey, and the cornstarch dissolved in the cold water. Store in a jar. PREP DAY ENDS HERE.", timer:null},
-      {text:"COOK DAY: pat one chicken portion dry. Coat a wok or large skillet with cooking spray and heat over high, add the chicken in a single layer, and cook 5 to 6 minutes until golden and cooked through, stirring occasionally. Remove to a plate.", timer:360},
-      {text:"In the same pan, add a share of the sliced veg along with the garlic and ginger. Stir-fry over high heat 4 to 5 minutes until crisp-tender, adding the snap peas for the last 1 to 2 minutes so they stay bright green.", timer:300},
-      {text:"Shake the sauce jar hard before pouring — the cornstarch settles solid at the bottom. Return the chicken to the pan, pour in a share of the sauce, and toss 1 to 2 minutes until it thickens and coats everything. Drizzle with the sesame oil and toss once more.", timer:120},
-      {text:"Heat a Bibigo rice packet and serve the stir fry over the top.", timer:null}
-    ],
-    notes:"Macros are from the logged recipe in the tracker, not an estimate: 434 kcal, 39.7g protein, 48.8g carbs, 6.3g fat per serving, using 900g RAW chicken breast and cooking spray. At 39.7g protein it lands a hair under the 40g anchor-meal floor, which is exactly why it sits in dinners. To push it over the line, add a soft-boiled egg or an extra 50g of chicken per portion. COOK-TO-ORDER MATTERS MORE HERE THAN ANYWHERE: stir-fry is the worst dish in the library to batch-reheat. Crisp-tender broccoli and snap peas go limp by day two, so the veg is prepped raw and cooked fresh each time. FROZEN CHICKEN: cubing while partly frozen is the whole trick — cleaner cuts, no thaw-refreeze texture hit, and 2 of the 3 portions never leave the freezer until the night before. Shake the sauce jar before each use; the cornstarch settles hard." }
-,
-  { id:31, category:"dinner", protein_type:"beef", emoji:"🥘", name:"Chili con carne", source:null, desc:"The old cookbook chili, scaled and seasoned — cumin, oregano, and a spoonful of cocoa for depth. Served with a 40g square of day-of Jiffy cornbread.", cal:433, protein:"30g", carbs:"44g", fat:"14g", servings:"6 servings",
-    ingredients:["680g 85/15 ground beef","225g yellow onion, chopped","3 garlic cloves, crushed","1.5 tbsp chili powder","1.5 tsp salt","1.5 tsp ground cumin","1.5 tsp dried oregano","1.5 tsp unsweetened cocoa powder","0.75 tsp red pepper sauce","680g canned whole tomatoes, undrained","660g canned red kidney beans, undrained","1 box Jiffy Corn Muffin Mix (241g) — day of","1 large egg — day of","80ml milk — day of"],
-    steps:[
-      {text:"Cook the ground beef, onion, and garlic in a large pot over medium heat until the beef is browned. Drain the fat — this is where most of the fat in the macros comes off.", timer:null},
-      {text:"Stir in everything except the beans: chili powder, salt, cumin, oregano, cocoa, red pepper sauce, and the whole tomatoes with their juice. Break the tomatoes up against the side of the pot with a spoon.", timer:null},
-      {text:"Bring to a boil, then reduce the heat. Cover and simmer 1 hour, stirring occasionally.", timer:3600},
-      {text:"Stir in the kidney beans with their liquid. Bring back to a boil, then reduce the heat again.", timer:null},
-      {text:"Simmer uncovered about 20 minutes, stirring occasionally, until it thickens to the consistency you want.", timer:1200},
-      {text:"Portion the chili into 6 containers. The cornbread is made fresh on the day you eat it, not now.", timer:null},
-      {text:"DAY OF — cornbread: heat oven to 400°F. Stir the Jiffy mix with the egg and milk until just combined; lumps are fine and overmixing makes it tough. Pour into a greased 8x8 pan.", timer:null},
-      {text:"Bake 15 to 20 minutes until golden and a toothpick comes out clean. Cool a few minutes, then cut into 8 squares of about 40g each — 6 for the week plus 2 spare.", timer:1050}
-    ],
-    notes:"Scaled 4 to 6 servings (1.5x) and switched to 85/15 beef per house standard. Replaces the plainer Chili that used to be in the library. MACROS INCLUDE THE CORNBREAD: chili alone is ~303 kcal / 27g protein; the 40g Jiffy square adds ~130 kcal, 21g carbs and 4g fat, bringing the plate to ~433 kcal / 30g protein. Still a dinner with room to spare. CORNBREAD IS DAY-OF ON PURPOSE: one box baked in an 8x8 and cut into 8 gives ~41g squares — 6 for the week plus 2 spare. It is 20 minutes start to finish and dry and crumbly by day two, which is why it is not batched with the chili. Bake it the morning or evening you want it. DON'T SKIP THE COCOA: a teaspoon and a half reads as nothing in the bowl but it is what gives the beef its depth — it does not taste like chocolate. BATCH-COOK THE CHILI: better on day 2 and reheats without texture loss. Keeps 4 to 5 days. MACROS ARE ESTIMATED, not logged — the beef draining step is the big variable. Worth logging the real version and sending the numbers back. VARIATION: for Cincinnati-style, spoon about 3/4 cup over a cup of hot spaghetti with cheddar and onion (adds roughly 300 kcal, which tips it into anchor-meal territory)." }
-];
+// Recipe and sauce data lives in recipes.json
+let recipes = [];
+let sauces = [];
+let recipesText = '';
  
 const sections = [
   { key:"breakfast", label:"Breakfast" },
@@ -638,20 +310,6 @@ const sections = [
 ];
  
  
-const sauces = [
-  { id:"s1", emoji:"🌶️", name:"Gochujang-Lime", kcal:"+40 kcal", character:"Bold, Korean-leaning — the house default. Sweet, sour, salty, and spicy all at once.",
-    ingredients:["1 tbsp gochujang","1 tsp soy sauce / tamari","1 tsp toasted sesame oil","½ lime, juiced","1 tsp honey or maple"],
-    tip:"Whisk smooth. Pairs with almost anything — rice bowls, roasted veg, leftover chicken." },
-  { id:"s2", emoji:"🥜", name:"Peanut-Lime", kcal:"+90 kcal", character:"Rich and crowd-pleasing. The indulgent pick.",
-    ingredients:["1 tbsp peanut butter, thinned with warm water to pourable","½ lime, juiced","1 tsp soy sauce","pinch chili flake"],
-    tip:"Pairs best with cauliflower and a peanut crunch on top." },
-  { id:"s3", emoji:"🍶", name:"Miso-Ginger", kcal:"+35 kcal", character:"Savory and clean. The lightest of the set.",
-    ingredients:["1 tbsp white miso","fresh grated ginger, to taste","1 tsp rice vinegar"],
-    tip:"Stir in OFF-HEAT — never boil miso or it goes flat." },
-  { id:"s4", emoji:"🍋", name:"Lemon-Parm-Chili", kcal:"+50 kcal", character:"Western and bright — the cleanest match for eggs. Most crowd-friendly.",
-    ingredients:["juice of ½ lemon","2 tbsp grated parmesan","pinch chili flake","black pepper"],
-    tip:"No whisking — just toss the roasted veg in it." }
-];
  
 let cookTimer = null;
  
@@ -941,21 +599,10 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
  
 // ===== VIEW SWITCHING =====
 function switchView(view) {
-  const browse = document.getElementById('view-browse');
-  const plan = document.getElementById('view-plan');
-  const tabBrowse = document.getElementById('tab-browse');
-  const tabPlan = document.getElementById('tab-plan');
-  if (view === 'plan') {
-    browse.style.display = 'none';
-    plan.style.display = 'block';
-    tabPlan.classList.add('active');
-    tabBrowse.classList.remove('active');
-  } else {
-    browse.style.display = 'block';
-    plan.style.display = 'none';
-    tabBrowse.classList.add('active');
-    tabPlan.classList.remove('active');
-  }
+  ['browse', 'plan', 'pantry'].forEach(v => {
+    document.getElementById('view-' + v).style.display = v === view ? 'block' : 'none';
+    document.getElementById('tab-' + v).classList.toggle('active', v === view);
+  });
 }
  
 // ===== WEEK PLANNER =====
@@ -1018,6 +665,7 @@ function pageSignature(doc) {
   return [...doc.querySelectorAll('style, script:not([src])')].map(n => n.textContent.trim()).join('\n');
 }
 const currentSignature = pageSignature(document);
+const fetchRecipes = bust => fetch('recipes.json' + (bust ? '?check=' + Date.now() : ''), { cache: bust ? 'no-store' : 'no-cache' });
 let lastUpdateCheck = 0;
 async function checkForUpdate(manual) {
   const link = document.getElementById('update-link');
@@ -1028,7 +676,10 @@ async function checkForUpdate(manual) {
     const res = await fetch(location.pathname + '?check=' + Date.now(), { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const fresh = new DOMParser().parseFromString(await res.text(), 'text/html');
-    if (pageSignature(fresh) !== currentSignature) {
+    const freshData = await fetchRecipes(true);
+    if (!freshData.ok) throw new Error(freshData.status);
+    const dataChanged = recipesText && (await freshData.text()) !== recipesText;
+    if (pageSignature(fresh) !== currentSignature || dataChanged) {
       document.getElementById('update-banner').classList.add('show');
       if (manual) link.textContent = 'Update available';
     } else if (manual) {
@@ -1046,7 +697,19 @@ if (/[?&]v=\d+/.test(location.search)) history.replaceState(null, '', location.p
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkForUpdate(false); });
 window.addEventListener('pageshow', () => checkForUpdate(false));
 
-render();
+async function loadRecipes() {
+  try {
+    const res = await fetchRecipes(false);
+    if (!res.ok) throw new Error(res.status);
+    recipesText = await res.text();
+    ({ recipes, sauces } = JSON.parse(recipesText));
+  } catch (e) {
+    document.getElementById('main').innerHTML = '<div class="search-empty">Couldn’t load recipes &mdash; try refreshing.</div>';
+    return;
+  }
+  render();
+}
+loadRecipes();
 </script>
 </body>
 </html>
