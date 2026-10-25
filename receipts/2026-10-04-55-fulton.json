@@ -1,0 +1,222 @@
+{
+ "date": "2026-10-04",
+ "store": "55 Fulton Market",
+ "items": [
+  {
+   "name": "Drizzilicious Mini Rice Cake Bites, Salted Caramel (4 oz)",
+   "category": "Snacks",
+   "qty": 1,
+   "price": 4.99,
+   "amount": {
+    "count": 1
+   },
+   "replaced": "Drizzilicious Mini Rice Cake Bites, Birthday Cake (4 oz)"
+  },
+  {
+   "name": "Organic Carrots, Bag (16 oz)",
+   "category": "Produce",
+   "qty": 1,
+   "price": 2.5,
+   "amount": {
+    "g": 454
+   },
+   "replaced": "Organic Carrot (1 lb)"
+  },
+  {
+   "name": "Progresso Unsalted Chicken Broth (32 oz)",
+   "category": "Pantry",
+   "qty": 2,
+   "price": 6.98,
+   "amount": {
+    "ml": 1892
+   },
+   "replaced": "Best Yet Aseptic Chicken Broth (32 oz)"
+  },
+  {
+   "name": "Earthbound Farm Frozen Organic Whole Green Beans (10 oz)",
+   "category": "Frozen",
+   "qty": 2,
+   "price": 8.98,
+   "amount": {
+    "g": 567
+   },
+   "replaced": "Birds Eye Premium Whole Green Beans (10.8 oz)"
+  },
+  {
+   "name": "Hershey's Special Dark Chocolate Baking Chips (12 oz)",
+   "category": "Baking",
+   "qty": 1,
+   "price": 6.89,
+   "amount": {
+    "g": 340
+   },
+   "replaced": "Toll House Dark Chocolate Chips (10 oz)"
+  },
+  {
+   "name": "Clif Bar Chocolate Chip Energy Bar",
+   "category": "Snacks",
+   "qty": 5,
+   "price": 17.45,
+   "amount": {
+    "count": 5
+   },
+   "replaced": "CLIF BAR Energy Protein Bars, Chocolate Chip, 5 ct"
+  },
+  {
+   "name": "Organic Cabbage",
+   "category": "Produce",
+   "qty": 1,
+   "price": 6.9,
+   "amount": {
+    "g": 2100
+   }
+  },
+  {
+   "name": "English Seedless Cucumber",
+   "category": "Produce",
+   "qty": 3,
+   "price": 7.5,
+   "amount": {
+    "count": 3
+   }
+  },
+  {
+   "name": "Navel Orange",
+   "category": "Produce",
+   "qty": 2,
+   "price": 2.0,
+   "amount": {
+    "count": 2
+   }
+  },
+  {
+   "name": "Mutti Triple Concentrated Tomato Paste (6.5 oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 3.89,
+   "amount": {
+    "g": 184
+   }
+  },
+  {
+   "name": "Kikkoman Soy Sauce, All-Purpose (10 fl oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 3.0,
+   "amount": {
+    "ml": 296
+   }
+  },
+  {
+   "name": "KA-ME Sweet Chili Sauce (7 fl oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 6.49,
+   "amount": {
+    "ml": 207
+   }
+  },
+  {
+   "name": "Pennsylvania Dutch Egg Noodles, Extra Wide (12 oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 3.99,
+   "amount": {
+    "g": 340
+   }
+  },
+  {
+   "name": "Farmland Fresh Dairies Whole Milk (1 qt)",
+   "category": "Dairy",
+   "qty": 1,
+   "price": 1.99,
+   "amount": {
+    "ml": 946
+   }
+  },
+  {
+   "name": "Organic Orange Bell Pepper",
+   "category": "Produce",
+   "qty": 1,
+   "price": 7.59,
+   "amount": {
+    "g": 431
+   }
+  },
+  {
+   "name": "Urban Meadow Green Peas (16 oz)",
+   "category": "Frozen",
+   "qty": 1,
+   "price": 2.99,
+   "amount": {
+    "g": 454
+   }
+  },
+  {
+   "name": "Vlasic Kosher Dill Pickle Spears (24 fl oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 4.99,
+   "amount": {
+    "ml": 710
+   }
+  },
+  {
+   "name": "Organic Green Onions (Scallions)",
+   "category": "Produce",
+   "qty": 1,
+   "price": 2.5,
+   "amount": {
+    "count": 1
+   }
+  },
+  {
+   "name": "Onion (2 lb)",
+   "category": "Produce",
+   "qty": 1,
+   "price": 2.0,
+   "amount": {
+    "g": 907
+   }
+  },
+  {
+   "name": "Dill",
+   "category": "Produce",
+   "qty": 1,
+   "price": 2.5,
+   "amount": {
+    "count": 1
+   }
+  },
+  {
+   "name": "Cool Whip Original Whipped Topping (8 oz)",
+   "category": "Dairy",
+   "qty": 1,
+   "price": 3.99,
+   "amount": {
+    "g": 227
+   }
+  },
+  {
+   "name": "Gunter's Pure Clover Honey (12 oz)",
+   "category": "Pantry",
+   "qty": 1,
+   "price": 3.99,
+   "amount": {
+    "g": 340
+   }
+  },
+  {
+   "name": "Drizzilicious Mini Rice Cake Bites, Cinnamon Swirl (4 oz)",
+   "category": "Snacks",
+   "qty": 1,
+   "price": 4.99,
+   "amount": {
+    "count": 1
+   }
+  }
+ ],
+ "not_received": [
+  "Gourmet Garden Ginger Stir-In Paste (4 oz)"
+ ]
+}

@@ -1,0 +1,127 @@
+{
+ "date": "2026-10-04",
+ "store": "Costco",
+ "items": [
+  {
+   "name": "Kirkland Signature Ground Beef, 1.33 lb, 3-count",
+   "sku": "1854624",
+   "category": "Meat & Seafood",
+   "qty": 1,
+   "price": 27.49,
+   "amount": {
+    "g": 1810
+   },
+   "replaced": "Rastelli's Grass-Fed Ground Beef, 4 lb"
+  },
+  {
+   "name": "Kirkland Signature Sparkling Water, Variety Pack, 12 fl oz, 35-count",
+   "sku": "4164501",
+   "category": "Beverages",
+   "qty": 1,
+   "price": 14.07,
+   "amount": {
+    "count": 35
+   }
+  },
+  {
+   "name": "Kirkland Signature Colombian Supremo Coffee, Whole Bean, 3 lb",
+   "sku": "120296",
+   "category": "Coffee & Sweeteners",
+   "qty": 1,
+   "price": 21.99,
+   "amount": {
+    "g": 1361
+   }
+  },
+  {
+   "name": "The Honest Cow 4% Cottage Cheese, 3 lb",
+   "sku": "2049097",
+   "category": "Dairy & Eggs",
+   "qty": 1,
+   "price": 7.69,
+   "amount": {
+    "g": 1361
+   }
+  },
+  {
+   "name": "Chobani Greek Yogurt Protein Drink Variety Pack, 10 fl oz, 12-count",
+   "sku": "2756704",
+   "category": "Dairy & Eggs",
+   "qty": 1,
+   "price": 21.99,
+   "amount": {
+    "count": 12
+   }
+  },
+  {
+   "name": "Kirkland Signature Eggs, Large, 24-count",
+   "sku": "637598",
+   "category": "Dairy & Eggs",
+   "qty": 1,
+   "price": 4.17,
+   "amount": {
+    "count": 24
+   }
+  },
+  {
+   "name": "Kirkland Signature Organic Non-Dairy Oat Beverage, 32 oz, 6-count",
+   "sku": "1272413",
+   "category": "Dairy & Eggs",
+   "qty": 1,
+   "price": 10.99,
+   "amount": {
+    "ml": 5677
+   }
+  },
+  {
+   "name": "Kirkland Signature Organic Greek Yogurt, 48 oz",
+   "sku": "1048072",
+   "category": "Dairy & Eggs",
+   "qty": 1,
+   "price": 8.24,
+   "amount": {
+    "g": 1361
+   }
+  },
+  {
+   "name": "Kirkland Signature Rotisserie Chicken",
+   "sku": "87745",
+   "category": "Deli",
+   "qty": 1,
+   "price": 5.49,
+   "amount": {
+    "count": 1
+   }
+  },
+  {
+   "name": "Nurri 30g Protein Shake, Vanilla, 11 fl oz, 15-pack",
+   "sku": "2037515",
+   "category": "Health & Personal Care",
+   "qty": 1,
+   "price": 29.14,
+   "amount": {
+    "count": 15
+   }
+  },
+  {
+   "name": "Kirkland Signature Organic Boneless Skinless Chicken Thighs",
+   "sku": "47266",
+   "category": "Meat & Seafood",
+   "qty": 1,
+   "price": 31.17,
+   "amount": {
+    "g": 2146
+   }
+  },
+  {
+   "name": "Kirkland Signature Grass-fed Beef Sticks, 1.15 oz, 12-count",
+   "sku": "1857160",
+   "category": "Snacks, Candy & Nuts",
+   "qty": 1,
+   "price": 15.17,
+   "amount": {
+    "count": 12
+   }
+  }
+ ]
+}

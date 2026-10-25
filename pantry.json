@@ -1,0 +1,1019 @@
+{
+ "updated": "2026-10-21",
+ "receipts": [
+  "2026-10-04-55-fulton.json",
+  "2026-10-04.json",
+  "2026-10-21.json"
+ ],
+ "batches": [
+  {
+   "recipe": "Chili con carne",
+   "recipe_id": 31,
+   "cooked": "2026-10-04"
+  },
+  {
+   "recipe": "Crispy spicy beef noodles",
+   "recipe_id": 18,
+   "cooked": "2026-10-04"
+  },
+  {
+   "recipe": "Overnight oats",
+   "recipe_id": 1,
+   "cooked": "2026-10-05"
+  },
+  {
+   "recipe": "Dill chicken soup",
+   "recipe_id": 2,
+   "cooked": "2026-10-07"
+  },
+  {
+   "recipe": "Orange chicken rice bowl",
+   "recipe_id": 21,
+   "cooked": "2026-10-09"
+  }
+ ],
+ "items": [
+  {
+   "key": "beef-sticks",
+   "name": "Beef sticks",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 12
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "chobani-drinks",
+   "name": "Chobani protein drinks",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 12
+     }
+    },
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 12
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 2,
+   "cadence_days": 17
+  },
+  {
+   "key": "clif-bars",
+   "name": "Clif bars",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 5
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "cool-whip",
+   "name": "Cool Whip",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 227
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "cottage-cheese",
+   "name": "Cottage cheese",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "g": 1361
+     }
+    },
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "g": 1361
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 2,
+   "cadence_days": 17
+  },
+  {
+   "key": "eggs",
+   "name": "Eggs",
+   "tier": "staple",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 24
+     }
+    },
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 24
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 2,
+   "cadence_days": 17
+  },
+  {
+   "key": "blueberries",
+   "name": "Frozen blueberries",
+   "tier": "staple",
+   "lasts_days": 35,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "g": 2268
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1
+  },
+  {
+   "key": "green-beans",
+   "name": "Frozen green beans",
+   "tier": "staple",
+   "lasts_days": 60,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 567
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "egg-whites",
+   "name": "Liquid egg whites",
+   "tier": "staple",
+   "lasts_days": 21,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "g": 2722
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1
+  },
+  {
+   "key": "nurri-shakes",
+   "name": "Nurri protein shakes",
+   "tier": "staple",
+   "lasts_days": 15,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 15
+     }
+    },
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 15
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 2,
+   "cadence_days": 17
+  },
+  {
+   "key": "oat-milk",
+   "name": "Oat milk",
+   "tier": "staple",
+   "lasts_days": 21,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "ml": 5677
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "rice-cake-bites",
+   "name": "Rice cake bites",
+   "tier": "staple",
+   "lasts_days": 10,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 2
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1
+  },
+  {
+   "key": "salsa",
+   "name": "Salsa",
+   "tier": "staple",
+   "lasts_days": 21,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "g": 907
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1
+  },
+  {
+   "key": "sparkling-water",
+   "name": "Sparkling water",
+   "tier": "staple",
+   "lasts_days": 17,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 35
+     }
+    },
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 35
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 2,
+   "cadence_days": 17
+  },
+  {
+   "key": "bell-pepper",
+   "name": "Bell pepper",
+   "tier": "recipe",
+   "lasts_days": 7,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 431
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles"
+   ],
+   "on_hand": {
+    "g": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "cabbage",
+   "name": "Cabbage",
+   "tier": "recipe",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 2100
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "g": 1740
+   }
+  },
+  {
+   "key": "carrots",
+   "name": "Carrots",
+   "tier": "recipe",
+   "lasts_days": 21,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 454
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "g": 94
+   }
+  },
+  {
+   "key": "chicken-broth",
+   "name": "Chicken broth",
+   "tier": "recipe",
+   "lasts_days": 365,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "ml": 1892
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup"
+   ],
+   "on_hand": {
+    "ml": 452
+   }
+  },
+  {
+   "key": "chicken-thighs",
+   "name": "Chicken thighs",
+   "tier": "recipe",
+   "lasts_days": 5,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "g": 2146
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "g": 646
+   }
+  },
+  {
+   "key": "cucumbers",
+   "name": "Cucumbers",
+   "tier": "recipe",
+   "lasts_days": 7,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 3
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "count": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "pickles",
+   "name": "Dill pickles",
+   "tier": "recipe",
+   "lasts_days": 60,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "ml": 710
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "on_hand": {
+    "ml": 710
+   }
+  },
+  {
+   "key": "egg-noodles",
+   "name": "Egg noodles",
+   "tier": "recipe",
+   "lasts_days": 365,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 340
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles"
+   ],
+   "on_hand": {
+    "g": 115
+   }
+  },
+  {
+   "key": "dill",
+   "name": "Fresh dill",
+   "tier": "recipe",
+   "lasts_days": 7,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 1
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup"
+   ],
+   "on_hand": {
+    "count": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "peas",
+   "name": "Frozen peas",
+   "tier": "recipe",
+   "lasts_days": 90,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 454
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup"
+   ],
+   "on_hand": {
+    "g": 244
+   }
+  },
+  {
+   "key": "greek-yogurt",
+   "name": "Greek yogurt (tub)",
+   "tier": "recipe",
+   "lasts_days": 14,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "g": 1361
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Dill chicken soup"
+   ],
+   "on_hand": {
+    "g": 1116
+   }
+  },
+  {
+   "key": "green-onions",
+   "name": "Green onions",
+   "tier": "recipe",
+   "lasts_days": 7,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 1
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "count": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "ground-beef",
+   "name": "Ground beef",
+   "tier": "recipe",
+   "lasts_days": 5,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "g": 1810
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Chili con carne",
+    "Crispy spicy beef noodles"
+   ],
+   "on_hand": {
+    "g": 30
+   },
+   "used_up": true
+  },
+  {
+   "key": "milk",
+   "name": "Milk",
+   "tier": "recipe",
+   "lasts_days": 7,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "ml": 946
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Chili con carne"
+   ],
+   "on_hand": {
+    "ml": 866
+   }
+  },
+  {
+   "key": "onions",
+   "name": "Onions",
+   "tier": "recipe",
+   "lasts_days": 30,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 907
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Chili con carne",
+    "Crispy spicy beef noodles",
+    "Dill chicken soup",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "g": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "oranges",
+   "name": "Oranges",
+   "tier": "recipe",
+   "lasts_days": 10,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "count": 2
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "count": 0
+   },
+   "used_up": true
+  },
+  {
+   "key": "rotisserie-chicken",
+   "name": "Rotisserie chicken",
+   "tier": "recipe",
+   "lasts_days": 4,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "count": 1
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "on_hand": {
+    "count": 1
+   }
+  },
+  {
+   "key": "tortillas",
+   "name": "Tortillas",
+   "tier": "recipe",
+   "lasts_days": 21,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 16
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1,
+   "on_hand": {
+    "count": 16
+   }
+  },
+  {
+   "key": "bibigo-rice",
+   "name": "Bibigo rice bowls",
+   "tier": "long",
+   "lasts_days": 120,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "count": 12
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1,
+   "on_hand": {
+    "count": 12
+   }
+  },
+  {
+   "key": "black-pepper",
+   "name": "Black pepper",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "chili-powder",
+   "name": "Chili powder",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "chocolate-chips",
+   "name": "Chocolate chips",
+   "tier": "long",
+   "lasts_days": 180,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 340
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "on_hand": {
+    "g": 340
+   }
+  },
+  {
+   "key": "cinnamon",
+   "name": "Cinnamon",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "coffee",
+   "name": "Coffee beans",
+   "tier": "long",
+   "lasts_days": 45,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "Costco",
+     "amount": {
+      "g": 1361
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "on_hand": {
+    "g": 1361
+   }
+  },
+  {
+   "key": "cooking-spray",
+   "name": "Cooking spray",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "cumin",
+   "name": "Cumin",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "oregano",
+   "name": "Dried oregano",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "chicken-breast-frozen",
+   "name": "Frozen chicken breast",
+   "tier": "long",
+   "lasts_days": 90,
+   "purchases": [
+    {
+     "date": "2026-10-21",
+     "store": "Costco",
+     "amount": {
+      "g": 2268
+     }
+    }
+   ],
+   "last_bought": "2026-10-21",
+   "times_bought": 1,
+   "on_hand": {
+    "g": 2268
+   }
+  },
+  {
+   "key": "garlic-powder",
+   "name": "Garlic powder",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "gochujang",
+   "name": "Gochujang",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "honey",
+   "name": "Honey",
+   "tier": "long",
+   "lasts_days": 365,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 340
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "g": 230
+   }
+  },
+  {
+   "key": "minced-garlic",
+   "name": "Minced garlic",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "olive-oil",
+   "name": "Olive oil",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "onion-powder",
+   "name": "Onion powder",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "red-pepper-flakes",
+   "name": "Red pepper flakes",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "rice-vinegar",
+   "name": "Rice vinegar",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "salt",
+   "name": "Salt",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "sesame-oil",
+   "name": "Sesame oil",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "smoked-paprika",
+   "name": "Smoked paprika",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "soy-sauce",
+   "name": "Soy sauce",
+   "tier": "long",
+   "lasts_days": 180,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "ml": 296
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles",
+    "Orange chicken rice bowl"
+   ],
+   "on_hand": {
+    "ml": 156
+   }
+  },
+  {
+   "key": "sriracha",
+   "name": "Sriracha",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "sweet-chili",
+   "name": "Sweet chili sauce",
+   "tier": "long",
+   "lasts_days": 120,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "ml": 207
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "used_in": [
+    "Crispy spicy beef noodles"
+   ],
+   "on_hand": {
+    "ml": 154
+   }
+  },
+  {
+   "key": "taco-seasoning",
+   "name": "Taco seasoning",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "tomato-paste",
+   "name": "Tomato paste",
+   "tier": "long",
+   "lasts_days": 60,
+   "purchases": [
+    {
+     "date": "2026-10-04",
+     "store": "55 Fulton Market",
+     "amount": {
+      "g": 184
+     }
+    }
+   ],
+   "last_bought": "2026-10-04",
+   "times_bought": 1,
+   "on_hand": {
+    "g": 184
+   }
+  },
+  {
+   "key": "worcestershire",
+   "name": "Worcestershire sauce",
+   "tier": "long",
+   "assumed": true
+  }
+ ]
+}

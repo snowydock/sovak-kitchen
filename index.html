@@ -184,6 +184,17 @@
   .planner-btn.secondary { background: var(--white); color: var(--ink-muted); border: 1px solid var(--border); }
   .planner-btn.secondary:hover { background: var(--cream-dark); color: var(--ink); }
   .planner-btn svg { width: 15px; height: 15px; fill: currentColor; }
+  .pantry-group { margin-bottom: 2.25rem; }
+  .pantry-list { background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--r-lg); overflow: hidden; }
+  .pantry-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 1.2rem; border-top: 1px solid var(--border-soft); }
+  .pantry-row:first-child { border-top: none; }
+  .pantry-name { font-size: 14px; color: var(--ink); }
+  .pantry-meta { font-size: 12px; color: var(--ink-muted); font-weight: 300; text-align: right; white-space: nowrap; }
+  .pantry-gone-label { font-size: 12px; color: var(--ink-faint); margin: 14px 0 8px 2px; }
+  .pantry-gone { font-size: 13px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; padding: 0 2px; }
+  .pantry-rack { font-size: 13px; color: var(--ink-muted); font-weight: 300; line-height: 1.7; padding: 12px 1.2rem; border-top: 1px solid var(--border-soft); }
+  .pantry-rack b { font-weight: 500; color: var(--ink-soft); }
+  @media (max-width: 520px) { .pantry-row { flex-direction: column; gap: 2px; } .pantry-meta { text-align: left; white-space: normal; } }
   .planner-empty { text-align: center; padding: 3rem 1rem; color: var(--ink-faint); font-size: 14px; font-weight: 300; }
   .week-group { margin-bottom: 2rem; }
   .week-group-label { font-size: 11px; font-weight: 500; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
@@ -284,8 +295,9 @@
   <div class="planner">
     <div class="planner-intro">
       <div class="planner-headline">Pantry</div>
-      <div class="planner-sub">Coming soon &mdash; what&rsquo;s on hand, learned from our Instacart orders.</div>
+      <div class="planner-sub" id="pantry-sub">What&rsquo;s on hand, learned from our Instacart orders.</div>
     </div>
+    <div id="pantry-output"></div>
   </div>
 </div>
 <footer class="site-footer">The Sovak Kitchen &mdash; updated October 2026 &middot; <button class="update-link" id="update-link" onclick="checkForUpdate(true)">Check for updates</button></footer>
@@ -659,13 +671,85 @@ function planCard(r) {
   </div>`;
 }
  
+// ===== PANTRY =====
+let pantry = null;
+let pantryText = '';
+const DAY = 86400000;
+const dayOf = iso => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d); };
+const today = () => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };
+const shortDate = iso => dayOf(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+function fmtAmount(a) {
+  if (!a) return '';
+  if (a.count != null) return a.count + ' ct';
+  if (a.g != null) return a.g >= 1000 ? (a.g / 1000).toFixed(1).replace(/\.0$/, '') + ' kg' : a.g + ' g';
+  if (a.ml != null) return a.ml >= 1000 ? (a.ml / 1000).toFixed(1).replace(/\.0$/, '') + ' L' : a.ml + ' ml';
+  return '';
+}
+function fmtCadence(days) {
+  if (days < 10) return `every ~${days} days`;
+  const w = Math.round(days / 7 * 2) / 2;
+  return `every ~${String(w).replace('.5', '½')} wks`;
+}
+// On hand: not used up by a cooked batch, and still within its life (learned interval
+// between orders when we have one, otherwise the catalog default).
+function pantryOnHand(e) {
+  if (e.assumed) return true;
+  if (e.used_up) return false;
+  const life = e.cadence_days || e.lasts_days;
+  return (today() - dayOf(e.last_bought)) / DAY < life;
+}
+
+function renderPantry() {
+  const out = document.getElementById('pantry-output');
+  if (!pantry) { out.innerHTML = '<div class="planner-empty">Couldn’t load the pantry &mdash; try refreshing.</div>'; return; }
+  if (pantry.updated) document.getElementById('pantry-sub').innerHTML =
+    `What&rsquo;s on hand, learned from our Instacart orders. Last order ${shortDate(pantry.updated)}.`;
+  const groups = [
+    { tier: 'staple', label: 'Everyday staples' },
+    { tier: 'recipe', label: 'For recipes' },
+    { tier: 'long', label: 'Long-lived' },
+  ];
+  out.innerHTML = groups.map(g => {
+    const all = pantry.items.filter(e => e.tier === g.tier);
+    const bought = all.filter(e => !e.assumed);
+    const have = bought.filter(pantryOnHand);
+    const gone = bought.filter(e => !pantryOnHand(e));
+    const rack = all.filter(e => e.assumed);
+    const rows = have.map(e => {
+      const last = e.purchases[e.purchases.length - 1];
+      const meta = [fmtAmount(e.on_hand || last.amount), 'bought ' + shortDate(e.last_bought)];
+      if (e.cadence_days) meta.push(fmtCadence(e.cadence_days));
+      return `<div class="pantry-row"><span class="pantry-name">${e.name}</span><span class="pantry-meta">${meta.join(' &middot; ')}</span></div>`;
+    }).join('');
+    const rackHtml = rack.length ? `<div class="pantry-rack"><b>Spice rack &amp; oils</b> &mdash; ${rack.map(e => e.name).join(', ')}</div>` : '';
+    const list = rows || rackHtml ? `<div class="pantry-list">${rows}${rackHtml}</div>` : '';
+    const goneHtml = gone.length ? `<div class="pantry-gone-label">Probably used up</div><div class="pantry-gone">${gone.map(e => e.name).join(', ')}</div>` : '';
+    return `<section class="pantry-group">
+      <div class="week-group-label">${g.label}<span class="line"></span></div>
+      ${list}${goneHtml}
+    </section>`;
+  }).join('');
+}
+
+async function loadPantry() {
+  try {
+    const res = await fetchData('pantry.json', false);
+    if (!res.ok) throw new Error(res.status);
+    pantryText = await res.text();
+    pantry = JSON.parse(pantryText);
+  } catch (e) { pantry = null; }
+  renderPantry();
+}
+
 // ===== UPDATE CHECK =====
 // Compares this page's own code against a fresh copy from the server, bypassing the cache.
 function pageSignature(doc) {
   return [...doc.querySelectorAll('style, script:not([src])')].map(n => n.textContent.trim()).join('\n');
 }
 const currentSignature = pageSignature(document);
-const fetchRecipes = bust => fetch('recipes.json' + (bust ? '?check=' + Date.now() : ''), { cache: bust ? 'no-store' : 'no-cache' });
+const fetchData = (file, bust) => fetch(file + (bust ? '?check=' + Date.now() : ''), { cache: bust ? 'no-store' : 'no-cache' });
+const fetchRecipes = bust => fetchData('recipes.json', bust);
 let lastUpdateCheck = 0;
 async function checkForUpdate(manual) {
   const link = document.getElementById('update-link');
@@ -678,7 +762,11 @@ async function checkForUpdate(manual) {
     const fresh = new DOMParser().parseFromString(await res.text(), 'text/html');
     const freshData = await fetchRecipes(true);
     if (!freshData.ok) throw new Error(freshData.status);
-    const dataChanged = recipesText && (await freshData.text()) !== recipesText;
+    let dataChanged = recipesText && (await freshData.text()) !== recipesText;
+    if (pantryText) {
+      const freshPantry = await fetchData('pantry.json', true);
+      if (freshPantry.ok && (await freshPantry.text()) !== pantryText) dataChanged = true;
+    }
     if (pageSignature(fresh) !== currentSignature || dataChanged) {
       document.getElementById('update-banner').classList.add('show');
       if (manual) link.textContent = 'Update available';
@@ -710,6 +798,7 @@ async function loadRecipes() {
   render();
 }
 loadRecipes();
+loadPantry();
 </script>
 </body>
 </html>
