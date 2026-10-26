@@ -36,7 +36,7 @@ CATALOG = [
     ("chobani-drinks", "Chobani protein drinks", "staple", 14, r"chobani.*protein drink"),
     ("nurri-shakes", "Nurri protein shakes", "staple", 15, r"nurri"),
     ("egg-whites", "Liquid egg whites", "staple", 21, r"egg whites"),
-    ("eggs", "Eggs", "staple", 14, r"\beggs?\b.*(large|count|ct)|large eggs"),
+    ("eggs", "Eggs", "staple", 14, r"\beggs?\b(?! (whites|noodles))"),
     ("oat-milk", "Oat milk", "staple", 21, r"oat (beverage|milk)"),
     ("blueberries", "Frozen blueberries", "staple", 35, r"blueberr"),
     ("salsa", "Salsa", "staple", 21, r"salsa"),
@@ -50,7 +50,7 @@ CATALOG = [
     ("ground-turkey", "Ground turkey", "recipe", 5, r"ground turkey"),
     ("chicken-thighs", "Chicken thighs", "recipe", 5, r"chicken thigh"),
     ("rotisserie-chicken", "Rotisserie chicken", "recipe", 4, r"rotisserie"),
-    ("greek-yogurt", "Greek yogurt (tub)", "recipe", 14, r"greek yogurt(?!.*drink)"),
+    ("greek-yogurt", "Greek yogurt (tub)", "recipe", 14, r"\byogurt\b(?!.*drink)"),
     ("tortillas", "Tortillas", "recipe", 21, r"tortilla|wraps"),
     ("chicken-broth", "Chicken broth", "recipe", 365, r"chicken broth"),
     ("egg-noodles", "Egg noodles", "recipe", 365, r"egg noodles"),
@@ -59,12 +59,27 @@ CATALOG = [
     ("oranges", "Oranges", "recipe", 10, r"\borange\b(?!.*pepper)"),
     ("carrots", "Carrots", "recipe", 21, r"carrot"),
     ("bell-pepper", "Bell pepper", "recipe", 7, r"bell pepper"),
-    ("onions", "Onions", "recipe", 30, r"^onion|yellow onion|white onion|red onion"),
+    ("onions", "Onions", "recipe", 30, r"^(medium |large )?onions?\b(?! powder)|(yellow|white|red|medium) onion"),
     ("green-onions", "Green onions", "recipe", 7, r"green onion|scallion"),
     ("dill", "Fresh dill", "recipe", 7, r"^(fresh )?dill\b(?! pickle)"),
     ("peas", "Frozen peas", "recipe", 90, r"green peas|\bpeas\b"),
     ("pickles", "Dill pickles", "recipe", 60, r"pickle"),
     ("milk", "Milk", "recipe", 7, r"whole milk|\bmilk\b(?!.*oat)"),
+    # not bought yet; these just give recipe lines one name on the grocery list
+    ("feta", "Feta", "recipe", 21, r"feta"),
+    ("mozzarella", "Shredded mozzarella", "recipe", 21, r"mozzarella(?! blend)"),
+    ("cheddar", "Shredded cheddar", "recipe", 21, r"cheddar"),
+    ("parmesan", "Parmesan", "recipe", 30, r"parmesan"),
+    ("cream-cheese", "Cream cheese", "recipe", 21, r"cream cheese"),
+    ("butter", "Light butter", "recipe", 30, r"butter"),
+    ("lemons", "Lemons", "recipe", 14, r"^(fresh )?lemons?\b|lemon (juice|zest)"),
+    ("limes", "Limes", "recipe", 14, r"^limes?\b|lime (juice|wedges)"),
+    ("cilantro", "Cilantro", "recipe", 7, r"cilantro|coriander"),
+    ("parsley", "Fresh parsley", "recipe", 7, r"^(fresh )?parsley"),
+    ("ginger", "Ginger paste", "long", 60, r"ginger.*paste|minced ginger|fresh ginger"),
+    ("celery", "Celery", "recipe", 14, r"celery"),
+    ("light-mayo", "Light mayo", "long", 60, r"mayo"),
+    ("sesame-seeds", "Sesame seeds", "long", 180, r"sesame seeds"),
     # --- long-lived ---
     ("chicken-breast-frozen", "Frozen chicken breast", "long", 90, r"chicken breast"),
     ("bibigo-rice", "Bibigo rice bowls", "long", 120, r"bibigo"),
@@ -74,18 +89,31 @@ CATALOG = [
     ("tomato-paste", "Tomato paste", "long", 60, r"tomato paste"),
     ("honey", "Honey", "long", 365, r"honey"),
     ("chocolate-chips", "Chocolate chips", "long", 180, r"chocolate.*chips|baking chips"),
-    ("ginger-paste", "Ginger paste", "long", 60, r"ginger.*paste"),
 ]
 
 # Long-lived items assumed on hand without a receipt (spice rack, oils, sauces).
+# key, display name, regex used to recognise it in recipe ingredient lines
 ASSUMED = [
-    ("salt", "Salt"), ("black-pepper", "Black pepper"), ("garlic-powder", "Garlic powder"),
-    ("onion-powder", "Onion powder"), ("smoked-paprika", "Smoked paprika"), ("cumin", "Cumin"),
-    ("oregano", "Dried oregano"), ("chili-powder", "Chili powder"), ("taco-seasoning", "Taco seasoning"),
-    ("red-pepper-flakes", "Red pepper flakes"), ("cinnamon", "Cinnamon"),
-    ("cooking-spray", "Cooking spray"), ("olive-oil", "Olive oil"), ("sesame-oil", "Sesame oil"),
-    ("rice-vinegar", "Rice vinegar"), ("sriracha", "Sriracha"), ("gochujang", "Gochujang"),
-    ("minced-garlic", "Minced garlic"), ("worcestershire", "Worcestershire sauce"),
+    ("salt", "Salt", r"\bsalt\b"),
+    ("black-pepper", "Black pepper", r"black pepper|^pepper\b"),
+    ("garlic-powder", "Garlic powder", r"garlic powder"),
+    ("onion-powder", "Onion powder", r"onion powder|dried minced onion"),
+    ("smoked-paprika", "Paprika", r"paprika"),
+    ("cumin", "Cumin", r"cumin"),
+    ("oregano", "Dried oregano", r"oregano"),
+    ("dried-herbs", "Dried herbs", r"italian seasoning|mixed herbs|dried (thyme|basil|parsley)|bay leaf"),
+    ("chili-powder", "Chili powder", r"chil+i powder"),
+    ("taco-seasoning", "Taco seasoning", r"taco seasoning"),
+    ("red-pepper-flakes", "Red pepper flakes", r"red pepper flakes|chil+i flakes"),
+    ("cinnamon", "Cinnamon", r"cinnamon"),
+    ("cooking-spray", "Cooking spray", r"cooking spray"),
+    ("olive-oil", "Olive oil", r"olive oil"),
+    ("sesame-oil", "Sesame oil", r"sesame oil"),
+    ("rice-vinegar", "Rice vinegar", r"rice vinegar"),
+    ("sriracha", "Sriracha", r"sriracha"),
+    ("gochujang", "Gochujang", r"gochujang"),
+    ("minced-garlic", "Garlic", r"^(minced )?garlic\b(?! powder)|garlic cloves?|cloves? garlic|^fresh garlic"),
+    ("worcestershire", "Worcestershire sauce", r"worcestershire"),
 ]
 
 
@@ -218,7 +246,7 @@ def main():
             if "used_in" in e:
                 e["used_in"] = sorted(set(e["used_in"]))
 
-    for key, disp in ASSUMED:
+    for key, disp, _ in ASSUMED:
         items.setdefault(key, {"key": key, "name": disp, "tier": "long", "assumed": True})
 
     order = {"staple": 0, "recipe": 1, "long": 2}
@@ -226,6 +254,9 @@ def main():
         "updated": max((json.loads(p.read_text())["date"] for p in receipts), default=None),
         "receipts": [p.name for p in receipts],
         "batches": batches,
+        # The page matches recipe ingredients with these, in order (first hit wins).
+        "rules": [{"key": k, "name": n, "tier": t, "match": rx} for k, n, t, _, rx in CATALOG]
+                 + [{"key": k, "name": n, "tier": "long", "match": rx} for k, n, rx in ASSUMED],
         "items": sorted(items.values(), key=lambda e: (order[e["tier"]], e["name"].lower())),
     }
     (ROOT / "pantry.json").write_text(json.dumps(out, indent=1) + "\n")

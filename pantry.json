@@ -32,6 +32,458 @@
    "cooked": "2026-10-09"
   }
  ],
+ "rules": [
+  {
+   "key": "sparkling-water",
+   "name": "Sparkling water",
+   "tier": "staple",
+   "match": "sparkling water"
+  },
+  {
+   "key": "cottage-cheese",
+   "name": "Cottage cheese",
+   "tier": "staple",
+   "match": "cottage cheese"
+  },
+  {
+   "key": "chobani-drinks",
+   "name": "Chobani protein drinks",
+   "tier": "staple",
+   "match": "chobani.*protein drink"
+  },
+  {
+   "key": "nurri-shakes",
+   "name": "Nurri protein shakes",
+   "tier": "staple",
+   "match": "nurri"
+  },
+  {
+   "key": "egg-whites",
+   "name": "Liquid egg whites",
+   "tier": "staple",
+   "match": "egg whites"
+  },
+  {
+   "key": "eggs",
+   "name": "Eggs",
+   "tier": "staple",
+   "match": "\\beggs?\\b(?! (whites|noodles))"
+  },
+  {
+   "key": "oat-milk",
+   "name": "Oat milk",
+   "tier": "staple",
+   "match": "oat (beverage|milk)"
+  },
+  {
+   "key": "blueberries",
+   "name": "Frozen blueberries",
+   "tier": "staple",
+   "match": "blueberr"
+  },
+  {
+   "key": "salsa",
+   "name": "Salsa",
+   "tier": "staple",
+   "match": "salsa"
+  },
+  {
+   "key": "beef-sticks",
+   "name": "Beef sticks",
+   "tier": "staple",
+   "match": "beef sticks?"
+  },
+  {
+   "key": "clif-bars",
+   "name": "Clif bars",
+   "tier": "staple",
+   "match": "clif bar"
+  },
+  {
+   "key": "rice-cake-bites",
+   "name": "Rice cake bites",
+   "tier": "staple",
+   "match": "rice cake"
+  },
+  {
+   "key": "cool-whip",
+   "name": "Cool Whip",
+   "tier": "staple",
+   "match": "cool whip|whipped topping"
+  },
+  {
+   "key": "green-beans",
+   "name": "Frozen green beans",
+   "tier": "staple",
+   "match": "green beans"
+  },
+  {
+   "key": "ground-beef",
+   "name": "Ground beef",
+   "tier": "recipe",
+   "match": "ground beef"
+  },
+  {
+   "key": "ground-turkey",
+   "name": "Ground turkey",
+   "tier": "recipe",
+   "match": "ground turkey"
+  },
+  {
+   "key": "chicken-thighs",
+   "name": "Chicken thighs",
+   "tier": "recipe",
+   "match": "chicken thigh"
+  },
+  {
+   "key": "rotisserie-chicken",
+   "name": "Rotisserie chicken",
+   "tier": "recipe",
+   "match": "rotisserie"
+  },
+  {
+   "key": "greek-yogurt",
+   "name": "Greek yogurt (tub)",
+   "tier": "recipe",
+   "match": "\\byogurt\\b(?!.*drink)"
+  },
+  {
+   "key": "tortillas",
+   "name": "Tortillas",
+   "tier": "recipe",
+   "match": "tortilla|wraps"
+  },
+  {
+   "key": "chicken-broth",
+   "name": "Chicken broth",
+   "tier": "recipe",
+   "match": "chicken broth"
+  },
+  {
+   "key": "egg-noodles",
+   "name": "Egg noodles",
+   "tier": "recipe",
+   "match": "egg noodles"
+  },
+  {
+   "key": "cabbage",
+   "name": "Cabbage",
+   "tier": "recipe",
+   "match": "cabbage"
+  },
+  {
+   "key": "cucumbers",
+   "name": "Cucumbers",
+   "tier": "recipe",
+   "match": "cucumber"
+  },
+  {
+   "key": "oranges",
+   "name": "Oranges",
+   "tier": "recipe",
+   "match": "\\borange\\b(?!.*pepper)"
+  },
+  {
+   "key": "carrots",
+   "name": "Carrots",
+   "tier": "recipe",
+   "match": "carrot"
+  },
+  {
+   "key": "bell-pepper",
+   "name": "Bell pepper",
+   "tier": "recipe",
+   "match": "bell pepper"
+  },
+  {
+   "key": "onions",
+   "name": "Onions",
+   "tier": "recipe",
+   "match": "^(medium |large )?onions?\\b(?! powder)|(yellow|white|red|medium) onion"
+  },
+  {
+   "key": "green-onions",
+   "name": "Green onions",
+   "tier": "recipe",
+   "match": "green onion|scallion"
+  },
+  {
+   "key": "dill",
+   "name": "Fresh dill",
+   "tier": "recipe",
+   "match": "^(fresh )?dill\\b(?! pickle)"
+  },
+  {
+   "key": "peas",
+   "name": "Frozen peas",
+   "tier": "recipe",
+   "match": "green peas|\\bpeas\\b"
+  },
+  {
+   "key": "pickles",
+   "name": "Dill pickles",
+   "tier": "recipe",
+   "match": "pickle"
+  },
+  {
+   "key": "milk",
+   "name": "Milk",
+   "tier": "recipe",
+   "match": "whole milk|\\bmilk\\b(?!.*oat)"
+  },
+  {
+   "key": "feta",
+   "name": "Feta",
+   "tier": "recipe",
+   "match": "feta"
+  },
+  {
+   "key": "mozzarella",
+   "name": "Shredded mozzarella",
+   "tier": "recipe",
+   "match": "mozzarella(?! blend)"
+  },
+  {
+   "key": "cheddar",
+   "name": "Shredded cheddar",
+   "tier": "recipe",
+   "match": "cheddar"
+  },
+  {
+   "key": "parmesan",
+   "name": "Parmesan",
+   "tier": "recipe",
+   "match": "parmesan"
+  },
+  {
+   "key": "cream-cheese",
+   "name": "Cream cheese",
+   "tier": "recipe",
+   "match": "cream cheese"
+  },
+  {
+   "key": "butter",
+   "name": "Light butter",
+   "tier": "recipe",
+   "match": "butter"
+  },
+  {
+   "key": "lemons",
+   "name": "Lemons",
+   "tier": "recipe",
+   "match": "^(fresh )?lemons?\\b|lemon (juice|zest)"
+  },
+  {
+   "key": "limes",
+   "name": "Limes",
+   "tier": "recipe",
+   "match": "^limes?\\b|lime (juice|wedges)"
+  },
+  {
+   "key": "cilantro",
+   "name": "Cilantro",
+   "tier": "recipe",
+   "match": "cilantro|coriander"
+  },
+  {
+   "key": "parsley",
+   "name": "Fresh parsley",
+   "tier": "recipe",
+   "match": "^(fresh )?parsley"
+  },
+  {
+   "key": "ginger",
+   "name": "Ginger paste",
+   "tier": "long",
+   "match": "ginger.*paste|minced ginger|fresh ginger"
+  },
+  {
+   "key": "celery",
+   "name": "Celery",
+   "tier": "recipe",
+   "match": "celery"
+  },
+  {
+   "key": "light-mayo",
+   "name": "Light mayo",
+   "tier": "long",
+   "match": "mayo"
+  },
+  {
+   "key": "sesame-seeds",
+   "name": "Sesame seeds",
+   "tier": "long",
+   "match": "sesame seeds"
+  },
+  {
+   "key": "chicken-breast-frozen",
+   "name": "Frozen chicken breast",
+   "tier": "long",
+   "match": "chicken breast"
+  },
+  {
+   "key": "bibigo-rice",
+   "name": "Bibigo rice bowls",
+   "tier": "long",
+   "match": "bibigo"
+  },
+  {
+   "key": "coffee",
+   "name": "Coffee beans",
+   "tier": "long",
+   "match": "coffee"
+  },
+  {
+   "key": "soy-sauce",
+   "name": "Soy sauce",
+   "tier": "long",
+   "match": "soy sauce"
+  },
+  {
+   "key": "sweet-chili",
+   "name": "Sweet chili sauce",
+   "tier": "long",
+   "match": "sweet chil+i"
+  },
+  {
+   "key": "tomato-paste",
+   "name": "Tomato paste",
+   "tier": "long",
+   "match": "tomato paste"
+  },
+  {
+   "key": "honey",
+   "name": "Honey",
+   "tier": "long",
+   "match": "honey"
+  },
+  {
+   "key": "chocolate-chips",
+   "name": "Chocolate chips",
+   "tier": "long",
+   "match": "chocolate.*chips|baking chips"
+  },
+  {
+   "key": "salt",
+   "name": "Salt",
+   "tier": "long",
+   "match": "\\bsalt\\b"
+  },
+  {
+   "key": "black-pepper",
+   "name": "Black pepper",
+   "tier": "long",
+   "match": "black pepper|^pepper\\b"
+  },
+  {
+   "key": "garlic-powder",
+   "name": "Garlic powder",
+   "tier": "long",
+   "match": "garlic powder"
+  },
+  {
+   "key": "onion-powder",
+   "name": "Onion powder",
+   "tier": "long",
+   "match": "onion powder|dried minced onion"
+  },
+  {
+   "key": "smoked-paprika",
+   "name": "Paprika",
+   "tier": "long",
+   "match": "paprika"
+  },
+  {
+   "key": "cumin",
+   "name": "Cumin",
+   "tier": "long",
+   "match": "cumin"
+  },
+  {
+   "key": "oregano",
+   "name": "Dried oregano",
+   "tier": "long",
+   "match": "oregano"
+  },
+  {
+   "key": "dried-herbs",
+   "name": "Dried herbs",
+   "tier": "long",
+   "match": "italian seasoning|mixed herbs|dried (thyme|basil|parsley)|bay leaf"
+  },
+  {
+   "key": "chili-powder",
+   "name": "Chili powder",
+   "tier": "long",
+   "match": "chil+i powder"
+  },
+  {
+   "key": "taco-seasoning",
+   "name": "Taco seasoning",
+   "tier": "long",
+   "match": "taco seasoning"
+  },
+  {
+   "key": "red-pepper-flakes",
+   "name": "Red pepper flakes",
+   "tier": "long",
+   "match": "red pepper flakes|chil+i flakes"
+  },
+  {
+   "key": "cinnamon",
+   "name": "Cinnamon",
+   "tier": "long",
+   "match": "cinnamon"
+  },
+  {
+   "key": "cooking-spray",
+   "name": "Cooking spray",
+   "tier": "long",
+   "match": "cooking spray"
+  },
+  {
+   "key": "olive-oil",
+   "name": "Olive oil",
+   "tier": "long",
+   "match": "olive oil"
+  },
+  {
+   "key": "sesame-oil",
+   "name": "Sesame oil",
+   "tier": "long",
+   "match": "sesame oil"
+  },
+  {
+   "key": "rice-vinegar",
+   "name": "Rice vinegar",
+   "tier": "long",
+   "match": "rice vinegar"
+  },
+  {
+   "key": "sriracha",
+   "name": "Sriracha",
+   "tier": "long",
+   "match": "sriracha"
+  },
+  {
+   "key": "gochujang",
+   "name": "Gochujang",
+   "tier": "long",
+   "match": "gochujang"
+  },
+  {
+   "key": "minced-garlic",
+   "name": "Garlic",
+   "tier": "long",
+   "match": "^(minced )?garlic\\b(?! powder)|garlic cloves?|cloves? garlic|^fresh garlic"
+  },
+  {
+   "key": "worcestershire",
+   "name": "Worcestershire sauce",
+   "tier": "long",
+   "match": "worcestershire"
+  }
+ ],
  "items": [
   {
    "key": "beef-sticks",
@@ -821,6 +1273,12 @@
    "assumed": true
   },
   {
+   "key": "dried-herbs",
+   "name": "Dried herbs",
+   "tier": "long",
+   "assumed": true
+  },
+  {
    "key": "oregano",
    "name": "Dried oregano",
    "tier": "long",
@@ -845,6 +1303,12 @@
    "on_hand": {
     "g": 2268
    }
+  },
+  {
+   "key": "minced-garlic",
+   "name": "Garlic",
+   "tier": "long",
+   "assumed": true
   },
   {
    "key": "garlic-powder",
@@ -883,12 +1347,6 @@
    }
   },
   {
-   "key": "minced-garlic",
-   "name": "Minced garlic",
-   "tier": "long",
-   "assumed": true
-  },
-  {
    "key": "olive-oil",
    "name": "Olive oil",
    "tier": "long",
@@ -897,6 +1355,12 @@
   {
    "key": "onion-powder",
    "name": "Onion powder",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "smoked-paprika",
+   "name": "Paprika",
    "tier": "long",
    "assumed": true
   },
@@ -921,12 +1385,6 @@
   {
    "key": "sesame-oil",
    "name": "Sesame oil",
-   "tier": "long",
-   "assumed": true
-  },
-  {
-   "key": "smoked-paprika",
-   "name": "Smoked paprika",
    "tier": "long",
    "assumed": true
   },
