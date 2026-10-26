@@ -26,6 +26,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LOG_URL = "https://raw.githubusercontent.com/snowydock/sovak-fitness/main/log/{}.json"
 BATCH_GAP_DAYS = 7
+# Dinners cut from 10 servings (15 tacos) to 6 (9 tacos) on 2026-10-25: batches cooked
+# before then used the bigger batch, so deduct them at the old size.
+RESIZED = {"date": "2026-10-25", "factor": 10 / 6, "recipe_ids": {2, 3, 4, 6, 7, 27}}
 USED_UP_SHARE = 0.15   # under this share of the last purchase left = used up
 
 # Every known ingredient lives in products.json: tier, typical lifespan, the regex
@@ -100,6 +103,8 @@ def remaining_after(e, batches, recipes_by_id):
             if not isinstance(line, str):
                 continue
             rest, amt = parse_ingredient(line)
+            if amt and b["recipe_id"] in RESIZED["recipe_ids"] and b["cooked"] < RESIZED["date"]:
+                amt = {u: v * RESIZED["factor"] for u, v in amt.items()}
             m = match(rest)
             if not m or m[0] != e["key"]:
                 continue

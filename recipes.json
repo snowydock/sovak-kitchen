@@ -52,21 +52,21 @@
       "protein": "30g",
       "carbs": "24g",
       "fat": "10g",
-      "servings": "10 servings",
+      "servings": "6 servings",
       "ingredients": [
-        "26g olive oil",
-        "120g carrots",
-        "150g onion",
-        "6g garlic",
-        "140g orzo",
-        "600g chicken breast (shredded)",
-        "300g chicken thigh (shredded)",
-        "1440g chicken broth",
-        "210g frozen peas",
-        "4g fresh dill",
-        "30g lemon juice",
-        "245g Greek yogurt",
-        "240g liquid egg whites"
+        "15g olive oil",
+        "70g carrots",
+        "90g onion",
+        "4g garlic",
+        "85g orzo",
+        "360g chicken breast (shredded)",
+        "180g chicken thigh (shredded)",
+        "865g chicken broth",
+        "125g frozen peas",
+        "3g fresh dill",
+        "20g lemon juice",
+        "150g Greek yogurt",
+        "150g liquid egg whites"
       ],
       "steps": [
         {
@@ -112,19 +112,19 @@
       "protein": "23g",
       "carbs": "20g",
       "fat": "9g",
-      "servings": "10 servings",
+      "servings": "6 servings",
       "ingredients": [
-        "960g cannellini beans (drained)",
-        "600g cream of chicken soup",
-        "480g ground turkey breast (cooked)",
-        "630g milk",
-        "226g chopped green chiles",
-        "4g fresh cilantro",
-        "10g dried minced onion",
-        "6g garlic powder",
-        "4g cumin",
-        "2g dried oregano",
-        "180g nonfat Greek yogurt"
+        "575g cannellini beans (drained)",
+        "360g cream of chicken soup",
+        "290g ground turkey breast (cooked)",
+        "380g milk",
+        "135g chopped green chiles",
+        "3g fresh cilantro",
+        "6g dried minced onion",
+        "4g garlic powder",
+        "2g cumin",
+        "1g dried oregano",
+        "110g nonfat Greek yogurt"
       ],
       "steps": [
         {
@@ -162,19 +162,19 @@
       "protein": "21g",
       "carbs": "9g",
       "fat": "15g",
-      "servings": "10 servings",
+      "servings": "6 servings",
       "ingredients": [
-        "608g 85/15 ground beef",
-        "250g red bell pepper",
-        "180g shredded carrots",
-        "350g green cabbage",
-        "30g green onions",
-        "14g sesame oil",
-        "60g low-sodium soy sauce",
-        "15g rice vinegar",
-        "15g sriracha (optional)",
-        "6g garlic powder",
-        "2g ground ginger"
+        "365g 85/15 ground beef",
+        "150g red bell pepper",
+        "110g shredded carrots",
+        "210g green cabbage",
+        "20g green onions",
+        "8g sesame oil",
+        "35g low-sodium soy sauce",
+        "10g rice vinegar",
+        "10g sriracha (optional)",
+        "4g garlic powder",
+        "1g ground ginger"
       ],
       "steps": [
         {
@@ -216,24 +216,24 @@
       "protein": "26g",
       "carbs": "22g",
       "fat": "13g",
-      "servings": "15 tacos",
+      "servings": "9 tacos",
       "ingredients": [
-        "1440g 85/15 ground beef",
-        "240g tomato paste",
-        "300g white onion (sliced)",
-        "300g bell pepper (sliced)",
-        "300g plain yogurt",
-        "120g light mayo",
-        "100g Cholula chilli lime hot sauce",
-        "50g honey",
-        "480g shredded mozzarella (32g per taco)",
-        "15 Mission low carb mini wraps",
+        "865g 85/15 ground beef",
+        "145g tomato paste",
+        "180g white onion (sliced)",
+        "180g bell pepper (sliced)",
+        "180g plain yogurt",
+        "70g light mayo",
+        "60g Cholula chilli lime hot sauce",
+        "30g honey",
+        "288g shredded mozzarella (32g per taco)",
+        "9 Mission low carb mini wraps",
         "Avocado cooking spray",
-        "Spices: 2 tsp salt, 3 tsp smoked paprika, 3 tsp oregano, 3 tsp garlic powder, 2 tsp onion powder, 2 tsp cumin"
+        "Spices: 1.2 tsp salt, 1.8 tsp smoked paprika, 1.8 tsp oregano, 1.8 tsp garlic powder, 1.2 tsp onion powder, 1.2 tsp cumin"
       ],
       "steps": [
         {
-          "text": "Make the sauce: whisk together yogurt, light mayo, Cholula, honey, 1 tsp smoked paprika, 1 tsp onion powder, and 1 tbsp fresh parsley in a bowl. Cover and set aside in the fridge.",
+          "text": "Make the sauce: whisk together yogurt, light mayo, Cholula, honey, 0.6 tsp smoked paprika, 0.6 tsp onion powder, and 2 tsp fresh parsley in a bowl. Cover and set aside in the fridge.",
           "timer": null
         },
         {
@@ -265,11 +265,11 @@
           "timer": null
         },
         {
-          "text": "Arrange the 3 tacos on a lined baking sheet. Bake at 370°F for 12 minutes, flipping halfway, until golden and crispy. Repeat this assembly step fresh each day rather than baking all 15 at once.",
+          "text": "Arrange the 3 tacos on a lined baking sheet. Bake at 370°F for 12 minutes, flipping halfway, until golden and crispy. Repeat this assembly step fresh each day rather than baking all 9 at once.",
           "timer": 720
         }
       ],
-      "notes": "TWO-PHASE METHOD (the whole trick): Make the beef-and-veg mixture as one big batch on prep day, then assemble and bake tacos fresh in batches of 3 (2 for Mike, 1 for Ali) on the day you eat them. Batch-baking all 15 tacos up front is onerous and they lose their crispness — this splits the work across days and gives far better results for less upfront effort. The beef mixture and its pan juices keep in the fridge; the wraps and cheese stay separate until assembly. MACRO NOTE: 85/15 beef vs the original 95/5 adds ~3–4g fat and ~30–35 cal per taco."
+      "notes": "TWO-PHASE METHOD (the whole trick): Make the beef-and-veg mixture as one big batch on prep day, then assemble and bake tacos fresh in batches of 3 (2 for Mike, 1 for Ali) on the day you eat them. Batch-baking all 9 tacos up front is onerous and they lose their crispness — this splits the work across days and gives far better results for less upfront effort. The beef mixture and its pan juices keep in the fridge; the wraps and cheese stay separate until assembly. MACRO NOTE: 85/15 beef vs the original 95/5 adds ~3–4g fat and ~30–35 cal per taco."
     },
     {
       "id": 7,
@@ -283,38 +283,38 @@
       "protein": "37g",
       "carbs": "18g",
       "fat": "14g",
-      "servings": "10 servings",
+      "servings": "6 servings",
       "ingredients": [
-        "1588g boneless skinless chicken thighs",
-        "3 tbsp olive oil",
-        "3 tbsp fresh lemon juice",
-        "1 tsp lemon zest",
-        "5 garlic cloves (minced)",
-        "2 tsp dried oregano",
-        "1 tsp dried thyme",
-        "1 tsp smoked paprika",
-        "1.5 tsp kosher salt",
-        "0.75 tsp black pepper",
-        "0.25 tsp red pepper flakes (optional)",
-        "3 English cucumbers (diced)",
-        "3 cups cherry tomatoes (halved)",
-        "0.5 red onion (finely diced)",
-        "0.25 cup fresh parsley (chopped)",
-        "2 tbsp olive oil (salad)",
-        "2 tbsp red wine vinegar",
-        "1 tsp dried oregano (salad)",
-        "0.75 tsp kosher salt (salad)",
-        "0.5 tsp black pepper (salad)",
-        "280g feta cheese (crumbled)",
-        "10 mini pitas (~28g each)"
+        "950g boneless skinless chicken thighs",
+        "2 tbsp olive oil",
+        "2 tbsp fresh lemon juice",
+        "0.5 tsp lemon zest",
+        "3 garlic cloves (minced)",
+        "1.2 tsp dried oregano",
+        "0.6 tsp dried thyme",
+        "0.6 tsp smoked paprika",
+        "0.9 tsp kosher salt",
+        "0.5 tsp black pepper",
+        "Pinch red pepper flakes (optional)",
+        "2 English cucumbers (diced)",
+        "2 cups cherry tomatoes (halved)",
+        "45g red onion (finely diced)",
+        "2.5 tbsp fresh parsley (chopped)",
+        "1 tbsp olive oil (salad)",
+        "1 tbsp red wine vinegar",
+        "0.6 tsp dried oregano (salad)",
+        "0.5 tsp kosher salt (salad)",
+        "0.3 tsp black pepper (salad)",
+        "170g feta cheese (crumbled)",
+        "6 mini pitas (~28g each)"
       ],
       "steps": [
         {
-          "text": "PREP DAY: whisk the olive oil, lemon juice, lemon zest, garlic, oregano, thyme, smoked paprika, salt, pepper, and red pepper flakes, then toss with the chicken thighs. Divide into 4 portions of ~400g each.",
+          "text": "PREP DAY: whisk the olive oil, lemon juice, lemon zest, garlic, oregano, thyme, smoked paprika, salt, pepper, and red pepper flakes, then toss with the chicken thighs. Divide into 3 portions of ~315g each.",
           "timer": null
         },
         {
-          "text": "Refrigerate 2 portions (days 1 to 2) and freeze the rest flat (thaw overnight before use).",
+          "text": "Refrigerate 2 portions (days 1 to 2) and freeze the third flat (thaw overnight before use).",
           "timer": null
         },
         {
@@ -1447,19 +1447,19 @@
       "protein": "30g",
       "carbs": "8g",
       "fat": "6g",
-      "servings": "10 servings (~190g each)",
+      "servings": "6 servings (~190g each)",
       "ingredients": [
-        "950g shredded rotisserie chicken breast (from 2 chickens)",
-        "250g nonfat Greek yogurt",
-        "120g light mayonnaise",
-        "120g dill pickles, finely diced",
-        "150g celery, finely diced",
-        "200g red grapes, halved",
-        "60g red onion, minced",
-        "15g Dijon mustard",
-        "15ml lemon juice",
-        "0.5 tsp salt",
-        "0.5 tsp black pepper",
+        "570g shredded rotisserie chicken breast (from 2 chickens)",
+        "150g nonfat Greek yogurt",
+        "70g light mayonnaise",
+        "70g dill pickles, finely diced",
+        "90g celery, finely diced",
+        "120g red grapes, halved",
+        "35g red onion, minced",
+        "10g Dijon mustard",
+        "10ml lemon juice",
+        "0.3 tsp salt",
+        "0.3 tsp black pepper",
         "Costco sourdough bread, 1–2 slices per serving (to serve)"
       ],
       "steps": [
@@ -1488,7 +1488,7 @@
           "timer": null
         }
       ],
-      "notes": "The 2:1 yogurt-to-mayo ratio keeps it light while the mayo carries the flavor. TASTE AFTER CHILLING — pickles and salt shift as it sits, so adjust seasoning then, not before. If your chickens yield less than 900g of breast meat, fold in thigh meat to hit 950g total. Macros above are for the SALAD ONLY (~215 kcal, ~30g protein per ~190g serving; carbs come mostly from the grapes). Costco sourdough adds roughly 120–140 kcal and ~24g carbs per slice — so a 2-slice serving lands the full plate around 460–500 kcal and ~55g carbs."
+      "notes": "The 2:1 yogurt-to-mayo ratio keeps it light while the mayo carries the flavor. TASTE AFTER CHILLING — pickles and salt shift as it sits, so adjust seasoning then, not before. If the breast meat comes up short of 570g, fold in thigh meat to make up the difference. Macros above are for the SALAD ONLY (~215 kcal, ~30g protein per ~190g serving; carbs come mostly from the grapes). Costco sourdough adds roughly 120–140 kcal and ~24g carbs per slice — so a 2-slice serving lands the full plate around 460–500 kcal and ~55g carbs."
     },
     {
       "id": 28,
