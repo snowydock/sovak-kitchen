@@ -293,7 +293,7 @@
   <div class="planner">
     <div class="planner-intro">
       <div class="planner-headline">Plan my week</div>
-      <div class="planner-sub">Roll a random week &mdash; 1 lunch (the big anchor meal, 40g+ protein) and 2 dinners (the lighter fill-in meals). Tap &#x21bb; on a card to swap just that meal. When the week looks right, hit Groceries.</div>
+      <div class="planner-sub">Roll a random week &mdash; 2 lunches (the big anchor meals, 40g+ protein) and 2 dinners (the lighter fill-in meals), enough for both of us for 6 days. Tap &#x21bb; on a card to swap just that meal. When the week looks right, hit Groceries.</div>
     </div>
     <div class="planner-controls">
       <button class="planner-btn primary" onclick="rollWeek()">
@@ -666,7 +666,7 @@ let plan = null;   // { dinner: [r, r], lunch: [r] }
 function rollWeek() {
   plan = {
     dinner: pickWithVariety(recipes.filter(r => r.category === 'dinner'), 2),
-    lunch: pickWithVariety(recipes.filter(r => r.category === 'lunch'), 1),
+    lunch: pickWithVariety(recipes.filter(r => r.category === 'lunch'), 2),
   };
   renderPlan();
   document.getElementById('grocery-output').innerHTML = '';
@@ -692,7 +692,7 @@ function renderPlan() {
       <div class="plan-grid">${plan.dinner.map((r, i) => planCard(r, 'dinner', i)).join('')}</div>
     </div>
     <div class="week-group">
-      <div class="week-group-label">Lunch &mdash; the anchor meal<span class="line"></span></div>
+      <div class="week-group-label">Lunches &mdash; the anchor meals<span class="line"></span></div>
       <div class="plan-grid">${plan.lunch.map((r, i) => planCard(r, 'lunch', i)).join('')}</div>
     </div>`;
   document.getElementById('reroll-btn').style.display = 'inline-flex';
