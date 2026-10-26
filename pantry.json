@@ -37,331 +37,1374 @@
    "key": "sparkling-water",
    "name": "Sparkling water",
    "tier": "staple",
-   "match": "sparkling water"
+   "match": "sparkling water",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Sparkling Water, Variety Pack, 12 fl oz, 35-count",
+    "pack": {
+     "count": 35.0
+    }
+   }
   },
   {
    "key": "cottage-cheese",
    "name": "Cottage cheese",
    "tier": "staple",
-   "match": "cottage cheese"
+   "match": "cottage cheese",
+   "buy": {
+    "store": "Costco",
+    "product": "The Honest Cow 4% Cottage Cheese, 3 lb",
+    "pack": {
+     "g": 1361.0
+    }
+   }
   },
   {
    "key": "chobani-drinks",
    "name": "Chobani protein drinks",
    "tier": "staple",
-   "match": "chobani.*protein drink"
+   "match": "chobani.*protein drink",
+   "buy": {
+    "store": "Costco",
+    "product": "Chobani Greek Yogurt Protein Drink Variety Pack, 10 fl oz, 12-count",
+    "pack": {
+     "count": 12.0
+    }
+   }
   },
   {
    "key": "nurri-shakes",
    "name": "Nurri protein shakes",
    "tier": "staple",
-   "match": "nurri"
+   "match": "nurri",
+   "buy": {
+    "store": "Costco",
+    "product": "Nurri 30g Protein Shake, Vanilla, 11 fl oz, 15-pack",
+    "pack": {
+     "count": 15.0
+    }
+   }
   },
   {
    "key": "egg-whites",
    "name": "Liquid egg whites",
    "tier": "staple",
-   "match": "egg whites"
+   "match": "egg whites",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Liquid Egg Whites, Cage Free, 16 oz, 6-count",
+    "pack": {
+     "g": 2722.0
+    }
+   }
   },
   {
    "key": "eggs",
    "name": "Eggs",
    "tier": "staple",
-   "match": "\\beggs?\\b(?! (whites|noodles))"
+   "match": "\\beggs?\\b(?! (whites|noodles))",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Eggs, Large, 24-count",
+    "pack": {
+     "count": 24.0
+    },
+    "each_g": 50
+   }
   },
   {
    "key": "oat-milk",
    "name": "Oat milk",
    "tier": "staple",
-   "match": "oat (beverage|milk)"
+   "match": "oat (beverage|milk)",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Non-Dairy Oat Beverage, 32 oz, 6-count",
+    "pack": {
+     "ml": 5677.0
+    }
+   }
   },
   {
    "key": "blueberries",
    "name": "Frozen blueberries",
    "tier": "staple",
-   "match": "blueberr"
+   "match": "blueberr",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Wild Blueberries, 5 lb",
+    "pack": {
+     "g": 2268.0
+    }
+   }
   },
   {
    "key": "salsa",
    "name": "Salsa",
    "tier": "staple",
-   "match": "salsa"
+   "match": "salsa",
+   "buy": {
+    "store": "Costco",
+    "product": "Mateo's Gourmet Salsa, Medium, 32 oz",
+    "pack": {
+     "g": 907.0
+    }
+   }
   },
   {
    "key": "beef-sticks",
    "name": "Beef sticks",
    "tier": "staple",
-   "match": "beef sticks?"
+   "match": "beef sticks?",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Grass-fed Beef Sticks, 1.15 oz, 12-count",
+    "pack": {
+     "count": 12.0
+    }
+   }
   },
   {
    "key": "clif-bars",
    "name": "Clif bars",
    "tier": "staple",
-   "match": "clif bar"
+   "match": "clif bar",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Clif Bar Chocolate Chip Energy Bar",
+    "pack": {
+     "count": 1.0
+    }
+   }
   },
   {
    "key": "rice-cake-bites",
    "name": "Rice cake bites",
    "tier": "staple",
-   "match": "rice cake"
+   "match": "rice cake",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Drizzilicious Mini Rice Cake Bites, Cinnamon Swirl (4 oz)",
+    "pack": {
+     "count": 1.0
+    }
+   }
   },
   {
    "key": "cool-whip",
    "name": "Cool Whip",
    "tier": "staple",
-   "match": "cool whip|whipped topping"
+   "match": "cool whip|whipped topping",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cool Whip Original Whipped Topping (8 oz)",
+    "pack": {
+     "g": 227.0
+    }
+   }
   },
   {
    "key": "green-beans",
    "name": "Frozen green beans",
    "tier": "staple",
-   "match": "green beans"
+   "match": "green beans",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Earthbound Farm Frozen Organic Whole Green Beans (10 oz)",
+    "pack": {
+     "g": 283.5
+    }
+   }
   },
   {
    "key": "ground-beef",
    "name": "Ground beef",
    "tier": "recipe",
-   "match": "ground beef"
+   "match": "ground beef",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Ground Beef, 1.33 lb, 3-count",
+    "pack": {
+     "g": 1810.0
+    }
+   }
   },
   {
    "key": "ground-turkey",
    "name": "Ground turkey",
    "tier": "recipe",
-   "match": "ground turkey"
+   "match": "ground turkey",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Lean Ground Turkey 93/7 (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
   },
   {
    "key": "chicken-thighs",
    "name": "Chicken thighs",
    "tier": "recipe",
-   "match": "chicken thigh"
+   "match": "chicken thigh",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Boneless Skinless Chicken Thighs",
+    "pack": {
+     "g": 2146.0
+    }
+   }
   },
   {
    "key": "rotisserie-chicken",
    "name": "Rotisserie chicken",
    "tier": "recipe",
-   "match": "rotisserie"
+   "match": "rotisserie",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Rotisserie Chicken",
+    "pack": {
+     "count": 1.0
+    },
+    "each_g": 475
+   }
   },
   {
    "key": "greek-yogurt",
-   "name": "Greek yogurt (tub)",
+   "name": "Greek yogurt",
    "tier": "recipe",
-   "match": "\\byogurt\\b(?!.*drink)"
+   "match": "\\byogurt\\b(?!.*drink)",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Greek Yogurt, 48 oz",
+    "pack": {
+     "g": 1361.0
+    }
+   }
   },
   {
    "key": "tortillas",
    "name": "Tortillas",
    "tier": "recipe",
-   "match": "tortilla|wraps"
+   "match": "tortilla|wraps",
+   "buy": {
+    "store": "Costco",
+    "product": "Mission Carb Balance Flour Tortillas, 8-count, 2-pack",
+    "pack": {
+     "count": 16.0
+    }
+   }
   },
   {
    "key": "chicken-broth",
    "name": "Chicken broth",
    "tier": "recipe",
-   "match": "chicken broth"
+   "match": "chicken broth",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Progresso Unsalted Chicken Broth (32 oz)",
+    "pack": {
+     "ml": 946.0
+    }
+   }
   },
   {
    "key": "egg-noodles",
    "name": "Egg noodles",
    "tier": "recipe",
-   "match": "egg noodles"
+   "match": "egg noodles",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Pennsylvania Dutch Egg Noodles, Extra Wide (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   }
   },
   {
    "key": "cabbage",
    "name": "Cabbage",
    "tier": "recipe",
-   "match": "cabbage"
+   "match": "cabbage",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Organic Cabbage",
+    "pack": {
+     "g": 900
+    },
+    "by_weight": true
+   }
   },
   {
    "key": "cucumbers",
    "name": "Cucumbers",
    "tier": "recipe",
-   "match": "cucumber"
+   "match": "cucumber",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "English Seedless Cucumber",
+    "pack": {
+     "count": 1.0
+    },
+    "each_g": 400
+   }
   },
   {
    "key": "oranges",
    "name": "Oranges",
    "tier": "recipe",
-   "match": "\\borange\\b(?!.*pepper)"
+   "match": "\\borange\\b(?!.*pepper)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Navel Orange",
+    "pack": {
+     "count": 1.0
+    },
+    "each_g": 130
+   }
   },
   {
    "key": "carrots",
    "name": "Carrots",
    "tier": "recipe",
-   "match": "carrot"
+   "match": "carrot",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Organic Carrots, Bag (16 oz)",
+    "pack": {
+     "g": 454.0
+    },
+    "each_g": 60
+   }
   },
   {
    "key": "bell-pepper",
    "name": "Bell pepper",
    "tier": "recipe",
-   "match": "bell pepper"
+   "match": "bell pepper",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Organic Orange Bell Pepper",
+    "pack": {
+     "g": 200
+    },
+    "each_g": 200,
+    "by_weight": true
+   }
   },
   {
    "key": "onions",
    "name": "Onions",
    "tier": "recipe",
-   "match": "^(medium |large )?onions?\\b(?! powder)|(yellow|white|red|medium) onion"
+   "match": "^(medium |large )?onions?\\b(?! powder)|(yellow|white|red|medium) onion",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Onion (2 lb)",
+    "pack": {
+     "g": 907.0
+    },
+    "each_g": 150
+   }
   },
   {
    "key": "green-onions",
    "name": "Green onions",
    "tier": "recipe",
-   "match": "green onion|scallion"
+   "match": "green onion|scallion",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Organic Green Onions (Scallions)",
+    "pack": {
+     "count": 1.0
+    },
+    "each_g": 100
+   }
   },
   {
    "key": "dill",
    "name": "Fresh dill",
    "tier": "recipe",
-   "match": "^(fresh )?dill\\b(?! pickle)"
+   "match": "^(fresh )?dill\\b(?! pickle)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Dill",
+    "pack": {
+     "count": 1.0
+    },
+    "each_g": 30
+   }
   },
   {
    "key": "peas",
    "name": "Frozen peas",
    "tier": "recipe",
-   "match": "green peas|\\bpeas\\b"
+   "match": "frozen peas|green peas|^peas\\b",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Urban Meadow Green Peas (16 oz)",
+    "pack": {
+     "g": 454.0
+    }
+   }
   },
   {
    "key": "pickles",
    "name": "Dill pickles",
    "tier": "recipe",
-   "match": "pickle"
+   "match": "pickle",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Vlasic Kosher Dill Pickle Spears (24 fl oz)",
+    "pack": {
+     "ml": 710.0
+    }
+   }
   },
   {
    "key": "milk",
    "name": "Milk",
    "tier": "recipe",
-   "match": "whole milk|\\bmilk\\b(?!.*oat)"
+   "match": "whole milk|\\bmilk\\b(?!.*oat)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Farmland Fresh Dairies Whole Milk (1 qt)",
+    "pack": {
+     "ml": 946.0
+    }
+   }
   },
   {
    "key": "feta",
    "name": "Feta",
    "tier": "recipe",
-   "match": "feta"
+   "match": "feta",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Crumbled Feta (6 oz)",
+    "pack": {
+     "g": 170
+    }
+   }
   },
   {
    "key": "mozzarella",
    "name": "Shredded mozzarella",
    "tier": "recipe",
-   "match": "mozzarella(?! blend)"
+   "match": "mozzarella(?! blend)",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Shredded Mozzarella, 2.5 lb, 2-count",
+    "pack": {
+     "g": 2268
+    }
+   }
   },
   {
    "key": "cheddar",
    "name": "Shredded cheddar",
    "tier": "recipe",
-   "match": "cheddar"
+   "match": "cheddar",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Shredded Cheddar (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
   },
   {
    "key": "parmesan",
    "name": "Parmesan",
    "tier": "recipe",
-   "match": "parmesan"
+   "match": "parmesan",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Grated Parmesan (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
   },
   {
    "key": "cream-cheese",
    "name": "Cream cheese",
    "tier": "recipe",
-   "match": "cream cheese"
+   "match": "cream cheese",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Philadelphia Cream Cheese (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
   },
   {
    "key": "butter",
    "name": "Light butter",
    "tier": "recipe",
-   "match": "butter"
+   "match": "^(light |reduced fat |unsalted )?butter|reduced fat butter|light butter",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Light Butter (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
   },
   {
    "key": "lemons",
    "name": "Lemons",
    "tier": "recipe",
-   "match": "^(fresh )?lemons?\\b|lemon (juice|zest)"
+   "match": "^(fresh )?lemons?\\b|lemon (juice|zest)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Lemon",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 45
+   }
   },
   {
    "key": "limes",
    "name": "Limes",
    "tier": "recipe",
-   "match": "^limes?\\b|lime (juice|wedges)"
+   "match": "^limes?\\b|lime (juice|wedges)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Lime",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 30
+   }
   },
   {
    "key": "cilantro",
    "name": "Cilantro",
    "tier": "recipe",
-   "match": "cilantro|coriander"
+   "match": "cilantro|coriander",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cilantro (bunch)",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 60
+   }
   },
   {
    "key": "parsley",
    "name": "Fresh parsley",
    "tier": "recipe",
-   "match": "^(fresh )?parsley"
+   "match": "^(fresh )?parsley",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Flat-Leaf Parsley (bunch)",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 60
+   }
   },
   {
    "key": "ginger",
    "name": "Ginger paste",
    "tier": "long",
-   "match": "ginger.*paste|minced ginger|fresh ginger"
+   "match": "ginger.*paste|minced ginger|fresh ginger",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Gourmet Garden Ginger Stir-In Paste (4 oz)",
+    "pack": {
+     "g": 113
+    }
+   }
   },
   {
    "key": "celery",
    "name": "Celery",
    "tier": "recipe",
-   "match": "celery"
+   "match": "celery",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Celery (bunch)",
+    "pack": {
+     "g": 450
+    },
+    "each_g": 50
+   }
   },
   {
    "key": "light-mayo",
    "name": "Light mayo",
    "tier": "long",
-   "match": "mayo"
+   "match": "mayo",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Hellmann's Light Mayonnaise (30 oz)",
+    "pack": {
+     "g": 850
+    }
+   }
   },
   {
    "key": "sesame-seeds",
    "name": "Sesame seeds",
    "tier": "long",
-   "match": "sesame seeds"
+   "match": "sesame seeds",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Sesame Seeds (2 oz)",
+    "pack": {
+     "g": 57
+    }
+   }
   },
   {
    "key": "chicken-breast-frozen",
    "name": "Frozen chicken breast",
    "tier": "long",
-   "match": "chicken breast"
+   "match": "chicken breast",
+   "buy": {
+    "store": "Costco",
+    "product": "Crescent Foods Halal Chicken Breast, 5 lb",
+    "pack": {
+     "g": 2268.0
+    }
+   }
   },
   {
    "key": "bibigo-rice",
    "name": "Bibigo rice bowls",
    "tier": "long",
-   "match": "bibigo"
+   "match": "bibigo",
+   "buy": {
+    "store": "Costco",
+    "product": "Bibigo Cooked Sticky White Rice Bowls, Medium Grain, 7.4 oz, 12-count",
+    "pack": {
+     "count": 12.0
+    },
+    "each_g": 210
+   }
   },
   {
    "key": "coffee",
    "name": "Coffee beans",
    "tier": "long",
-   "match": "coffee"
+   "match": "coffee",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Colombian Supremo Coffee, Whole Bean, 3 lb",
+    "pack": {
+     "g": 1361.0
+    }
+   }
   },
   {
    "key": "soy-sauce",
    "name": "Soy sauce",
    "tier": "long",
-   "match": "soy sauce"
+   "match": "soy sauce",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Kikkoman Soy Sauce, All-Purpose (10 fl oz)",
+    "pack": {
+     "ml": 296.0
+    }
+   }
   },
   {
    "key": "sweet-chili",
    "name": "Sweet chili sauce",
    "tier": "long",
-   "match": "sweet chil+i"
+   "match": "sweet chil+i",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "KA-ME Sweet Chili Sauce (7 fl oz)",
+    "pack": {
+     "ml": 207.0
+    }
+   }
   },
   {
    "key": "tomato-paste",
    "name": "Tomato paste",
    "tier": "long",
-   "match": "tomato paste"
+   "match": "tomato paste",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Mutti Triple Concentrated Tomato Paste (6.5 oz)",
+    "pack": {
+     "g": 184.0
+    }
+   }
   },
   {
    "key": "honey",
    "name": "Honey",
    "tier": "long",
-   "match": "honey"
+   "match": "honey",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Gunter's Pure Clover Honey (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   }
   },
   {
    "key": "chocolate-chips",
    "name": "Chocolate chips",
    "tier": "long",
-   "match": "chocolate.*chips|baking chips"
+   "match": "chocolate.*chips|baking chips",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Hershey's Special Dark Chocolate Baking Chips (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   }
+  },
+  {
+   "key": "snap-peas",
+   "name": "Snap peas",
+   "tier": "recipe",
+   "match": "snap peas",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Sugar Snap Peas (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
+  },
+  {
+   "key": "black-beans",
+   "name": "Black beans",
+   "tier": "long",
+   "match": "black beans",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Black Beans (15.5 oz can)",
+    "pack": {
+     "g": 425
+    }
+   }
+  },
+  {
+   "key": "kidney-beans",
+   "name": "Kidney beans",
+   "tier": "long",
+   "match": "kidney beans",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Red Kidney Beans (15.5 oz can)",
+    "pack": {
+     "g": 425
+    }
+   }
+  },
+  {
+   "key": "cannellini",
+   "name": "Cannellini beans",
+   "tier": "long",
+   "match": "cannellini|great northern",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cannellini Beans (15.5 oz can)",
+    "pack": {
+     "g": 425
+    }
+   }
+  },
+  {
+   "key": "crushed-tomatoes",
+   "name": "Crushed tomatoes",
+   "tier": "long",
+   "match": "crushed tomatoes|san marzano|whole tomatoes",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Crushed Tomatoes (28 oz can)",
+    "pack": {
+     "g": 794
+    }
+   }
+  },
+  {
+   "key": "rotel",
+   "name": "Diced tomatoes & green chiles",
+   "tier": "long",
+   "match": "diced tomatoes (&|and|with) green chiles",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ro-Tel Diced Tomatoes & Green Chilies (10 oz can)",
+    "pack": {
+     "g": 283
+    }
+   }
+  },
+  {
+   "key": "diced-tomatoes",
+   "name": "Diced tomatoes",
+   "tier": "long",
+   "match": "diced tomatoes",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Diced Tomatoes (14.5 oz can)",
+    "pack": {
+     "g": 411
+    }
+   }
+  },
+  {
+   "key": "green-chiles",
+   "name": "Diced green chiles",
+   "tier": "long",
+   "match": "green chiles",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Diced Green Chiles (4 oz can)",
+    "pack": {
+     "g": 113
+    }
+   }
+  },
+  {
+   "key": "tomato-sauce",
+   "name": "Tomato sauce",
+   "tier": "long",
+   "match": "tomato sauce",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Tomato Sauce (15 oz can)",
+    "pack": {
+     "g": 425
+    }
+   }
+  },
+  {
+   "key": "marinara",
+   "name": "Marinara",
+   "tier": "long",
+   "match": "marinara",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Marinara Sauce (24 oz jar)",
+    "pack": {
+     "g": 680
+    }
+   }
+  },
+  {
+   "key": "cream-of-chicken",
+   "name": "Cream of chicken soup",
+   "tier": "long",
+   "match": "cream of chicken",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cream of Chicken Soup (10.5 oz can)",
+    "pack": {
+     "g": 298
+    }
+   }
+  },
+  {
+   "key": "corn",
+   "name": "Corn",
+   "tier": "long",
+   "match": "\\bcorn\\b(?! muffin)|sweetcorn",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Frozen Sweet Corn (16 oz)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "mixed-veg",
+   "name": "Frozen mixed vegetables",
+   "tier": "long",
+   "match": "mixed vegetables",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Frozen Mixed Vegetables (16 oz)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "edamame",
+   "name": "Frozen edamame",
+   "tier": "long",
+   "match": "edamame",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Frozen Shelled Edamame (12 oz)",
+    "pack": {
+     "g": 340
+    }
+   }
+  },
+  {
+   "key": "broccoli",
+   "name": "Broccoli florets",
+   "tier": "recipe",
+   "match": "broccoli",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Broccoli Florets (12 oz)",
+    "pack": {
+     "g": 340
+    }
+   }
+  },
+  {
+   "key": "zucchini",
+   "name": "Zucchini",
+   "tier": "recipe",
+   "match": "zucchini",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Zucchini (each)",
+    "pack": {
+     "g": 200
+    },
+    "each_g": 200,
+    "by_weight": true
+   }
+  },
+  {
+   "key": "mushrooms",
+   "name": "Sliced mushrooms",
+   "tier": "recipe",
+   "match": "mushroom",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Sliced White Mushrooms (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
+  },
+  {
+   "key": "cherry-tomatoes",
+   "name": "Cherry tomatoes",
+   "tier": "recipe",
+   "match": "(cherry|grape) tomatoes",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cherry Tomatoes (1 pint)",
+    "pack": {
+     "g": 284
+    }
+   }
+  },
+  {
+   "key": "jalapenos",
+   "name": "Jalape\u00f1os",
+   "tier": "recipe",
+   "match": "jalape",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Jalape\u00f1o Pepper",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 15
+   }
+  },
+  {
+   "key": "kale",
+   "name": "Kale",
+   "tier": "recipe",
+   "match": "\\bkale\\b|spinach",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Kale (bunch)",
+    "pack": {
+     "g": 200
+    }
+   }
+  },
+  {
+   "key": "basil",
+   "name": "Fresh basil",
+   "tier": "recipe",
+   "match": "^(fresh )?basil",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Fresh Basil (bunch)",
+    "pack": {
+     "count": 1
+    },
+    "each_g": 60
+   }
+  },
+  {
+   "key": "red-grapes",
+   "name": "Red grapes",
+   "tier": "recipe",
+   "match": "grapes",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Red Seedless Grapes (~2 lb)",
+    "pack": {
+     "g": 900
+    }
+   }
+  },
+  {
+   "key": "potatoes",
+   "name": "Potatoes",
+   "tier": "long",
+   "match": "potatoes(?!.*mashed)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Yellow Potatoes (5 lb bag)",
+    "pack": {
+     "g": 2268
+    }
+   }
+  },
+  {
+   "key": "mashed-potatoes",
+   "name": "Prepared mashed potatoes",
+   "tier": "recipe",
+   "match": "mashed potatoes",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Prepared Mashed Potatoes (24 oz)",
+    "pack": {
+     "g": 680
+    }
+   }
+  },
+  {
+   "key": "penne",
+   "name": "Whole wheat penne",
+   "tier": "long",
+   "match": "penne",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Whole Wheat Penne (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "spaghetti",
+   "name": "Spaghetti",
+   "tier": "long",
+   "match": "spaghetti",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Spaghetti (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "lasagna",
+   "name": "Lasagna noodles",
+   "tier": "long",
+   "match": "lasagna",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Lasagna Noodles (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "orzo",
+   "name": "Orzo",
+   "tier": "long",
+   "match": "orzo",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Orzo (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "ditalini",
+   "name": "Ditalini",
+   "tier": "long",
+   "match": "ditalini|small whole wheat pasta",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ditalini Pasta (1 lb)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "protein-pasta",
+   "name": "Protein pasta",
+   "tier": "long",
+   "match": "protein pasta",
+   "buy": {
+    "store": "Costco",
+    "product": "Protein Pasta, 12 oz, 6-count",
+    "pack": {
+     "g": 2041
+    }
+   }
+  },
+  {
+   "key": "panko",
+   "name": "Breadcrumbs",
+   "tier": "long",
+   "match": "panko|bread ?crumbs",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Panko Breadcrumbs (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
+  },
+  {
+   "key": "buns",
+   "name": "Hamburger buns",
+   "tier": "recipe",
+   "match": "buns",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Hamburger Buns (8 ct)",
+    "pack": {
+     "count": 8
+    }
+   }
+  },
+  {
+   "key": "mini-pitas",
+   "name": "Mini pitas",
+   "tier": "recipe",
+   "match": "pitas?",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Mini Pitas (12 ct)",
+    "pack": {
+     "count": 12
+    }
+   }
+  },
+  {
+   "key": "jiffy",
+   "name": "Jiffy corn muffin mix",
+   "tier": "long",
+   "match": "jiffy|corn muffin",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Jiffy Corn Muffin Mix (8.5 oz)",
+    "pack": {
+     "count": 1
+    }
+   }
+  },
+  {
+   "key": "beef-broth",
+   "name": "Low-sodium beef broth",
+   "tier": "long",
+   "match": "beef broth",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Low-Sodium Beef Broth (32 oz)",
+    "pack": {
+     "ml": 946
+    }
+   }
+  },
+  {
+   "key": "turkey-sausage",
+   "name": "Smoked turkey sausage",
+   "tier": "recipe",
+   "match": "turkey sausage",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Smoked Turkey Sausage (14 oz)",
+    "pack": {
+     "g": 397
+    }
+   }
+  },
+  {
+   "key": "dijon",
+   "name": "Dijon mustard",
+   "tier": "long",
+   "match": "dijon",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Dijon Mustard (12 oz)",
+    "pack": {
+     "g": 340
+    }
+   }
+  },
+  {
+   "key": "red-wine-vinegar",
+   "name": "Red wine vinegar",
+   "tier": "long",
+   "match": "red wine vinegar",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Red Wine Vinegar (12.7 oz)",
+    "pack": {
+     "ml": 375
+    }
+   }
+  },
+  {
+   "key": "cornstarch",
+   "name": "Cornstarch",
+   "tier": "long",
+   "match": "cornstarch",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cornstarch (16 oz)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "flour",
+   "name": "Whole-wheat flour",
+   "tier": "long",
+   "match": "flour(?!.*tortilla)",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Whole Wheat Flour (2 lb)",
+    "pack": {
+     "g": 907
+    }
+   }
+  },
+  {
+   "key": "hot-sauce",
+   "name": "Hot sauce",
+   "tier": "long",
+   "match": "cholula|red pepper sauce|hot sauce",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Cholula Hot Sauce (5 oz)",
+    "pack": {
+     "ml": 150
+    }
+   }
+  },
+  {
+   "key": "chili-garlic",
+   "name": "Chili garlic paste",
+   "tier": "long",
+   "match": "chil+i garlic",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Lee Kum Kee Chili Garlic Sauce (8 oz)",
+    "pack": {
+     "g": 226
+    }
+   }
+  },
+  {
+   "key": "tajin",
+   "name": "Taj\u00edn",
+   "tier": "long",
+   "match": "taj[i\u00ed]n",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Taj\u00edn Cl\u00e1sico Seasoning (5 oz)",
+    "pack": {
+     "g": 142
+    }
+   }
+  },
+  {
+   "key": "cocoa",
+   "name": "Cocoa powder",
+   "tier": "long",
+   "match": "cocoa",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Unsweetened Cocoa Powder (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
+  },
+  {
+   "key": "nutmeg",
+   "name": "Nutmeg",
+   "tier": "long",
+   "match": "nutmeg",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Nutmeg (1 oz)",
+    "pack": {
+     "g": 28
+    }
+   }
+  },
+  {
+   "key": "ground-ginger",
+   "name": "Ground ginger",
+   "tier": "long",
+   "match": "ground ginger",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Ginger (1 oz)",
+    "pack": {
+     "g": 28
+    }
+   }
+  },
+  {
+   "key": "oats",
+   "name": "Old fashioned oats",
+   "tier": "long",
+   "match": "\\boats\\b",
+   "buy": {
+    "store": "Costco",
+    "product": "Old Fashioned Oats (10 lb)",
+    "pack": {
+     "g": 4536
+    }
+   }
+  },
+  {
+   "key": "flax",
+   "name": "Flax seed",
+   "tier": "long",
+   "match": "flax",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Flax Seed (16 oz)",
+    "pack": {
+     "g": 454
+    }
+   }
+  },
+  {
+   "key": "protein-powder",
+   "name": "Protein powder",
+   "tier": "long",
+   "match": "protein powder",
+   "buy": {
+    "store": "Costco",
+    "product": "Protein Powder (5 lb)",
+    "pack": {
+     "g": 2268
+    }
+   }
   },
   {
    "key": "salt",
@@ -499,6 +1542,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Grass-fed Beef Sticks, 1.15 oz, 12-count",
+    "pack": {
+     "count": 12.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -523,6 +1573,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Chobani Greek Yogurt Protein Drink Variety Pack, 10 fl oz, 12-count",
+    "pack": {
+     "count": 12.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 2,
    "cadence_days": 17
@@ -541,6 +1598,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Clif Bar Chocolate Chip Energy Bar",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -558,6 +1622,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Cool Whip Original Whipped Topping (8 oz)",
+    "pack": {
+     "g": 227.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -582,6 +1653,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "The Honest Cow 4% Cottage Cheese, 3 lb",
+    "pack": {
+     "g": 1361.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 2,
    "cadence_days": 17
@@ -607,6 +1685,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Eggs, Large, 24-count",
+    "pack": {
+     "count": 24.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 2,
    "cadence_days": 17
@@ -625,6 +1710,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Wild Blueberries, 5 lb",
+    "pack": {
+     "g": 2268.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1
   },
@@ -642,6 +1734,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Earthbound Farm Frozen Organic Whole Green Beans (10 oz)",
+    "pack": {
+     "g": 283.5
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -659,6 +1758,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Liquid Egg Whites, Cage Free, 16 oz, 6-count",
+    "pack": {
+     "g": 2722.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1
   },
@@ -683,6 +1789,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Nurri 30g Protein Shake, Vanilla, 11 fl oz, 15-pack",
+    "pack": {
+     "count": 15.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 2,
    "cadence_days": 17
@@ -701,6 +1814,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Non-Dairy Oat Beverage, 32 oz, 6-count",
+    "pack": {
+     "ml": 5677.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -718,6 +1838,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Drizzilicious Mini Rice Cake Bites, Cinnamon Swirl (4 oz)",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1
   },
@@ -735,6 +1862,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Mateo's Gourmet Salsa, Medium, 32 oz",
+    "pack": {
+     "g": 907.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1
   },
@@ -759,6 +1893,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Sparkling Water, Variety Pack, 12 fl oz, 35-count",
+    "pack": {
+     "count": 35.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 2,
    "cadence_days": 17
@@ -777,6 +1918,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Organic Orange Bell Pepper",
+    "pack": {
+     "g": 431.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -801,6 +1949,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Organic Cabbage",
+    "pack": {
+     "g": 2100.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -824,6 +1979,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Organic Carrots, Bag (16 oz)",
+    "pack": {
+     "g": 454.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -848,6 +2010,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Progresso Unsalted Chicken Broth (32 oz)",
+    "pack": {
+     "ml": 946.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -871,6 +2040,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Boneless Skinless Chicken Thighs",
+    "pack": {
+     "g": 2146.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -895,6 +2071,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "English Seedless Cucumber",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -919,6 +2102,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Vlasic Kosher Dill Pickle Spears (24 fl oz)",
+    "pack": {
+     "ml": 710.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "on_hand": {
@@ -939,6 +2129,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Pennsylvania Dutch Egg Noodles, Extra Wide (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -962,6 +2159,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Dill",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -986,6 +2190,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Urban Meadow Green Peas (16 oz)",
+    "pack": {
+     "g": 454.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -997,7 +2208,7 @@
   },
   {
    "key": "greek-yogurt",
-   "name": "Greek yogurt (tub)",
+   "name": "Greek yogurt",
    "tier": "recipe",
    "lasts_days": 14,
    "purchases": [
@@ -1009,6 +2220,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Organic Greek Yogurt, 48 oz",
+    "pack": {
+     "g": 1361.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1032,6 +2250,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Organic Green Onions (Scallions)",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1057,6 +2282,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Ground Beef, 1.33 lb, 3-count",
+    "pack": {
+     "g": 1810.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1082,6 +2314,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Farmland Fresh Dairies Whole Milk (1 qt)",
+    "pack": {
+     "ml": 946.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1105,6 +2344,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Onion (2 lb)",
+    "pack": {
+     "g": 907.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1132,6 +2378,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Navel Orange",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1156,6 +2409,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Rotisserie Chicken",
+    "pack": {
+     "count": 1.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "on_hand": {
@@ -1176,6 +2436,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Mission Carb Balance Flour Tortillas, 8-count, 2-pack",
+    "pack": {
+     "count": 16.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1,
    "on_hand": {
@@ -1196,6 +2463,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Bibigo Cooked Sticky White Rice Bowls, Medium Grain, 7.4 oz, 12-count",
+    "pack": {
+     "count": 12.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1,
    "on_hand": {
@@ -1228,6 +2502,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Hershey's Special Dark Chocolate Baking Chips (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "on_hand": {
@@ -1254,6 +2535,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Kirkland Signature Colombian Supremo Coffee, Whole Bean, 3 lb",
+    "pack": {
+     "g": 1361.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "on_hand": {
@@ -1298,6 +2586,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "Costco",
+    "product": "Crescent Foods Halal Chicken Breast, 5 lb",
+    "pack": {
+     "g": 2268.0
+    }
+   },
    "last_bought": "2026-10-21",
    "times_bought": 1,
    "on_hand": {
@@ -1336,6 +2631,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Gunter's Pure Clover Honey (12 oz)",
+    "pack": {
+     "g": 340.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1402,6 +2704,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Kikkoman Soy Sauce, All-Purpose (10 fl oz)",
+    "pack": {
+     "ml": 296.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1432,6 +2741,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "KA-ME Sweet Chili Sauce (7 fl oz)",
+    "pack": {
+     "ml": 207.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "used_in": [
@@ -1461,6 +2777,13 @@
      }
     }
    ],
+   "bought_as": {
+    "store": "55 Fulton Market",
+    "product": "Mutti Triple Concentrated Tomato Paste (6.5 oz)",
+    "pack": {
+     "g": 184.0
+    }
+   },
    "last_bought": "2026-10-04",
    "times_bought": 1,
    "on_hand": {

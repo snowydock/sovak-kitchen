@@ -28,100 +28,18 @@ LOG_URL = "https://raw.githubusercontent.com/snowydock/sovak-fitness/main/log/{}
 BATCH_GAP_DAYS = 7
 USED_UP_SHARE = 0.15   # under this share of the last purchase left = used up
 
-# key, display name, tier, typical days it lasts, name regex
-CATALOG = [
-    # --- staples ---
-    ("sparkling-water", "Sparkling water", "staple", 17, r"sparkling water"),
-    ("cottage-cheese", "Cottage cheese", "staple", 14, r"cottage cheese"),
-    ("chobani-drinks", "Chobani protein drinks", "staple", 14, r"chobani.*protein drink"),
-    ("nurri-shakes", "Nurri protein shakes", "staple", 15, r"nurri"),
-    ("egg-whites", "Liquid egg whites", "staple", 21, r"egg whites"),
-    ("eggs", "Eggs", "staple", 14, r"\beggs?\b(?! (whites|noodles))"),
-    ("oat-milk", "Oat milk", "staple", 21, r"oat (beverage|milk)"),
-    ("blueberries", "Frozen blueberries", "staple", 35, r"blueberr"),
-    ("salsa", "Salsa", "staple", 21, r"salsa"),
-    ("beef-sticks", "Beef sticks", "staple", 14, r"beef sticks?"),
-    ("clif-bars", "Clif bars", "staple", 14, r"clif bar"),
-    ("rice-cake-bites", "Rice cake bites", "staple", 10, r"rice cake"),
-    ("cool-whip", "Cool Whip", "staple", 14, r"cool whip|whipped topping"),
-    ("green-beans", "Frozen green beans", "staple", 60, r"green beans"),
-    # --- recipe ingredients ---
-    ("ground-beef", "Ground beef", "recipe", 5, r"ground beef"),
-    ("ground-turkey", "Ground turkey", "recipe", 5, r"ground turkey"),
-    ("chicken-thighs", "Chicken thighs", "recipe", 5, r"chicken thigh"),
-    ("rotisserie-chicken", "Rotisserie chicken", "recipe", 4, r"rotisserie"),
-    ("greek-yogurt", "Greek yogurt (tub)", "recipe", 14, r"\byogurt\b(?!.*drink)"),
-    ("tortillas", "Tortillas", "recipe", 21, r"tortilla|wraps"),
-    ("chicken-broth", "Chicken broth", "recipe", 365, r"chicken broth"),
-    ("egg-noodles", "Egg noodles", "recipe", 365, r"egg noodles"),
-    ("cabbage", "Cabbage", "recipe", 14, r"cabbage"),
-    ("cucumbers", "Cucumbers", "recipe", 7, r"cucumber"),
-    ("oranges", "Oranges", "recipe", 10, r"\borange\b(?!.*pepper)"),
-    ("carrots", "Carrots", "recipe", 21, r"carrot"),
-    ("bell-pepper", "Bell pepper", "recipe", 7, r"bell pepper"),
-    ("onions", "Onions", "recipe", 30, r"^(medium |large )?onions?\b(?! powder)|(yellow|white|red|medium) onion"),
-    ("green-onions", "Green onions", "recipe", 7, r"green onion|scallion"),
-    ("dill", "Fresh dill", "recipe", 7, r"^(fresh )?dill\b(?! pickle)"),
-    ("peas", "Frozen peas", "recipe", 90, r"green peas|\bpeas\b"),
-    ("pickles", "Dill pickles", "recipe", 60, r"pickle"),
-    ("milk", "Milk", "recipe", 7, r"whole milk|\bmilk\b(?!.*oat)"),
-    # not bought yet; these just give recipe lines one name on the grocery list
-    ("feta", "Feta", "recipe", 21, r"feta"),
-    ("mozzarella", "Shredded mozzarella", "recipe", 21, r"mozzarella(?! blend)"),
-    ("cheddar", "Shredded cheddar", "recipe", 21, r"cheddar"),
-    ("parmesan", "Parmesan", "recipe", 30, r"parmesan"),
-    ("cream-cheese", "Cream cheese", "recipe", 21, r"cream cheese"),
-    ("butter", "Light butter", "recipe", 30, r"butter"),
-    ("lemons", "Lemons", "recipe", 14, r"^(fresh )?lemons?\b|lemon (juice|zest)"),
-    ("limes", "Limes", "recipe", 14, r"^limes?\b|lime (juice|wedges)"),
-    ("cilantro", "Cilantro", "recipe", 7, r"cilantro|coriander"),
-    ("parsley", "Fresh parsley", "recipe", 7, r"^(fresh )?parsley"),
-    ("ginger", "Ginger paste", "long", 60, r"ginger.*paste|minced ginger|fresh ginger"),
-    ("celery", "Celery", "recipe", 14, r"celery"),
-    ("light-mayo", "Light mayo", "long", 60, r"mayo"),
-    ("sesame-seeds", "Sesame seeds", "long", 180, r"sesame seeds"),
-    # --- long-lived ---
-    ("chicken-breast-frozen", "Frozen chicken breast", "long", 90, r"chicken breast"),
-    ("bibigo-rice", "Bibigo rice bowls", "long", 120, r"bibigo"),
-    ("coffee", "Coffee beans", "long", 45, r"coffee"),
-    ("soy-sauce", "Soy sauce", "long", 180, r"soy sauce"),
-    ("sweet-chili", "Sweet chili sauce", "long", 120, r"sweet chil+i"),
-    ("tomato-paste", "Tomato paste", "long", 60, r"tomato paste"),
-    ("honey", "Honey", "long", 365, r"honey"),
-    ("chocolate-chips", "Chocolate chips", "long", 180, r"chocolate.*chips|baking chips"),
-]
-
-# Long-lived items assumed on hand without a receipt (spice rack, oils, sauces).
-# key, display name, regex used to recognise it in recipe ingredient lines
-ASSUMED = [
-    ("salt", "Salt", r"\bsalt\b"),
-    ("black-pepper", "Black pepper", r"black pepper|^pepper\b"),
-    ("garlic-powder", "Garlic powder", r"garlic powder"),
-    ("onion-powder", "Onion powder", r"onion powder|dried minced onion"),
-    ("smoked-paprika", "Paprika", r"paprika"),
-    ("cumin", "Cumin", r"cumin"),
-    ("oregano", "Dried oregano", r"oregano"),
-    ("dried-herbs", "Dried herbs", r"italian seasoning|mixed herbs|dried (thyme|basil|parsley)|bay leaf"),
-    ("chili-powder", "Chili powder", r"chil+i powder"),
-    ("taco-seasoning", "Taco seasoning", r"taco seasoning"),
-    ("red-pepper-flakes", "Red pepper flakes", r"red pepper flakes|chil+i flakes"),
-    ("cinnamon", "Cinnamon", r"cinnamon"),
-    ("cooking-spray", "Cooking spray", r"cooking spray"),
-    ("olive-oil", "Olive oil", r"olive oil"),
-    ("sesame-oil", "Sesame oil", r"sesame oil"),
-    ("rice-vinegar", "Rice vinegar", r"rice vinegar"),
-    ("sriracha", "Sriracha", r"sriracha"),
-    ("gochujang", "Gochujang", r"gochujang"),
-    ("minced-garlic", "Garlic", r"^(minced )?garlic\b(?! powder)|garlic cloves?|cloves? garlic|^fresh garlic"),
-    ("worcestershire", "Worcestershire sauce", r"worcestershire"),
-]
+# Every known ingredient lives in products.json: tier, typical lifespan, the regex
+# that recognises it (first hit wins), and the default product we'd buy.
+PRODUCTS = json.loads((ROOT / "products.json").read_text())["items"]
+for _p in PRODUCTS:
+    _p["re"] = re.compile(_p["match"], re.I)
 
 
 def match(name):
     n = name.lower()
-    for key, disp, tier, lasts, rx in CATALOG:
-        if re.search(rx, n):
-            return key, disp, tier, lasts
+    for p in PRODUCTS:
+        if p["re"].search(n):
+            return p["key"], p["name"], p["tier"], p.get("lasts_days", 365)
     return None
 
 
@@ -197,6 +115,21 @@ def remaining_after(e, batches, recipes_by_id):
     return {k: round(v) for k, v in left.items()}, used_up
 
 
+def rule(p, item):
+    """What the page needs per ingredient: how to recognise it and what to buy.
+    Receipts win over the default product, except the pack size of things sold by weight."""
+    r = {"key": p["key"], "name": p["name"], "tier": p["tier"], "match": p["match"]}
+    if p.get("buy"):
+        buy = dict(p["buy"])
+        learned = (item or {}).get("bought_as")
+        if learned:
+            buy["store"], buy["product"] = learned["store"], learned["product"]
+            if not buy.get("by_weight"):
+                buy["pack"] = learned["pack"]
+        r["buy"] = buy
+    return r
+
+
 def add_amount(total, amt):
     for unit, v in amt.items():
         total[unit] = total.get(unit, 0) + v
@@ -216,6 +149,8 @@ def main():
             key, disp, tier, lasts = m
             e = items.setdefault(key, {"key": key, "name": disp, "tier": tier,
                                        "lasts_days": lasts, "purchases": []})
+            e["bought_as"] = {"store": r["store"], "product": line["name"],
+                              "pack": {u: round(v / line["qty"], 1) for u, v in line["amount"].items()}}
             # two lines on the same day (e.g. two stores) merge into one purchase
             same = [p for p in e["purchases"] if p["date"] == r["date"]]
             if same:
@@ -246,8 +181,9 @@ def main():
             if "used_in" in e:
                 e["used_in"] = sorted(set(e["used_in"]))
 
-    for key, disp, _ in ASSUMED:
-        items.setdefault(key, {"key": key, "name": disp, "tier": "long", "assumed": True})
+    for p in PRODUCTS:
+        if p.get("assumed"):
+            items.setdefault(p["key"], {"key": p["key"], "name": p["name"], "tier": "long", "assumed": True})
 
     order = {"staple": 0, "recipe": 1, "long": 2}
     out = {
@@ -255,8 +191,7 @@ def main():
         "receipts": [p.name for p in receipts],
         "batches": batches,
         # The page matches recipe ingredients with these, in order (first hit wins).
-        "rules": [{"key": k, "name": n, "tier": t, "match": rx} for k, n, t, _, rx in CATALOG]
-                 + [{"key": k, "name": n, "tier": "long", "match": rx} for k, n, rx in ASSUMED],
+        "rules": [rule(p, items.get(p["key"])) for p in PRODUCTS],
         "items": sorted(items.values(), key=lambda e: (order[e["tier"]], e["name"].lower())),
     }
     (ROOT / "pantry.json").write_text(json.dumps(out, indent=1) + "\n")

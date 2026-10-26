@@ -214,6 +214,8 @@
   .grocery-row:first-child { border-top: none; }
   .grocery-row input { width: 17px; height: 17px; accent-color: var(--accent); flex-shrink: 0; cursor: pointer; }
   .grocery-name { flex: 1; font-size: 14px; color: var(--ink); }
+  .grocery-why { display: block; font-size: 12px; color: var(--ink-faint); font-weight: 300; margin-top: 2px; }
+  .grocery-qty { font-size: 13px !important; font-weight: 500 !important; color: var(--ink) !important; white-space: nowrap; }
   .grocery-qty { font-size: 12px; color: var(--ink-muted); font-weight: 300; text-align: right; }
   .grocery-row.off .grocery-name, .grocery-row.off .grocery-qty { color: var(--ink-faint); }
   .grocery-have { font-size: 13px; color: var(--ink-faint); font-weight: 300; line-height: 1.7; margin: -0.25rem 2px 1.5rem; }
@@ -731,63 +733,92 @@ function fmtNeed(amts) {
   }).join(' + ');
 }
 
+// How many packs of the product cover what the recipes need (after what's on hand).
+// Spoon/cup measures are converted to grams; whole items use the product's weight per item.
+const SPOON = { tsp: 5, tbsp: 15, cup: 240 };
+const PACK_SLACK = 0.1;   // a recipe 10% over one pack still takes one pack
+function packsFor(amts, buy, onHand) {
+  const packUnit = Object.keys(buy.pack)[0], packSize = buy.pack[packUnit];
+  const each = buy.each_g || (packUnit === 'count' ? null : packSize);
+  let total = 0;
+  for (const [u, n] of Object.entries(amts)) {
+    const grams = u === 'g' || u === 'ml' ? n : SPOON[u] ? n * SPOON[u] : null;
+    if (packUnit === 'count') total += grams == null ? n : each ? grams / each : 0;
+    else total += grams != null ? grams : n * (each || packSize);
+  }
+  if (!Object.keys(amts).length) total = packUnit === 'count' ? 1 : packSize;   // no amount given: one of it
+  if (onHand) {
+    const have = packUnit === 'count' ? onHand.count : (onHand.g ?? onHand.ml);
+    if (have != null) total -= have;
+  }
+  if (total <= 0) return 0;
+  return Math.max(1, Math.ceil(total / packSize - PACK_SLACK));
+}
+
 function buildGroceries() {
   const items = pantry?.items || [];
   const byKey = Object.fromEntries(items.map(e => [e.key, e]));
-  const need = {}, have = new Set();
+  const need = {};
   for (const r of [...plan.lunch, ...plan.dinner]) {
     for (const line of r.ingredients) {
       if (typeof line !== 'string' || SKIP_LINE.test(line)) continue;
       const { name, amt, rest } = parseLine(line);
       if (!name) continue;
       const rule = matchRule(rest);
-      const item = rule && byKey[rule.key];
       const key = rule ? rule.key : name.toLowerCase();
-      const label = rule ? rule.name : name.charAt(0).toUpperCase() + name.slice(1);
-      const entry = need[key] || (need[key] = { key, label, amts: {}, item, recipes: new Set() });
-      entry.recipes.add(r.name);
+      const entry = need[key] || (need[key] = {
+        key, rule, item: rule && byKey[rule.key], amts: {},
+        label: rule ? rule.name : name.charAt(0).toUpperCase() + name.slice(1),
+      });
       if (amt) entry.amts[amt.unit] = (entry.amts[amt.unit] || 0) + amt.n;
     }
   }
-  const toBuy = [];
+
+  const rows = [], have = [];
   for (const e of Object.values(need)) {
-    const it = e.item;
-    if (it && pantryOnHand(it)) {
-      // Staples and the spice rack count as on hand; for tracked amounts, there has to be enough.
-      const left = it.on_hand;
-      const short = left && Object.entries(e.amts).some(([u, n]) => u in left && left[u] < n);
-      if (!short) { have.add(e.label); continue; }
-    }
-    toBuy.push(e);
+    const it = e.item, buy = e.rule?.buy;
+    const onHand = it && pantryOnHand(it);
+    if (onHand && (it.assumed || it.tier === 'staple')) { have.push(e.label); continue; }
+    if (e.rule && !buy) { have.push(e.label); continue; }          // spice rack
+    if (!buy) { rows.push({ store: 'Other', product: e.label, qty: fmtNeed(e.amts), why: '', checked: true }); continue; }
+    const packs = packsFor(e.amts, buy, onHand ? it.on_hand : null);
+    if (!packs) { have.push(e.label); continue; }
+    const needTxt = Object.keys(e.amts).length ? `${e.label} · need ${fmtNeed(e.amts)}` : e.label;
+    rows.push({ store: buy.store, product: buy.product, qty: '× ' + packs, why: needTxt, checked: true });
   }
-  toBuy.sort((a, b) => a.label.localeCompare(b.label));
 
   // Staples: repeat buys due within the week are pre-checked; one-off buys that ran out are listed unchecked.
   const t = today();
-  const staples = [], before = [];
+  const rules = Object.fromEntries((pantry?.rules || []).map(r => [r.key, r]));
   for (const it of items.filter(e => e.tier === 'staple' && !e.assumed)) {
     if (need[it.key]) continue;
+    const buy = rules[it.key]?.buy || { store: 'Other', product: it.name };
     const since = (t - dayOf(it.last_bought)) / DAY;
-    if (it.cadence_days) { if (since + 7 >= it.cadence_days) staples.push(it); }
-    else if (!pantryOnHand(it)) before.push(it);
+    if (it.cadence_days) {
+      if (since + 7 >= it.cadence_days) rows.push({ store: buy.store, product: buy.product, qty: '× 1', why: `Staple · ${fmtCadence(it.cadence_days)}`, checked: true });
+    } else if (!pantryOnHand(it)) {
+      rows.push({ store: buy.store, product: buy.product, qty: '× 1', why: `Bought ${shortDate(it.last_bought)}`, checked: false });
+    }
   }
-  return { toBuy, staples, before, have: [...have].sort() };
+
+  const stores = {};
+  for (const r of rows) (stores[r.store] = stores[r.store] || []).push(r);
+  for (const list of Object.values(stores)) list.sort((a, b) => (b.checked - a.checked) || a.product.localeCompare(b.product));
+  const order = s => s === 'Costco' ? 0 : s === 'Other' ? 2 : 1;
+  return { stores: Object.entries(stores).sort((a, b) => order(a[0]) - order(b[0]) || a[0].localeCompare(b[0])), have: have.sort() };
 }
 
-function groceryRow(name, qty, checked) {
-  return `<label class="grocery-row${checked ? '' : ' off'}"><input type="checkbox"${checked ? ' checked' : ''} onchange="this.parentElement.classList.toggle('off', !this.checked)"><span class="grocery-name">${name}</span><span class="grocery-qty">${qty}</span></label>`;
+function groceryRow(r) {
+  return `<label class="grocery-row${r.checked ? '' : ' off'}"><input type="checkbox"${r.checked ? ' checked' : ''} onchange="this.parentElement.classList.toggle('off', !this.checked)"><span class="grocery-name">${r.product}${r.why ? `<span class="grocery-why">${r.why}</span>` : ''}</span><span class="grocery-qty">${r.qty}</span></label>`;
 }
 
 function showGroceries() {
   if (!plan) return;
   const g = buildGroceries();
-  const lastAmt = it => fmtAmount(it.purchases[it.purchases.length - 1].amount);
-  const section = (label, rows) => rows.length ? `<div class="week-group-label">${label}<span class="line"></span></div><div class="grocery-list">${rows.join('')}</div>` : '';
   document.getElementById('grocery-output').innerHTML = `<div class="grocery" id="grocery">
-    ${section('For this week&rsquo;s meals', g.toBuy.map(e => groceryRow(e.label, fmtNeed(e.amts), true)))}
+    ${g.stores.map(([store, rows]) => `<div class="week-group-label">${store}<span class="line"></span></div>
+      <div class="grocery-list" data-store="${store}">${rows.map(groceryRow).join('')}</div>`).join('')}
     ${g.have.length ? `<div class="grocery-have">Already have: ${g.have.join(', ')}</div>` : ''}
-    ${section('Staples', g.staples.map(it => groceryRow(it.name, lastAmt(it), true)))}
-    ${section('Bought before', g.before.map(it => groceryRow(it.name, lastAmt(it), false)))}
     <div class="grocery-actions">
       <button class="planner-btn primary" onclick="copyGroceries()">Copy list</button>
       <span class="grocery-copied" id="grocery-copied"></span>
@@ -797,15 +828,19 @@ function showGroceries() {
 }
 
 async function copyGroceries() {
-  const lines = [...document.querySelectorAll('#grocery .grocery-row')]
-    .filter(row => row.querySelector('input').checked)
-    .map(row => {
-      const name = row.querySelector('.grocery-name').textContent;
-      const qty = row.querySelector('.grocery-qty').textContent;
-      return qty ? `${name} (${qty})` : name;
-    });
+  const parts = [];
+  let count = 0;
+  for (const list of document.querySelectorAll('#grocery .grocery-list')) {
+    const lines = [...list.querySelectorAll('.grocery-row')]
+      .filter(row => row.querySelector('input').checked)
+      .map(row => {
+        const name = row.querySelector('.grocery-name').firstChild.textContent;
+        return `${name} ${row.querySelector('.grocery-qty').textContent}`;
+      });
+    if (lines.length) { parts.push(list.dataset.store + '\n' + lines.join('\n')); count += lines.length; }
+  }
   const note = document.getElementById('grocery-copied');
-  try { await navigator.clipboard.writeText(lines.join('\n')); note.textContent = `Copied ${lines.length} items`; }
+  try { await navigator.clipboard.writeText(parts.join('\n\n')); note.textContent = `Copied ${count} items`; }
   catch (e) { note.textContent = 'Couldn’t copy — long-press to select instead'; }
   setTimeout(() => { note.textContent = ''; }, 3000);
 }
