@@ -1550,62 +1550,69 @@
       "category": "dinner",
       "protein_type": "turkey",
       "emoji": "🫘",
-      "name": "High-protein minestrone",
+      "name": "Chicken sausage minestrone",
       "source": null,
-      "desc": "Hearty bean-and-turkey minestrone loaded with vegetables. Under 300 calories and better on day two.",
-      "cal": 280,
-      "protein": "21g",
-      "carbs": "35g",
-      "fat": "7g",
+      "desc": "Bean-and-vegetable minestrone with seared chicken sausage and a tomato-paste, fennel and parmesan-rind broth. About 300 calories and better on day two.",
+      "cal": 300,
+      "protein": "23g",
+      "carbs": "36g",
+      "fat": "8g",
       "servings": "6 servings",
       "ingredients": [
-        "1 tbsp olive oil",
+        "Cooking spray",
+        "4 links Kirkland Signature Parmesan & Black Pepper chicken sausage (~305g), halved lengthwise and sliced into ½-inch half-moons",
         "1 medium onion, diced (~150g)",
         "2 carrots, diced (~120g)",
         "2 celery stalks, diced (~100g)",
         "3 garlic cloves, minced",
-        "227g lean ground turkey (93/7)",
+        "2 tbsp tomato paste (~30g)",
+        "0.5 tsp fennel seed, lightly crushed",
+        "0.25 tsp red pepper flakes",
         "425g cannellini beans, drained and rinsed",
         "425g kidney beans, drained and rinsed",
-        "425g diced tomatoes (with juice)",
+        "425g no-salt-added diced tomatoes (with juice)",
         "960ml low-sodium chicken broth",
-        "125g zucchini, chopped",
-        "60g kale or spinach, chopped",
-        "60g small whole wheat pasta (ditalini), dry",
+        "1 parmesan rind (optional)",
         "1 tsp dried oregano",
         "1 tsp dried basil",
         "1 bay leaf",
-        "0.5 tsp salt",
+        "125g zucchini, chopped",
+        "60g small whole wheat pasta (ditalini), dry",
         "0.25 tsp black pepper",
+        "Salt to taste, at the end only",
         "25g grated parmesan, for serving (optional)"
       ],
       "steps": [
         {
-          "text": "Heat the olive oil in a large pot over medium. Add the onion, carrots, and celery and cook until softened, about 5 to 6 minutes. Add the garlic and cook 1 more minute until fragrant.",
-          "timer": 420
+          "text": "Coat a large pot with cooking spray and heat over medium-high. Add the sausage half-moons in a single layer and sear until browned, 4 to 5 minutes, flipping once. The sausage is fully cooked, so this is just for color. Move it to a plate.",
+          "timer": 300
         },
         {
-          "text": "Add the ground turkey, breaking it up with a spoon, and cook until no longer pink, about 5 to 6 minutes.",
+          "text": "Spray the pot again, lower to medium, and add the onion, carrots, and celery. Cook until softened, about 6 minutes, scraping up the browned bits from the sausage.",
           "timer": 360
         },
         {
-          "text": "Stir in both beans, the diced tomatoes with their juice, the broth, oregano, basil, bay leaf, salt, and pepper. Bring to a boil, then reduce heat and simmer uncovered.",
-          "timer": null
+          "text": "Add the garlic, tomato paste, fennel seed, and red pepper flakes. Stir until the paste darkens a shade and smells toasty, 1 to 2 minutes.",
+          "timer": 90
         },
         {
-          "text": "Stir in the ditalini and the zucchini. Simmer until the pasta is tender, about 8 to 10 minutes.",
-          "timer": 540
+          "text": "Stir in both beans, the tomatoes with their juice, the broth, the parmesan rind if using, the oregano, basil, bay leaf, and black pepper. Bring to a boil, then simmer uncovered for 15 minutes.",
+          "timer": 900
         },
         {
-          "text": "Stir in the kale or spinach and cook just until wilted, about 2 minutes. Remove the bay leaf, taste, and adjust the seasoning.",
+          "text": "Add the zucchini and simmer 8 minutes. Meanwhile, cook the ditalini in a small pot of boiling water until tender, then drain. Keep the pasta out of the soup.",
+          "timer": 480
+        },
+        {
+          "text": "Return the sausage to the pot and simmer 2 minutes to heat through. Remove the bay leaf and rind, taste, and add salt only if it needs it.",
           "timer": 120
         },
         {
-          "text": "Ladle into bowls and top with grated parmesan if using.",
+          "text": "To serve, put about a sixth of the pasta in each bowl or container, ladle the soup over, and top with grated parmesan if using.",
           "timer": null
         }
       ],
-      "notes": "Soups are left as batch-and-reheat rather than prep-ahead: minestrone is better on day 2. Keeps 4 days in the fridge. The pasta keeps absorbing broth as it sits, so add a splash of water or broth when reheating. To push the protein up, stir in an extra can of beans or swap the ditalini for the Costco protein pasta already used in the Greek meatballs."
+      "notes": "Soups are left as batch-and-reheat rather than prep-ahead: minestrone is better on day 2. Keeps 4 days in the fridge. Store the pasta separately from the soup so it stays firm and the broth doesn't thicken. The sausage carries plenty of salt (640mg a link), which is why the salt is cut and the tomatoes are no-salt-added; season only at the end. One 3 lb Costco pack (18 links) covers about four batches. Macros are estimated from the sausage label; LoseIt-logged numbers override."
     },
     {
       "id": 30,
