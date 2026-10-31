@@ -1552,32 +1552,30 @@
       "emoji": "🫘",
       "name": "Chicken sausage minestrone",
       "source": null,
-      "desc": "Bean-and-vegetable minestrone with seared chicken sausage and a tomato-paste, fennel and parmesan-rind broth. About 300 calories and better on day two.",
+      "desc": "Bean-and-vegetable minestrone with seared chicken sausage in a tomato-paste broth, with protein pasta added per bowl. About 300 calories and better on day two.",
       "cal": 300,
-      "protein": "23g",
-      "carbs": "36g",
+      "protein": "24g",
+      "carbs": "34g",
       "fat": "8g",
       "servings": "6 servings",
       "ingredients": [
         "Cooking spray",
-        "4 links Kirkland Signature Parmesan & Black Pepper chicken sausage (~305g), halved lengthwise and sliced into ½-inch half-moons",
+        "305g chicken sausage (4 Kirkland links), halved lengthwise and sliced into ½-inch half-moons",
         "1 medium onion, diced (~150g)",
         "2 carrots, diced (~120g)",
         "2 celery stalks, diced (~100g)",
         "3 garlic cloves, minced",
         "2 tbsp tomato paste (~30g)",
-        "0.5 tsp fennel seed, lightly crushed",
         "0.25 tsp red pepper flakes",
         "425g cannellini beans, drained and rinsed",
         "425g kidney beans, drained and rinsed",
         "425g no-salt-added diced tomatoes (with juice)",
         "960ml low-sodium chicken broth",
-        "1 parmesan rind (optional)",
         "1 tsp dried oregano",
         "1 tsp dried basil",
         "1 bay leaf",
         "125g zucchini, chopped",
-        "60g small whole wheat pasta (ditalini), dry",
+        "60g protein pasta (Brami, any short shape), dry",
         "0.25 tsp black pepper",
         "Salt to taste, at the end only",
         "25g grated parmesan, for serving (optional)"
@@ -1592,19 +1590,19 @@
           "timer": 360
         },
         {
-          "text": "Add the garlic, tomato paste, fennel seed, and red pepper flakes. Stir until the paste darkens a shade and smells toasty, 1 to 2 minutes.",
+          "text": "Add the garlic, tomato paste, and red pepper flakes. Stir until the paste darkens a shade and smells toasty, 1 to 2 minutes.",
           "timer": 90
         },
         {
-          "text": "Stir in both beans, the tomatoes with their juice, the broth, the parmesan rind if using, the oregano, basil, bay leaf, and black pepper. Bring to a boil, then simmer uncovered for 15 minutes.",
+          "text": "Stir in both beans, the tomatoes with their juice, the broth, the oregano, basil, bay leaf, and black pepper. Bring to a boil, then simmer uncovered for 15 minutes.",
           "timer": 900
         },
         {
-          "text": "Add the zucchini and simmer 8 minutes. Meanwhile, cook the ditalini in a small pot of boiling water until tender, then drain. Keep the pasta out of the soup.",
+          "text": "Add the zucchini and simmer 8 minutes. Meanwhile, cook the protein pasta in a small pot of boiling water until tender, then drain. Keep the pasta out of the soup.",
           "timer": 480
         },
         {
-          "text": "Return the sausage to the pot and simmer 2 minutes to heat through. Remove the bay leaf and rind, taste, and add salt only if it needs it.",
+          "text": "Return the sausage to the pot and simmer 2 minutes to heat through. Remove the bay leaf, taste, and add salt only if it needs it.",
           "timer": 120
         },
         {
@@ -1612,7 +1610,7 @@
           "timer": null
         }
       ],
-      "notes": "Soups are left as batch-and-reheat rather than prep-ahead: minestrone is better on day 2. Keeps 4 days in the fridge. Store the pasta separately from the soup so it stays firm and the broth doesn't thicken. The sausage carries plenty of salt (640mg a link), which is why the salt is cut and the tomatoes are no-salt-added; season only at the end. One 3 lb Costco pack (18 links) covers about four batches. Macros are estimated from the sausage label; LoseIt-logged numbers override."
+      "notes": "Soups are left as batch-and-reheat rather than prep-ahead: minestrone is better on day 2. Keeps 4 days in the fridge. Store the pasta separately from the soup so it stays firm and the broth doesn't thicken. Sausage is Costco's Kirkland Signature Parmesan & Black Pepper chicken sausage; it's fully cooked and carries plenty of salt (640mg a link), which is why the salt is cut and the tomatoes are no-salt-added. Season only at the end. One 3 lb pack (18 links) covers about four batches. Pasta is the Brami protein pasta variety pack from Costco. Macros are estimated from the labels; LoseIt-logged numbers override."
     },
     {
       "id": 30,

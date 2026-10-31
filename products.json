@@ -1206,9 +1206,9 @@
    "match": "protein pasta",
    "buy": {
     "store": "Costco",
-    "product": "Protein Pasta, 12 oz, 6-count",
+    "product": "Brami Protein Pasta Variety Pack, 16 oz, 4-count",
     "pack": {
-     "g": 2041
+     "g": 1814
     }
    }
   },
@@ -1293,6 +1293,20 @@
     "product": "Smoked Turkey Sausage (14 oz)",
     "pack": {
      "g": 397
+    }
+   }
+  },
+  {
+   "key": "chicken-sausage",
+   "name": "Chicken sausage",
+   "tier": "recipe",
+   "lasts_days": 14,
+   "match": "chicken sausage",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Parmesan & Black Pepper Chicken Sausage, 3 lb",
+    "pack": {
+     "g": 1361
     }
    }
   },
