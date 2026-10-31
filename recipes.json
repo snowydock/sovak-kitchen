@@ -1748,6 +1748,464 @@
         }
       ],
       "notes": "Scaled 4 to 6 servings (1.5x) and switched to 85/15 beef per house standard. Replaces the plainer Chili that used to be in the library. MACROS INCLUDE THE CORNBREAD: chili alone is ~303 kcal / 27g protein; the 40g Jiffy square adds ~130 kcal, 21g carbs and 4g fat, bringing the plate to ~433 kcal / 30g protein. Still a dinner with room to spare. CORNBREAD IS DAY-OF ON PURPOSE: one box baked in an 8x8 and cut into 8 gives ~41g squares — 6 for the week plus 2 spare. It is 20 minutes start to finish and dry and crumbly by day two, which is why it is not batched with the chili. Bake it the morning or evening you want it. DON'T SKIP THE COCOA: a teaspoon and a half reads as nothing in the bowl but it is what gives the beef its depth — it does not taste like chocolate. BATCH-COOK THE CHILI: better on day 2 and reheats without texture loss. Keeps 4 to 5 days. MACROS ARE ESTIMATED, not logged — the beef draining step is the big variable. Worth logging the real version and sending the numbers back. VARIATION: for Cincinnati-style, spoon about 3/4 cup over a cup of hot spaghetti with cheddar and onion (adds roughly 300 kcal, which tips it into anchor-meal territory)."
+    },
+    {
+      "id": 32,
+      "category": "dinner",
+      "protein_type": "chicken",
+      "emoji": "🍛",
+      "name": "Butter chicken",
+      "source": null,
+      "desc": "Tender yogurt-marinated chicken thighs in a silky, nut-free tomato butter sauce over rice. Sauce made ahead; each night is a 20-minute sear and simmer.",
+      "cal": 405,
+      "protein": "37g",
+      "carbs": "38g",
+      "fat": "11g",
+      "servings": "6 servings (cook-to-order)",
+      "ingredients": [
+        "900g boneless skinless chicken thighs, cut into bite-size pieces",
+        "150g nonfat Greek yogurt (marinade)",
+        "30g minced garlic (15g marinade, 15g sauce)",
+        "20g ginger paste (10g marinade, 10g sauce)",
+        "4 tsp garam masala (2 marinade, 2 sauce)",
+        "1 tsp turmeric",
+        "1 tsp smoked paprika",
+        "1.5 tsp salt (1 marinade, 0.5 sauce)",
+        "Juice of 1 lemon (half for the marinade)",
+        "14g butter",
+        "200g yellow onion, finely diced",
+        "30g tomato paste",
+        "425g crushed tomatoes",
+        "1 tsp cumin",
+        "7g honey",
+        "120ml half-and-half",
+        "2 Bibigo cooked white rice packets (420g)",
+        "Cilantro, to serve (optional)"
+      ],
+      "steps": [
+        {
+          "text": "PREP DAY: toss the chicken with the yogurt, 15g garlic, 10g ginger, 2 tsp garam masala, the turmeric, smoked paprika, 1 tsp salt, and half the lemon juice. Divide into 3 portions of ~350g. Refrigerate 2 (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight).",
+          "timer": null
+        },
+        {
+          "text": "Make the sauce: melt the butter in a pot over medium and cook the onion until soft and golden, about 8 minutes.",
+          "timer": 480
+        },
+        {
+          "text": "Add the remaining garlic, ginger, 2 tsp garam masala, the cumin, and the tomato paste. Stir 1 minute.",
+          "timer": 60
+        },
+        {
+          "text": "Add the crushed tomatoes, honey, and 0.5 tsp salt. Simmer 15 minutes, then blend smooth. Divide into 3 jars. PREP DAY ENDS HERE. Keep the half-and-half for cook day.",
+          "timer": 900
+        },
+        {
+          "text": "COOK DAY: coat a skillet with cooking spray and sear one chicken portion over medium-high until browned, 6 to 7 minutes.",
+          "timer": 420
+        },
+        {
+          "text": "Add one jar of sauce and simmer until the chicken hits 165F, about 8 minutes. Off the heat, stir in 40ml half-and-half.",
+          "timer": 480
+        },
+        {
+          "text": "Serve over 2/3 of a heated Bibigo rice packet split between two bowls, with cilantro if using.",
+          "timer": null
+        }
+      ],
+      "notes": "Nut-free on purpose: restaurant butter chicken is often thickened with cashew paste, so the creaminess here comes from Greek yogurt and a splash of half-and-half. Thighs instead of breast keep it tender; it lands nearer 400 kcal than the usual 350 dinner target and that's deliberate. STORAGE: sauce jars keep 5 days in the fridge; 3rd chicken portion frozen, thaw overnight. If it becomes a favorite, it can be scaled up to a lunch.",
+      "new": true
+    },
+    {
+      "id": 33,
+      "category": "dinner",
+      "protein_type": "chicken",
+      "emoji": "🥘",
+      "name": "Chicken & sausage jambalaya",
+      "source": null,
+      "desc": "One-pot Cajun rice with seared chicken sausage, chicken thighs, and the holy trinity. Everything chopped ahead; one 30-minute cook covers three nights.",
+      "cal": 355,
+      "protein": "30g",
+      "carbs": "34g",
+      "fat": "12g",
+      "servings": "6 servings",
+      "ingredients": [
+        "305g chicken sausage (4 Kirkland links), sliced into coins",
+        "500g boneless skinless chicken thighs, cut into 2cm cubes",
+        "200g yellow onion, diced",
+        "250g green bell pepper, diced",
+        "150g celery, diced",
+        "15g minced garlic",
+        "425g no-salt-added diced tomatoes (with juice)",
+        "240ml low-sodium chicken broth",
+        "2 tsp smoked paprika",
+        "1 tsp garlic powder",
+        "1 tsp dried oregano",
+        "1 tsp dried thyme",
+        "0.5 tsp cayenne",
+        "0.5 tsp black pepper",
+        "2 Bibigo cooked white rice packets (420g)",
+        "Hot sauce and sliced green onions, to serve"
+      ],
+      "steps": [
+        {
+          "text": "PREP DAY: dice the onion, bell pepper, and celery into one container. Slice the sausage into a second. Toss the chicken with the smoked paprika, garlic powder, oregano, thyme, cayenne, and black pepper in a third. PREP DAY ENDS HERE.",
+          "timer": null
+        },
+        {
+          "text": "COOK NIGHT 1: coat a large pot with cooking spray and sear the sausage over medium-high until browned, 4 to 5 minutes. Move to a plate.",
+          "timer": 300
+        },
+        {
+          "text": "Add the chicken and brown, about 5 minutes.",
+          "timer": 300
+        },
+        {
+          "text": "Add the onion, pepper, celery, and garlic and cook until softened, about 6 minutes.",
+          "timer": 360
+        },
+        {
+          "text": "Add the tomatoes and broth and simmer 10 minutes.",
+          "timer": 600
+        },
+        {
+          "text": "Break up the rice and stir it in with the sausage. Cover and let sit off the heat 5 minutes. Taste and add salt only if needed.",
+          "timer": 300
+        },
+        {
+          "text": "NIGHTS 2 AND 3: reheat a portion with a splash of broth or water.",
+          "timer": null
+        }
+      ],
+      "notes": "No added salt in the spice mix on purpose: the chicken sausage brings plenty (640mg a link). Uses 4 of the 18 links in the Costco pack, alongside the minestrone. Keeps 4 days in the fridge.",
+      "new": true
+    },
+    {
+      "id": 34,
+      "category": "dinner",
+      "protein_type": "chicken",
+      "emoji": "🍲",
+      "name": "Moroccan chicken & chickpea stew",
+      "source": null,
+      "desc": "Warm-spiced chicken thigh stew with sweet potato, chickpeas, and a few apricots. No rice needed, and it's better on night two.",
+      "cal": 335,
+      "protein": "31g",
+      "carbs": "38g",
+      "fat": "7g",
+      "servings": "6 servings",
+      "ingredients": [
+        "750g boneless skinless chicken thighs, cut into chunks",
+        "200g yellow onion, diced",
+        "200g carrots, diced",
+        "400g sweet potato, cut into 2cm cubes",
+        "240g chickpeas (1 can, drained and rinsed)",
+        "425g no-salt-added diced tomatoes (with juice)",
+        "500ml low-sodium chicken broth",
+        "40g dried apricots, chopped",
+        "15g minced garlic",
+        "10g ginger paste",
+        "2 tsp cumin",
+        "1.5 tsp ground coriander",
+        "1 tsp cinnamon",
+        "1 tsp smoked paprika",
+        "1 tsp turmeric",
+        "1 tsp salt",
+        "Juice of 1 lemon",
+        "Cilantro, to serve (optional)"
+      ],
+      "steps": [
+        {
+          "text": "PREP DAY: put the onion and carrots in one container and the sweet potato in another. Toss the chicken with the cumin, coriander, cinnamon, smoked paprika, turmeric, and salt. Drain the chickpeas and chop the apricots. PREP DAY ENDS HERE.",
+          "timer": null
+        },
+        {
+          "text": "COOK NIGHT 1: coat a pot with cooking spray and brown the chicken over medium-high, about 5 minutes.",
+          "timer": 300
+        },
+        {
+          "text": "Add the onion, carrots, garlic, and ginger and cook 5 minutes.",
+          "timer": 300
+        },
+        {
+          "text": "Add the sweet potato, chickpeas, tomatoes, broth, and apricots. Simmer partly covered until the sweet potato is tender, about 20 minutes.",
+          "timer": 1200
+        },
+        {
+          "text": "Squeeze lemon over each bowl and top with cilantro if using.",
+          "timer": null
+        },
+        {
+          "text": "NIGHTS 2 AND 3: reheat a portion. The flavor deepens overnight.",
+          "timer": null
+        }
+      ],
+      "notes": "One-pot stew, so no rice: the sweet potato and chickpeas carry it. Keeps 4 days in the fridge.",
+      "new": true
+    },
+    {
+      "id": 35,
+      "category": "dinner",
+      "protein_type": "chicken",
+      "emoji": "🍛",
+      "name": "Japanese chicken curry",
+      "source": null,
+      "desc": "Mild, thick Japanese-style curry with chicken thighs, carrots, and potatoes over a little rice. Comfort food that reheats beautifully.",
+      "cal": 360,
+      "protein": "27g",
+      "carbs": "45g",
+      "fat": "9g",
+      "servings": "6 servings",
+      "ingredients": [
+        "700g boneless skinless chicken thighs, cut into bite-size pieces",
+        "250g yellow onion, cut into wedges",
+        "300g carrots, cut into chunks",
+        "200g Yukon Gold potatoes, cut into chunks",
+        "60g S&B Golden Curry roux, mild or medium (about 2/3 of a 92g box)",
+        "700ml water",
+        "10g honey",
+        "2 Bibigo cooked white rice packets (420g)"
+      ],
+      "steps": [
+        {
+          "text": "PREP DAY: cut the onion, carrots, and potatoes into one container and the chicken into another. Break the roux into pieces. PREP DAY ENDS HERE.",
+          "timer": null
+        },
+        {
+          "text": "COOK NIGHT 1: coat a pot with cooking spray and brown the chicken and onion over medium-high, about 6 minutes.",
+          "timer": 360
+        },
+        {
+          "text": "Add the carrots, potatoes, and water. Simmer until the potatoes are tender, about 15 minutes.",
+          "timer": 900
+        },
+        {
+          "text": "Turn off the heat, stir in the roux until it melts, add the honey, then simmer 5 minutes until thick.",
+          "timer": 300
+        },
+        {
+          "text": "Serve each bowl over 1/3 of a heated Bibigo rice packet.",
+          "timer": null
+        },
+        {
+          "text": "NIGHTS 2 AND 3: reheat a portion with a splash of water. It thickens in the fridge.",
+          "timer": null
+        }
+      ],
+      "notes": "Check the roux box for allergens. It's wheat and soy, and as far as we know has no tree nuts, but read the label. Using 2/3 of a box (instead of the whole box) is what keeps this near 350 kcal; the extra carrot makes up the body. Keeps 4 days in the fridge.",
+      "new": true
+    },
+    {
+      "id": 36,
+      "category": "dinner",
+      "protein_type": "pork",
+      "emoji": "🍖",
+      "name": "Honey-garlic pork tenderloin",
+      "source": null,
+      "desc": "Sticky honey-garlic pork medallions with roasted sweet potatoes and green beans. Glaze and veg prepped ahead; one sheet pan and one skillet per night.",
+      "cal": 335,
+      "protein": "35g",
+      "carbs": "36g",
+      "fat": "6g",
+      "servings": "6 servings (cook-to-order)",
+      "ingredients": [
+        "900g pork tenderloin (about 2), cut into 2cm medallions",
+        "42g honey",
+        "45ml low-sodium soy sauce",
+        "15g minced garlic",
+        "1 tbsp rice vinegar",
+        "1 tsp cornstarch",
+        "0.5 tsp red pepper flakes",
+        "700g sweet potatoes, cut into 2cm cubes",
+        "450g green beans, trimmed",
+        "0.5 tsp salt",
+        "1 tsp smoked paprika",
+        "Cooking spray"
+      ],
+      "steps": [
+        {
+          "text": "PREP DAY: whisk the honey, soy sauce, garlic, rice vinegar, cornstarch, and red pepper flakes. Divide the medallions into 3 bags of ~300g, each with a third of the glaze. Refrigerate 2 (days 1 to 2) and freeze the 3rd flat (day 3, thaw overnight).",
+          "timer": null
+        },
+        {
+          "text": "Store the cubed sweet potatoes and the trimmed green beans in separate containers. PREP DAY ENDS HERE.",
+          "timer": null
+        },
+        {
+          "text": "COOK DAY: heat the oven to 425F. Spray a third of the sweet potatoes, season with salt and smoked paprika, and roast 15 minutes.",
+          "timer": 900
+        },
+        {
+          "text": "Add a third of the green beans to the pan and roast 10 minutes more.",
+          "timer": 600
+        },
+        {
+          "text": "While they roast, sear one bag of medallions in a sprayed skillet over medium-high, 3 minutes per side, until 145F.",
+          "timer": 360
+        },
+        {
+          "text": "Pour in the glaze from the bag and bubble 1 minute until sticky. Serve with the sweet potatoes and green beans.",
+          "timer": 60
+        }
+      ],
+      "notes": "Pork tenderloin is about as lean as chicken breast, so this lands under 350 without trimming anything. Pull it at 145F and rest 3 minutes so it stays juicy. Sweet potatoes keep 4 to 5 days cubed in water in the fridge if they start to brown.",
+      "new": true
+    },
+    {
+      "id": 37,
+      "category": "lunch",
+      "protein_type": "beef",
+      "emoji": "🥩",
+      "name": "Philly cheesesteak bowls",
+      "source": null,
+      "desc": "Thin-seared sirloin with browned peppers, onions, and mushrooms over rice, with a provolone slice that melts in the work microwave.",
+      "cal": 490,
+      "protein": "45g",
+      "carbs": "46g",
+      "fat": "14g",
+      "servings": "6 servings",
+      "ingredients": [
+        "1000g top sirloin, sliced very thin",
+        "400g green bell pepper, sliced",
+        "400g yellow onion, sliced",
+        "200g mushrooms, sliced",
+        "2 tbsp Worcestershire sauce",
+        "1 tsp garlic powder",
+        "1 tsp salt",
+        "1 tsp black pepper",
+        "90g provolone (6 thin slices)",
+        "3 Bibigo cooked white rice packets (630g)"
+      ],
+      "steps": [
+        {
+          "text": "Freeze the steak 30 minutes so it slices paper-thin, then slice against the grain.",
+          "timer": 1800
+        },
+        {
+          "text": "Coat a large skillet with cooking spray and cook the peppers, onion, and mushrooms over medium-high until soft and browned, about 10 minutes. Move to a bowl.",
+          "timer": 600
+        },
+        {
+          "text": "Sear the steak in 2 to 3 batches over high heat, about 2 minutes per batch.",
+          "timer": 360
+        },
+        {
+          "text": "Return the vegetables, add the Worcestershire, garlic powder, salt, and pepper, and toss to combine.",
+          "timer": null
+        },
+        {
+          "text": "Portion half a rice packet and a sixth of the steak mix into each of 6 containers. Lay a provolone slice on top of each; it melts when reheated.",
+          "timer": null
+        }
+      ],
+      "notes": "Made the night before as a full batch. Keeps 4 days in the fridge. Reheat 2 to 2.5 minutes with the lid cracked.",
+      "new": true
+    },
+    {
+      "id": 38,
+      "category": "lunch",
+      "protein_type": "pork",
+      "emoji": "🥖",
+      "name": "Banh mi pork bowls",
+      "source": null,
+      "desc": "Caramelized lemongrass pork over rice with quick-pickled carrots, cucumber, jalapeño, cilantro, and sriracha mayo packed on the side.",
+      "cal": 495,
+      "protein": "46g",
+      "carbs": "50g",
+      "fat": "11g",
+      "servings": "6 servings",
+      "ingredients": [
+        "1200g pork tenderloin, sliced into thin strips",
+        "45ml low-sodium soy sauce",
+        "30ml fish sauce",
+        "25g honey",
+        "15g minced garlic",
+        "15g lemongrass paste",
+        "0.5 tsp black pepper",
+        "250g carrots, cut into matchsticks",
+        "120ml rice vinegar",
+        "25g sugar",
+        "1 tsp salt",
+        "200g cucumber, sliced",
+        "1 jalapeño, thinly sliced",
+        "Cilantro (small bunch)",
+        "90g light mayo",
+        "30g sriracha",
+        "Juice of 1 lime",
+        "3 Bibigo cooked white rice packets (630g)"
+      ],
+      "steps": [
+        {
+          "text": "Pickle the carrots: stir the rice vinegar, 120ml water, sugar, and salt until dissolved, then submerge the carrots. Leave at least 30 minutes; they keep all week.",
+          "timer": 1800
+        },
+        {
+          "text": "Marinate the pork in the soy sauce, fish sauce, honey, garlic, lemongrass, and pepper for 30 minutes while the carrots pickle.",
+          "timer": 1800
+        },
+        {
+          "text": "Whisk the light mayo, sriracha, and lime juice for the sauce.",
+          "timer": null
+        },
+        {
+          "text": "Sear the pork in batches in a sprayed skillet over high heat until caramelized, 3 to 4 minutes per batch.",
+          "timer": 720
+        },
+        {
+          "text": "Pack half a rice packet and a sixth of the pork into each of 6 containers. Pack the pickled carrots, cucumber, jalapeño, cilantro, and sauce in a separate small container so they stay cold and crisp.",
+          "timer": null
+        }
+      ],
+      "notes": "Made the night before as a full batch. Keep the toppings and sauce out of the hot container: reheat the pork and rice, then add the cold toppings on top. Keeps 4 days in the fridge.",
+      "new": true
+    },
+    {
+      "id": 39,
+      "category": "lunch",
+      "protein_type": "chicken",
+      "emoji": "🍝",
+      "name": "Chicken parm pasta bake",
+      "source": null,
+      "desc": "Crispy-baked parmesan chicken bites tossed with protein pasta and marinara under melted mozzarella. All the chicken parm, none of the soggy cutlet.",
+      "cal": 480,
+      "protein": "48g",
+      "carbs": "37g",
+      "fat": "14g",
+      "servings": "6 servings",
+      "ingredients": [
+        "800g boneless skinless chicken breast, cut into 2cm cubes",
+        "1 large egg",
+        "50g panko breadcrumbs",
+        "30g grated parmesan",
+        "1 tsp Italian seasoning",
+        "0.5 tsp salt",
+        "224g protein pasta (Brami, any short shape), dry",
+        "680g marinara (one 24 oz jar)",
+        "120g shredded part-skim mozzarella",
+        "Basil, to serve (optional)"
+      ],
+      "steps": [
+        {
+          "text": "Heat the oven to 425F. Beat the egg and toss the chicken in it. Mix the panko, parmesan, Italian seasoning, and salt, then toss the chicken in the crumbs.",
+          "timer": null
+        },
+        {
+          "text": "Spread the chicken on a sprayed sheet pan, spray the tops, and bake until golden, about 15 minutes.",
+          "timer": 900
+        },
+        {
+          "text": "Meanwhile, cook the pasta 2 minutes short of the package time and drain.",
+          "timer": 480
+        },
+        {
+          "text": "Lower the oven to 375F. In a 9x13, combine the pasta, marinara, and chicken. Top with the mozzarella.",
+          "timer": null
+        },
+        {
+          "text": "Bake until bubbly, about 20 minutes. Cool and cut into 6 portions.",
+          "timer": 1200
+        }
+      ],
+      "notes": "9x13 bake, made the night before. Breaded cutlets go soggy after a night in the fridge, so the chicken is cut into bites and baked into the pasta instead. Keeps 4 days in the fridge.",
+      "new": true
     }
   ],
   "sauces": [

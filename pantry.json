@@ -580,6 +580,19 @@
    }
   },
   {
+   "key": "ground-coriander",
+   "name": "Ground coriander",
+   "tier": "long",
+   "match": "ground coriander",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Coriander (1.5 oz)",
+    "pack": {
+     "g": 42
+    }
+   }
+  },
+  {
    "key": "cilantro",
    "name": "Cilantro",
    "tier": "recipe",
@@ -1052,6 +1065,19 @@
     "product": "Red Seedless Grapes (~2 lb)",
     "pack": {
      "g": 900
+    }
+   }
+  },
+  {
+   "key": "sweet-potatoes",
+   "name": "Sweet potatoes",
+   "tier": "recipe",
+   "match": "sweet potato",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Sweet Potatoes (1 lb)",
+    "pack": {
+     "g": 454
     }
    }
   },
@@ -1538,6 +1564,168 @@
    "name": "Worcestershire sauce",
    "tier": "long",
    "match": "worcestershire"
+  },
+  {
+   "key": "garam-masala",
+   "name": "Garam masala",
+   "tier": "long",
+   "match": "garam masala",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Garam Masala (2 oz)",
+    "pack": {
+     "g": 57
+    }
+   }
+  },
+  {
+   "key": "turmeric",
+   "name": "Turmeric",
+   "tier": "long",
+   "match": "turmeric",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Turmeric (1.5 oz)",
+    "pack": {
+     "g": 42
+    }
+   }
+  },
+  {
+   "key": "cayenne",
+   "name": "Cayenne",
+   "tier": "long",
+   "match": "cayenne",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Ground Cayenne Pepper (1 oz)",
+    "pack": {
+     "g": 28
+    }
+   }
+  },
+  {
+   "key": "half-and-half",
+   "name": "Half-and-half",
+   "tier": "recipe",
+   "match": "half[- ]and[- ]half",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Half & Half (1 pt)",
+    "pack": {
+     "ml": 473
+    }
+   }
+  },
+  {
+   "key": "chickpeas",
+   "name": "Chickpeas",
+   "tier": "long",
+   "match": "chickpeas|garbanzo",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Chickpeas (15.5 oz can)",
+    "pack": {
+     "g": 425
+    }
+   }
+  },
+  {
+   "key": "dried-apricots",
+   "name": "Dried apricots",
+   "tier": "long",
+   "match": "apricot",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Dried Apricots (6 oz)",
+    "pack": {
+     "g": 170
+    }
+   }
+  },
+  {
+   "key": "curry-roux",
+   "name": "Japanese curry roux",
+   "tier": "long",
+   "match": "curry roux|golden curry",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "S&B Golden Curry Sauce Mix, Medium Hot (3.2 oz)",
+    "pack": {
+     "g": 92
+    }
+   }
+  },
+  {
+   "key": "pork-tenderloin",
+   "name": "Pork tenderloin",
+   "tier": "recipe",
+   "match": "pork tenderloin",
+   "buy": {
+    "store": "Costco",
+    "product": "Kirkland Signature Pork Tenderloin (~4 lb)",
+    "pack": {
+     "g": 1814
+    }
+   }
+  },
+  {
+   "key": "sirloin",
+   "name": "Top sirloin",
+   "tier": "recipe",
+   "match": "sirloin",
+   "buy": {
+    "store": "Costco",
+    "product": "USDA Choice Top Sirloin Steak (~3 lb)",
+    "pack": {
+     "g": 1361
+    }
+   }
+  },
+  {
+   "key": "provolone",
+   "name": "Provolone",
+   "tier": "recipe",
+   "match": "provolone",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Sliced Provolone (8 oz)",
+    "pack": {
+     "g": 227
+    }
+   }
+  },
+  {
+   "key": "fish-sauce",
+   "name": "Fish sauce",
+   "tier": "long",
+   "match": "fish sauce",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Fish Sauce (6.76 oz)",
+    "pack": {
+     "ml": 200
+    }
+   }
+  },
+  {
+   "key": "lemongrass",
+   "name": "Lemongrass paste",
+   "tier": "long",
+   "match": "lemongrass",
+   "buy": {
+    "store": "55 Fulton Market",
+    "product": "Gourmet Garden Lemongrass Stir-In Paste (4 oz)",
+    "pack": {
+     "g": 113
+    }
+   }
+  },
+  {
+   "key": "sugar",
+   "name": "Sugar",
+   "tier": "long",
+   "match": "\\bsugar\\b"
   }
  ],
  "items": [
@@ -2737,6 +2925,12 @@
   {
    "key": "sriracha",
    "name": "Sriracha",
+   "tier": "long",
+   "assumed": true
+  },
+  {
+   "key": "sugar",
+   "name": "Sugar",
    "tier": "long",
    "assumed": true
   },

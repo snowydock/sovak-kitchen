@@ -51,6 +51,9 @@
   .card { background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--r-lg); padding: 1.25rem 1.4rem; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; position: relative; overflow: hidden; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: transparent; transition: background 0.2s ease; border-radius: var(--r-lg) var(--r-lg) 0 0; }
   .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--border); }
+  /* New, not-yet-tried recipes ("new": true in recipes.json) get a silver border until they're kept */
+  .card.is-new, .plan-card.is-new { border: 2px solid #B4BAC2; }
+  .card.is-new:hover, .plan-card.is-new:hover { border-color: #9AA1AB; }
   .card:hover::before { background: var(--accent-mid); }
   .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
   .card-emoji { font-size: 22px; line-height: 1; }
@@ -371,7 +374,7 @@ function buildNav() {
 }
  
 function buildCard(r) {
-  return `<div class="card" onclick="openSummary(${r.id})">
+  return `<div class="card${r.new ? ' is-new' : ''}" onclick="openSummary(${r.id})">
     <div class="card-top">
       <span class="card-emoji">${r.emoji}</span>
       ${r.source ? '<div class="card-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div>' : ''}
@@ -846,7 +849,7 @@ async function copyGroceries() {
 }
 
 function planCard(r, cat, idx) {
-  return `<div class="plan-card" onclick="openSummary(${r.id})">
+  return `<div class="plan-card${r.new ? ' is-new' : ''}" onclick="openSummary(${r.id})">
     <div class="plan-card-top">
       <span class="plan-card-emoji">${r.emoji}</span>
       <span class="plan-card-actions">
